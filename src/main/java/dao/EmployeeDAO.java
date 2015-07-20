@@ -14,5 +14,6 @@ import java.util.ArrayList;
  */
 public class EmployeeDAO {
     
-    private ArrayList<Employee> employees = new ArrayList<>();
+    private static ArrayList<Employee> employees = new ArrayList<>();
+    
 }
