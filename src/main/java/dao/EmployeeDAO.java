@@ -5,10 +5,14 @@
  */
 package dao;
 
+import domain.Employee;
+import java.util.ArrayList;
+
 /**
  *
  * @author cameron
  */
 public class EmployeeDAO {
     
+    private ArrayList<Employee> employees = new ArrayList<>();
 }
