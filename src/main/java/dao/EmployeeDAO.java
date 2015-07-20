@@ -16,4 +16,8 @@ public class EmployeeDAO {
     
     private static ArrayList<Employee> employees = new ArrayList<>();
     
+    public EmployeeDAO(){
+        //does nothing
+    }
+    
 }
