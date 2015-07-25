@@ -36,7 +36,16 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
             //--->
             //--->
         
-        System.out.println("works"); //check server output window
+        String[] shifts = request.getParameterValues("name");
+        
+        /*not working yet*/
+        if (shifts != null) {
+            for (String shift : shifts) {
+                System.out.println(shift);
+            }
+        }
+        
+        //System.out.println("works"); //check server output window
         response.sendRedirect("/unipol/index.jsp");
     }
 

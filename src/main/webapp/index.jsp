@@ -283,7 +283,7 @@
 
 
         <section>
-            <h2>Additional comments</
+            <h2>Additional comments</h2>
                 <div class="row">
                     <div class="8u 12u$(small)">
                         <form method="post" action="/unipol/EmployeeAvailabilityServlet">

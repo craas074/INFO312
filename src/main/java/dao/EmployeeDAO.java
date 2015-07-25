@@ -7,6 +7,8 @@ package dao;
 
 import domain.Employee;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -14,7 +16,7 @@ import java.util.ArrayList;
  */
 public class EmployeeDAO {
     
-    private static ArrayList<Employee> employees = new ArrayList<>();
+    private static Map<String, Employee> employees = new TreeMap<>();
     
     public EmployeeDAO(){
         //does nothing

@@ -10,48 +10,54 @@ var selections = (function () {
         document.getElementById("table2").onclick = handler;
         document.getElementById("table3").onclick = handler;
 
-
+        /* Get bearings, i.e. the clicked cell, column number and a collection
+         * of all cells in the clicked row. Once bearings are achieved, call methods
+         * to add/remove the selection visibility (indicated with colored cell), and 
+         * add/remove seleletions from the hold*/
         function handler(e) {
 
             /* Set up target */
             e = e || window.event; //for IE87 backward compatibility
-            var t = e.target || e.srcElement; //IE87 backward compatibility
-            var rowCells = t.parentNode.cells; //Get a collection of all cells in the clicked row
-            
+            var targetCell = e.target || e.srcElement; //IE87 backward compatibility
+            var rowCells = targetCell.parentNode.cells; //Get a collection of all cells in the clicked row
+
             /* Get the column number of the selected cell */
             var columnNumber = 0;
             for (var i = 0; i < rowCells.length; i++) {
-                if (rowCells[i] === t) {
+                if (rowCells[i] === targetCell) {
                     columnNumber = i;
                 }
             }
            
-            /* Ensure that specific parts of the table arent registered as selections */
-            if (t.nodeName === 'TABLE' || t.nodeName === 'TH' || columnNumber === 0) {
+            /* Ensure that specific parts of the table arent registered as selections, i.e.
+             * the first column and the headers */
+            if (targetCell.nodeName === 'TABLE' || targetCell.nodeName === 'TH' || columnNumber === 0) {
                 return;
             }
-
-            setSelectionsVisible(t);
-            addAndRemoveSelections(t, columnNumber, rowCells);
+            
+            setSelectionsVisible(targetCell);
+            addAndRemoveSelections(targetCell, columnNumber, rowCells);
         
         } // End handler
         
-        function setSelectionsVisible(t){
+        /* Add/remove the selection visibility (indicated with colored cell) */
+        function setSelectionsVisible(targetCell){
             
             /* Detect and set selection visibility with CSS */
-            if (t.style.backgroundColor === "rgb(9, 218, 160)") {
-                t.style.backgroundColor = null;
+            if (targetCell.style.backgroundColor === "rgb(9, 218, 160)") {
+                targetCell.style.backgroundColor = null;
                 //remove the day and time from the selection list
             } else {
-                t.style.backgroundColor = "rgb(9, 218, 160)";     
+                targetCell.style.backgroundColor = "rgb(9, 218, 160)";     
             }     
             
         } // End setSelectionsVisible
         
-        function addAndRemoveSelections(t, columnNumber, rowCells){
+        /* Add/remove seleletions from the hold */
+        function addAndRemoveSelections(targetCell, columnNumber, rowCells){
             
             /*  */
-            var tableIdString = t.parentNode.parentNode.parentNode.getAttribute("id");
+            var tableIdString = targetCell.parentNode.parentNode.parentNode.getAttribute("id");
             var tableIdActual = document.getElementById(tableIdString);
             var day = tableIdActual.rows[0].cells[columnNumber].innerHTML;
             var id = tableIdActual.rows[0].cells[columnNumber].getAttribute("id");
@@ -66,19 +72,16 @@ var selections = (function () {
             if (document.getElementById(identifier) === null) {
 
                 //alert("doesn't exist, so create");
-                $("#shifts").append("<input class='shifts' id='" + identifier + "' type='text' value='" + identifier + "' style='display: none'/>");
+                $("#shifts").append("<input name='shifts' id='" + identifier + "' type='text' value='" + identifier + "'/>");
 
+                //' style='display: none'
             } else {
 
-                //alert("exists, so remove");
-                //document.getElementById(identifier).getAttribute("id")
-                //$(identifier).remove();
+                var element = document.getElementById(identifier);
+                element.parentNode.removeChild(element);
             
             }
-            
-            console.log(document.getElementById(identifier).getAttribute("id"));
-
-            
+                        
         } // End addAndRemoveSelections
         
         
