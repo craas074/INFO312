@@ -5,17 +5,24 @@
  */
 package dao;
 
+import domain.Employee;
 import java.util.HashMap;
 import java.util.Map;
-import Domain.Employee;
+
+
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  *
  * @author benjamindawson-bruce
  */
 public class EmployeeDAO {
     
-    
-    Map<String, Employee> employees = new HashMap<>();
+
+    private static Map<String, Employee> employees = new TreeMap<>();
+
 
     public Map<String, Employee> getEmployees() {
         return employees;

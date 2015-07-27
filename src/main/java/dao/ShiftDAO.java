@@ -5,7 +5,7 @@
  */
 package dao;
 
-import Domain.Shift;
+import domain.Shift;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,9 +48,8 @@ public class ShiftDAO {
     //not sure this method is right
     
     public void save(){
-        //save method??
+        //will be for db persistence. 
     }
-    
     
     
     

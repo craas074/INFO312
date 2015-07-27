@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Domain;
+package domain;
 
 
 
@@ -16,12 +16,12 @@ import java.util.Date;
 public class Shift {
     
     
-   String id;
-   Integer start;
-   Integer end;
+   private String id;
+   private Integer start;
+   private Integer end;
    //made start and end integers, easier to work with in 24 hr time
-   Date date;
-   Employee assignedTo;
+   private Date date;
+   private Employee assignedTo;
 
     public Shift(String id, Integer start, Integer end, Date date, Employee assignedTo) {
         this.id = id;

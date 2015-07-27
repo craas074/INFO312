@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Domain;
+package domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +15,11 @@ import java.util.List;
 public class Employee {
     
     
-     String id;
-     String name;
-     Double minhours;
-     Double maxhours;
-     Double currenthours;
+     private String id;
+     private String name;
+     private Double minhours;
+     private Double maxhours;
+     private Double currenthours;
      
      
      List<Shift> availableShifts = new ArrayList<>();
