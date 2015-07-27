@@ -9,6 +9,7 @@
 
     Collection<Shift> shifts = new ShiftDAO().getAll();
 
+    String shiftTimes = "";
 
 
 
@@ -59,14 +60,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% for (Product product : products) {%>
+                        <% for (Shift shift : shifts) {%>
+                        
+                        <% // if a certain day, produce a certain row structure %>
 
                         <tr>
-                            <td><%=product.getName()%></td>
-                            <td><%=product.getDescription()%></td>
-                            <td>$<%=product.getPrice()%></td>
-                            <td><%=product.getQuantity()%></td>
-                            <td><form action="/shopping/SelectedProductServlet"><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></form></td> 
+                            <td><%=shift.getStart() + " - " + shift.getEnd()%></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
 
                         <% }%>
