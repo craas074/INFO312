@@ -21,14 +21,14 @@ public class Shift {
    private Integer end;
    //made start and end integers, easier to work with in 24 hr time
    private Date date;
-   private Employee assignedTo;
+   private Employee employee;
 
-    public Shift(String id, Integer start, Integer end, Date date, Employee assignedTo) {
+    public Shift(String id, Integer start, Integer end, Date date) {
         this.id = id;
         this.start = start;
         this.end = end;
         this.date = date;
-        this.assignedTo = assignedTo;
+ 
     }
 
     public String getId() {
@@ -63,20 +63,14 @@ public class Shift {
         this.date = date;
     }
 
-    public Employee getAssignedTo() {
-        return assignedTo;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setAssignedTo(Employee assignedTo) {
-        this.assignedTo = assignedTo;
-    }
     
     
-    
-    
-    public void Assign (Employee employee){
-    
-        //wasnt sure how to implement this method
+    public void assign (Employee employee){
+        this.employee = employee;
     }
 
             
