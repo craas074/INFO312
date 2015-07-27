@@ -2,6 +2,21 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="dao.ShiftDAO"%>
+<%@page import="domain.Shift"%>
+<%@page import="java.util.Collection"%>
+<%
+
+    Collection<Shift> shifts = new ShiftDAO().getAll();
+
+
+
+
+
+
+
+
+%>
 
 <html>
     <head>
@@ -44,6 +59,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% for (Product product : products) {%>
+
+                        <tr>
+                            <td><%=product.getName()%></td>
+                            <td><%=product.getDescription()%></td>
+                            <td>$<%=product.getPrice()%></td>
+                            <td><%=product.getQuantity()%></td>
+                            <td><form action="/shopping/SelectedProductServlet"><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></form></td> 
+                        </tr>
+
+                        <% }%>
+                        
                         <tr>
                             <td>5.45am - 8.45am</td>
                             <td></td>

@@ -36,7 +36,7 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
             //--->
             //--->
         
-        String[] shifts = request.getParameterValues("name");
+        String[] shifts = request.getParameterValues("shifts");
         
         /*not working yet*/
         if (shifts != null) {
