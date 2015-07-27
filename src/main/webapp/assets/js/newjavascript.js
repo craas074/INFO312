@@ -1,82 +1,96 @@
 
-/* Construct a shift object */
-function shift(day, date, start, finish){
-    
-    this.day = day;
-    this.date = date;
-    this.start = start;
-    this.finish = finish;
-      
-}
-
-/* Array to hold shifts */
-var map = new Map();
-
-
 var selections = (function () {
 
     var pub = {};
-    
-    
-    function setupChecks() {
+     
+    function setupTask() {
 
+        /* Setup onclick events for each table */
+        document.getElementById("table1").onclick = handler;
+        document.getElementById("table2").onclick = handler;
+        document.getElementById("table3").onclick = handler;
 
-        document.getElementById("table1").onclick = columnHandler;
-        document.getElementById("table2").onclick = columnHandler;
-        document.getElementById("table3").onclick = columnHandler;
+        /* Get bearings, i.e. the clicked cell, column number and a collection
+         * of all cells in the clicked row. Once bearings are achieved, call methods
+         * to add/remove the selection visibility (indicated with colored cell), and 
+         * add/remove seleletions from the hold*/
+        function handler(e) {
 
-        function columnHandler(e) {
-            
+            /* Set up target */
             e = e || window.event; //for IE87 backward compatibility
-            var t = e.target || e.srcElement; //IE87 backward compatibility
-            while (t.nodeName !== 'TD' && t.nodeName !== 'TH' && t.nodeName !== 'TABLE') {
-                t = t.parentNode;
+            var targetCell = e.target || e.srcElement; //IE87 backward compatibility
+            var rowCells = targetCell.parentNode.cells; //Get a collection of all cells in the clicked row
+
+            /* Get the column number of the selected cell */
+            var columnNumber = 0;
+            for (var i = 0; i < rowCells.length; i++) {
+                if (rowCells[i] === targetCell) {
+                    columnNumber = i;
+                }
             }
-            if (t.nodeName === 'TABLE') {
+           
+            /* Ensure that specific parts of the table arent registered as selections, i.e.
+             * the first column and the headers */
+            if (targetCell.nodeName === 'TABLE' || targetCell.nodeName === 'TH' || columnNumber === 0) {
                 return;
             }
-            var c = t.parentNode.cells;
-            var j = 0;
-            for (var i = 0; i < c.length; i++) {
-                if (c[i] === t) {
-                    j = i;
-                }
-            }
             
-
-            if (t.style.backgroundColor === "rgb(9, 218, 160)" && t.innerHTML === '') {
-                t.style.backgroundColor = null;
+            setSelectionsVisible(targetCell);
+            addAndRemoveSelections(targetCell, columnNumber, rowCells);
+        
+        } // End handler
+        
+        /* Add/remove the selection visibility (indicated with colored cell) */
+        function setSelectionsVisible(targetCell){
+            
+            /* Detect and set selection visibility with CSS */
+            if (targetCell.style.backgroundColor === "rgb(9, 218, 160)") {
+                targetCell.style.backgroundColor = null;
                 //remove the day and time from the selection list
             } else {
-
-                if (t.innerHTML === '') {
-                    t.style.backgroundColor = "rgb(9, 218, 160)";
-                }
-                //console.log(c[0].innerHTML);
-                //find the day and time, add it to some list     
-            }
+                targetCell.style.backgroundColor = "rgb(9, 218, 160)";     
+            }     
             
-            var tableIdString = t.parentNode.parentNode.parentNode.getAttribute("id");
+        } // End setSelectionsVisible
+        
+        /* Add/remove seleletions from the hold */
+        function addAndRemoveSelections(targetCell, columnNumber, rowCells){
+            
+            /*  */
+            var tableIdString = targetCell.parentNode.parentNode.parentNode.getAttribute("id");
             var tableIdActual = document.getElementById(tableIdString);
-            var day = tableIdActual.rows[0].cells[j].innerHTML;
-            var id = tableIdActual.rows[0].cells[j].getAttribute("id");
-            var time = c[0].innerHTML; // or can make the id a formatted time or specific value
+            var day = tableIdActual.rows[0].cells[columnNumber].innerHTML;
+            var id = tableIdActual.rows[0].cells[columnNumber].getAttribute("id");
+            var time = rowCells[0].innerHTML; // or can make the id a formatted time or specific value
             
-            if (t.style.backgroundColor === "rgb(9, 218, 160)" && t.innerHTML === ''){
-                console.log("Table: " + tableIdString + ", Day: " + day + ", Date: " + id + ", Time: " + time);
+            console.log("Table: " + tableIdString + ", Day: " + day + ", Date: " + id + ", Time: " + time);
+
+            var identifier = day + time + id;
+            
+            /* Check if the selection doesn't exist. If its doesn't, store (create) the shift. 
+             * Otherwise, remove it as a stored selection */
+            if (document.getElementById(identifier) === null) {
+
+                //alert("doesn't exist, so create");
+                $("#shifts").append("<input name='shifts' id='" + identifier + "' type='text' value='" + identifier + "'/>");
+
+                //' style='display: none'
+            } else {
+
+                var element = document.getElementById(identifier);
+                element.parentNode.removeChild(element);
+            
             }
-            
-            var newShift = new shift(day, id, time, time);
-            map.set(newShift);
-            console.log(map);
-        }
+                        
+        } // End addAndRemoveSelections
+        
+        
     }
 
     pub.setup = function () {
 
-        setupChecks();
-        
-
+        setupTask();
+       
     };
 
     return pub;

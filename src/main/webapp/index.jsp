@@ -1,7 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+    "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="dao.ShiftDAO"%>
+<%@page import="domain.Shift"%>
+<%@page import="java.util.Collection"%>
+<%
+
+    Collection<Shift> shifts = new ShiftDAO().getAll();
+
+
+
+
+
+
+
+
+%>
 
 <html>
     <head>
@@ -15,293 +30,307 @@
     <body id="top">
 
         <!-- Header -->
-        <header id="header">
-            <a href="#" class="image avatar"><img src="images/otago1.jpg" alt="" /></a>
-            <h1><strong>Welcome, Ashton</strong>. Submit your<br />
-                shift availability using the given schedules<br /></h1>
-        </header>
+    <header id="header">
+        <a href="#" class="image avatar"><img src="images/otago1.jpg" alt="" /></a>
+        <h1><strong>Welcome, Ashton</strong>. Submit your<br />
+            shift availability using the given schedules<br /></h1>
+    </header>
 
-        <!-- Main -->
-        <div id="main">
-            
-            <!-- One -->
-            <section id="one">
-                <header class="major">
-                    <h2><%="Date displayed here"%></h2>
-                </header>
-                <div class="table-wrapper">
-                    <table id="table1">
-                        <thead>
-                            <tr>
-                                <th><p style="display: none">null</p></th>
-                                <th id="dynamicDateMON">Mon</th>
-                                <th id="dynamicDateTUE">Tue</th>
-                                <th id="dynamicDateWED">Wed</th>
-                                <th id="dynamicDateTHU">Thu</th>
-                                <th id="dynamicDateFRI">Fri </th>
-                                <th id="dynamicDateSAT">Sat</th>
-                                <th id="dynamicDateSUN">Sun</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>5.45am - 8.45am</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>6am - 9am</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>9am - 12pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>12pm - 3pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>3pm - 7pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>7pm - 11pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+    <!-- Main -->
+    <div id="main">
 
-            <!-- Two -->
-            <section id="two">
-                <header class="major">
-                    <h2> Date displayed here</h2>
-                </header>
-                <div class="table-wrapper">
-                    <table id="table2">
-                        <thead>
-                            <tr>
-                                <th><p style="display: none">null</p></th>
-                                <th id="dynamicDateMON">Mon</th>
-                                <th id="dynamicDateTUE">Tue</th>
-                                <th id="dynamicDateWED">Wed</th>
-                                <th id="dynamicDateTHU">Thu</th>
-                                <th id="dynamicDateFRI">Fri </th>
-                                <th id="dynamicDateSAT">Sat</th>
-                                <th id="dynamicDateSUN">Sun</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>5.45am - 8.45am</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>6am - 9am</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>9am - 12pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>12pm - 3pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>3pm - 7pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>7pm - 11pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+        <!-- One -->
+        <section id="one">
+            <header class="major">
+                <h2><%="Date displayed here"%></h2>
+            </header>
+            <div class="table-wrapper">
+                <table id="table1">
+                    <thead>
+                        <tr>
+                            <th><p style="display: none">null</p></th>
+                            <th id="dynamicDateMON">Mon</th>
+                            <th id="dynamicDateTUE">Tue</th>
+                            <th id="dynamicDateWED">Wed</th>
+                            <th id="dynamicDateTHU">Thu</th>
+                            <th id="dynamicDateFRI">Fri </th>
+                            <th id="dynamicDateSAT">Sat</th>
+                            <th id="dynamicDateSUN">Sun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (Product product : products) {%>
+
+                        <tr>
+                            <td><%=product.getName()%></td>
+                            <td><%=product.getDescription()%></td>
+                            <td>$<%=product.getPrice()%></td>
+                            <td><%=product.getQuantity()%></td>
+                            <td><form action="/shopping/SelectedProductServlet"><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></form></td> 
+                        </tr>
+
+                        <% }%>
+                        
+                        <tr>
+                            <td>5.45am - 8.45am</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6am - 9am</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9am - 12pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12pm - 3pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3pm - 7pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7pm - 11pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Two -->
+        <section id="two">
+            <header class="major">
+                <h2> Date displayed here</h2>
+            </header>
+            <div class="table-wrapper">
+                <table id="table2">
+                    <thead>
+                        <tr>
+                            <th><p style="display: none">null</p></th>
+                            <th id="dynamicDateMON">Mon</th>
+                            <th id="dynamicDateTUE">Tue</th>
+                            <th id="dynamicDateWED">Wed</th>
+                            <th id="dynamicDateTHU">Thu</th>
+                            <th id="dynamicDateFRI">Fri </th>
+                            <th id="dynamicDateSAT">Sat</th>
+                            <th id="dynamicDateSUN">Sun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5.45am - 8.45am</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6am - 9am</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9am - 12pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12pm - 3pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3pm - 7pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7pm - 11pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
 
-            <!-- Three -->
-            <section id="three">
+        <!-- Three -->
+        <section id="three">
 
-                <header class="major">
-                    <h2> Date displayed here</h2>
-                </header>
-                <div class="table-wrapper">
-                    <table id="table3">
-                        <thead>
-                            <tr>
-                                <th><p style="display: none">null</p></th>
-                                <th id="dynamicDateMON">Mon</th>
-                                <th id="dynamicDateTUE">Tue</th>
-                                <th id="dynamicDateWED">Wed</th>
-                                <th id="dynamicDateTHU">Thu</th>
-                                <th id="dynamicDateFRI">Fri </th>
-                                <th id="dynamicDateSAT">Sat</th>
-                                <th id="dynamicDateSUN">Sun</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>5.45am - 8.45am</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>6am - 9am</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>9am - 12pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>12pm - 3pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>3pm - 7pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>7pm - 11pm</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            
-            <form>
-            <section>
+            <header class="major">
+                <h2> Date displayed here</h2>
+            </header>
+            <div class="table-wrapper">
+                <table id="table3">
+                    <thead>
+                        <tr>
+                            <th><p style="display: none">null</p></th>
+                            <th id="dynamicDateMON">Mon</th>
+                            <th id="dynamicDateTUE">Tue</th>
+                            <th id="dynamicDateWED">Wed</th>
+                            <th id="dynamicDateTHU">Thu</th>
+                            <th id="dynamicDateFRI">Fri </th>
+                            <th id="dynamicDateSAT">Sat</th>
+                            <th id="dynamicDateSUN">Sun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5.45am - 8.45am</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6am - 9am</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9am - 12pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12pm - 3pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3pm - 7pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7pm - 11pm</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+        <section>
             <h2>Additional comments</h2>
-        
                 <div class="row">
                     <div class="8u 12u$(small)">
-                        <form method="post" action="#">
+                        <form method="post" action="/unipol/EmployeeAvailabilityServlet">
+                            
                             <div class="row uniform 50%">
-                                
                                 <div class="12u$"><textarea name="message" id="message" placeholder="" rows="6"></textarea></div>
                             </div>
+                            <div id="shifts">
+                                <!-- shifts dynamically placed here to be submitted as part of the post -->
+                            </div>
+                            <ul class="actions">
+                                <li><input id="submitButton" type="submit" value="Submit Availability" /></li>
+                            </ul>
+                            
                         </form>
-                        <ul class="actions">
-                            <li><input id="submitButton" type="submit" value="Submit Availability" /></li>
-                        </ul>
                     </div>
-                    
+
                 </div>
-                </section>
-            </form>
-            
+        </section>
+
         <!-- Footer -->
         <footer id="footer">
             <ul class="icons">

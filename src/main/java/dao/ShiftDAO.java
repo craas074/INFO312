@@ -5,21 +5,19 @@
  */
 package dao;
 
-import domain.Employee;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
 
 /**
  *
- * @author cameron
+ * @author ashtoncranmer
  */
-public class EmployeeDAO {
+public class ShiftDAO {
     
-    private static Map<String, Employee> employees = new TreeMap<>();
     
-    public EmployeeDAO(){
-        //does nothing
+    public ArrayList<String> getAll(){
+        
+        
+        return new ArrayList();
     }
     
 }
