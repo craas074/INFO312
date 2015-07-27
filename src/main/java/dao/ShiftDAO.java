@@ -5,19 +5,52 @@
  */
 package dao;
 
-import java.util.ArrayList;
+import domain.Shift;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
- * @author ashtoncranmer
+ * @author benjamindawson-bruce
  */
 public class ShiftDAO {
     
     
-    public ArrayList<String> getAll(){
-        
-        
-        return new ArrayList();
+    Map<String, Shift> shifts = new HashMap<>();
+
+    public Map<String, Shift> getShifts() {
+        return shifts;
     }
+
+    public void setShifts(Map<String, Shift> shifts) {
+        this.shifts = shifts;
+    }
+
+   
+
+    public void addShift(Shift s){
+        shifts.put(s.getId(), s);
+    }
+    
+    public void deleteShift(Shift s){
+        shifts.remove(s.getId());
+    }
+    
+    public void updateShift(Shift s){
+        //update??
+    }
+    
+    
+    public Shift getShift(String id){
+        return shifts.get(id);
+    }
+    
+    //not sure this method is right
+    
+    public void save(){
+        //will be for db persistence. 
+    }
+    
+    
     
 }
