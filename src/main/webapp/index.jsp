@@ -7,7 +7,7 @@
 <%@page import="java.util.Collection"%>
 <%
 
-    Collection<Shift> shifts = new ShiftDAO().getAll();
+    Collection<Shift> shifts = new ShiftDAO().getShifts();
 
     String shiftTimes = "";
 
@@ -60,6 +60,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        
                         <% for (Shift shift : shifts) {%>
                         
                         <% // if a certain day, produce a certain row structure %>

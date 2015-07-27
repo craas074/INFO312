@@ -22,8 +22,7 @@ public class Employee {
      private Double currenthours;
      
      
-     List<Shift> availableShifts = new ArrayList<>();
-     
+     List<Shift> availableShifts = new ArrayList<>(); 
      List<Shift> completedShifts = new ArrayList<>();
 
     public Employee(String id, String name, Double minhours, Double maxhours, Double currenthours) {
