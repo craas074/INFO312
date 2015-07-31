@@ -9,19 +9,14 @@ import domain.Employee;
 import java.util.HashMap;
 import java.util.Map;
 
-
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
-
 /**
  *
  * @author benjamindawson-bruce
  */
 public class EmployeeDAO {
     
-
-    private static Map<String, Employee> employees = new TreeMap<>();
+    //use hashmap, we dont care about the order of the employees.
+    private static Map<String, Employee> employees = new HashMap<>();
 
 
     public Map<String, Employee> getEmployees() {
@@ -50,8 +45,7 @@ public class EmployeeDAO {
        
     }
     
-    
-    public void save(){
+    private void save(){
         //method ?
     }
     
