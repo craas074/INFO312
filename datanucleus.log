@@ -62,3 +62,43 @@ java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/la
 	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
 	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
 	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+02:12:10,616 (main) ERROR [DataNucleus.Persistence] - Error : An error occurred trying to instantiate an instance of the API adapter "org.datanucleus.api.jdo.JDOAdapter" (perhaps you dont have the requisite datanucleus-api-XXX jar in the CLASSPATH, or the api jar for the persistence spec you are using?) : {1}
+java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/datanucleus/util/Localiser;
+	at org.datanucleus.api.jdo.JDOAdapter.<clinit>(JDOAdapter.java:68)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:115)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+02:12:55,058 (main) ERROR [DataNucleus.Persistence] - Error : An error occurred trying to instantiate an instance of the API adapter "org.datanucleus.api.jdo.JDOAdapter" (perhaps you dont have the requisite datanucleus-api-XXX jar in the CLASSPATH, or the api jar for the persistence spec you are using?) : {1}
+java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/datanucleus/util/Localiser;
+	at org.datanucleus.api.jdo.JDOAdapter.<clinit>(JDOAdapter.java:68)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:115)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+02:17:19,111 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+02:17:19,439 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+02:17:19,694 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 0 classes. Timings : input=253 ms, enhance=0 ms, total=253 ms. Consult the log for full details
+02:17:19,695 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed and no classes were enhanced. Consult the log for full details
+03:16:21,009 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:16:21,390 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:16:21,873 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+03:16:21,874 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=403 ms, enhance=79 ms, total=482 ms. Consult the log for full details

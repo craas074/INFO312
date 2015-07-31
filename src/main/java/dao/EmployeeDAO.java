@@ -5,48 +5,51 @@
  */
 package dao;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 import domain.Employee;
-import java.util.HashMap;
-import java.util.Map;
+
+import javax.jdo.PersistenceManager;
+import jdo.PMF;
 
 /**
  *
  * @author benjamindawson-bruce
  */
+
 public class EmployeeDAO {
     
-    //use hashmap, we dont care about the order of the employees.
-    private static Map<String, Employee> employees = new HashMap<>();
-
-
-    public Map<String, Employee> getEmployees() {
-        return employees;
+    private static PersistenceManager pm = PMF.get().getPersistenceManager();
+    
+    
+    public EmployeeDAO(PersistenceManager pmf){
+        this.pm= pmf;
     }
 
-    public void setEmployees(Map<String, Employee> employees) {
-        this.employees = employees;
+    public PersistenceManager getPmf() {
+        return pm;
     }
     
+    public void toggleEmployeeLogStatus(Employee employee) {
+    try {
+        Employee e = pm.getObjectById(Employee.class, employee.getEmail());
+        e.setFirstLogin(!e.getFirstLogin());
+
+        
+    } finally {
+        pm.close();
+    }
+}
     
-    public void addEmployee(Employee e){
-        employees.put(e.getId(), e);
+    public static Employee getEmployeeByEmail(String email){
+        Key k = KeyFactory.createKey(Employee.class.getSimpleName(), email);
+        return pm.getObjectById(Employee.class, k);
     }
     
-    public void deleteEmployee(Employee e){
-        employees.remove(e.getId());
-    }
-    
-    public void updateEmployee(Employee e){
-        //updates??
-    }
-    
-    public Employee getEmployee(String id){
-       return employees.get(id);
-       
-    }
-    
-    private void save(){
-        //method ?
+    public static void addEmployee(Employee e){
+        Key key = KeyFactory.createKey(Employee.class.getSimpleName(), e.getEmail());
+        e.setKey(key);
+        pm.makePersistent(e);
     }
     
 }

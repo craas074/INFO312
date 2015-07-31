@@ -3,6 +3,8 @@
  */
 package servlets;
 
+import dao.EmployeeDAO;
+import domain.Employee;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,6 +37,11 @@ public class NewEmployeeServlet extends HttpServlet {
         Double minhrs = Double.parseDouble(request.getParameter("minHrs"));
         Double maxhrs = Double.parseDouble(request.getParameter("maxHrs"));
         
+        Employee e = new Employee(name,email,minhrs,maxhrs);
+        EmployeeDAO.addEmployee(e);
+        
+        String nextJSP = "/admin/employees.jsp?newEmployee="+e.getEmail();
+        //next up, do login
     }
 
     /**

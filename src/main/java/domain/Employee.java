@@ -6,14 +6,19 @@
 package domain;
 
 
+import com.google.appengine.api.datastore.Key;
 import com.google.appengine.repackaged.org.apache.commons.codec.digest.DigestUtils;
+import dao.EmployeeDAO;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -26,16 +31,25 @@ import org.apache.commons.lang3.RandomStringUtils;
  *
  * @author benjamindawson-bruce
  */
+@PersistenceCapable
 public class Employee {
     
-    
-     private String id;
+    @PrimaryKey
+    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+     private Key key;
+    @Persistent
      private String email;
+    @Persistent
      private String password;
+    @Persistent
      private String name;
+    @Persistent
      private Double minhours;
+    @Persistent
      private Double maxhours;
+    @Persistent
      private Double currenthours;
+
      private Boolean firstLogin;
 
      
@@ -43,14 +57,17 @@ public class Employee {
      
      List<Shift> completedShifts = new ArrayList<>();
 
+
+     
+     
     public Employee(String name, String email, Double minhours, Double maxhours) {
-        this.id = UUID.randomUUID().toString();
         this.email = email;
         this.name = name;
         this.minhours=minhours;
         this.maxhours = maxhours;
         this.password = newPassword(email);
         this.currenthours = 0.00;
+        this.firstLogin=Boolean.TRUE;  
     }
     
     /* email generated pass to the employee, hash that pass and store the employee in the DAO
@@ -115,12 +132,12 @@ public class Employee {
         this.password = password;
     }
 
-    public String getId() {
-        return id;
+    public Key getKey() {
+        return this.key;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setKey(Key id) {
+        this.key = id;
     }
 
     public String getName() {
