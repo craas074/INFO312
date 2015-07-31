@@ -22,7 +22,12 @@
             <artifactId>appengine-api-1.0-sdk</artifactId>
             <version>1.9.21</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.kie.modules</groupId>
+            <artifactId>org-apache-commons-lang3</artifactId>
+            <version>6.2.0.Final</version>
+            <type>pom</type>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
