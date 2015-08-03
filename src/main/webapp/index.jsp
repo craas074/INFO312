@@ -5,17 +5,15 @@
 <%@page import="dao.ShiftDAO"%>
 <%@page import="domain.Shift"%>
 <%@page import="java.util.Collection"%>
+<%@page import="java.util.Date"%>
+
 <%
+    
+    //will need a reference to data to fill the appropriate cells
+    
+    String testDynamicDate = "test";
 
-    Collection<Shift> shifts = new ShiftDAO().getShifts();
-
-    String shiftTimes = "";
-
-
-
-
-
-
+    
 
 %>
 
@@ -50,36 +48,18 @@
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
-                            <th id="dynamicDateMON">Mon</th>
-                            <th id="dynamicDateTUE">Tue</th>
-                            <th id="dynamicDateWED">Wed</th>
-                            <th id="dynamicDateTHU">Thu</th>
-                            <th id="dynamicDateFRI">Fri </th>
-                            <th id="dynamicDateSAT">Sat</th>
-                            <th id="dynamicDateSUN">Sun</th>
+                            <th id="<%=testDynamicDate %>">Mon</th>
+                            <th id="<%=testDynamicDate %>">Tue</th>
+                            <th id="<%=testDynamicDate %>">Wed</th>
+                            <th id="<%=testDynamicDate %>">Thu</th>
+                            <th id="<%=testDynamicDate %>">Fri </th>
+                            <th id="<%=testDynamicDate %>">Sat</th>
+                            <th id="<%=testDynamicDate %>">Sun</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        <% for (Shift shift : shifts) {%>
-                        
-                        <% // if a certain day, produce a certain row structure %>
-
                         <tr>
-                            <td><%=shift.getStart() + " - " + shift.getEnd()%></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <% }%>
-                        
-                        <tr>
-                            <td>5.45am - 8.45am</td>
+                            <td>0600 - 0900</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -89,7 +69,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>6am - 9am</td>
+                            <td>0900 - 1200</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -99,7 +79,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>9am - 12pm</td>
+                            <td>1200 - 1500</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -109,7 +89,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>12pm - 3pm</td>
+                            <td>1500 - 1900</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -119,7 +99,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>3pm - 7pm</td>
+                            <td> 1900 - 2300</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -127,17 +107,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
-                        <tr>
-                            <td>7pm - 11pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        </tr> 
                     </tbody>
                 </table>
             </div>
@@ -164,7 +134,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>5.45am - 8.45am</td>
+                            <td>0600 - 0900</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -174,7 +144,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>6am - 9am</td>
+                            <td>0900 - 1200</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -184,7 +154,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>9am - 12pm</td>
+                            <td>1200 - 1500</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -194,7 +164,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>12pm - 3pm</td>
+                            <td>1500 - 1900</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -204,17 +174,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>3pm - 7pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>7pm - 11pm</td>
+                            <td> 1900 - 2300</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -251,7 +211,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>5.45am - 8.45am</td>
+                            <td>0600 - 0900</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -261,7 +221,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>6am - 9am</td>
+                            <td>0900 - 1200</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -271,7 +231,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>9am - 12pm</td>
+                            <td>1200 - 1500</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -281,7 +241,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>12pm - 3pm</td>
+                            <td>1500 - 1900</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -291,17 +251,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td>3pm - 7pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>7pm - 11pm</td>
+                            <td> 1900 - 2300</td>
                             <td></td>
                             <td></td>
                             <td></td>
