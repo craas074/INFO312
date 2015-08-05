@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Create New Employee</h1>
-        <form name="newEmployeeForm" method="post" action="/admin/new-employee">
+        <form name="newEmployeeForm" method="post" action="/CreateNewEmployee">
             <label for="name">Name</label>
             <input type="text" id="name" class="formTextIn" name="name">
             <label for="email">Email</label>
@@ -22,6 +22,7 @@
             <input type="text" id="minHrs" class="formTextIn" name="minHrs">
             <label for="maxHrs">Maximum Hours</label>
             <input type="text" id="minHrs" class="formTextIn" name="maxHrs">
+            <input type="submit" value="Create Employee">
         </form>
     </body>
 </html>

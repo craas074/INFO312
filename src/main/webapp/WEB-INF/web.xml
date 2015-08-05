@@ -4,8 +4,16 @@
         <servlet-name>CreateNewEmployee</servlet-name>
         <servlet-class>servlets.NewEmployeeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DoLogin</servlet-name>
+        <servlet-class>servlets.DoLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateNewEmployee</servlet-name>
         <url-pattern>/CreateNewEmployee</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DoLogin</servlet-name>
+        <url-pattern>/DoLogin</url-pattern>
     </servlet-mapping>
 </web-app>

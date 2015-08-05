@@ -40,7 +40,7 @@ public class NewEmployeeServlet extends HttpServlet {
         Employee e = new Employee(name,email,minhrs,maxhrs);
         EmployeeDAO.addEmployee(e);
         
-        String nextJSP = "/admin/employees.jsp?newEmployee="+e.getEmail();
+        response.sendRedirect("/admin/employees.jsp?newEmployee="+e.getEmail());
         //next up, do login
     }
 

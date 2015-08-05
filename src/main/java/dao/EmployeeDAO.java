@@ -19,12 +19,11 @@ import jdo.PMF;
 
 public class EmployeeDAO {
     
-    private static PersistenceManager pm = PMF.get().getPersistenceManager();
+    private static PersistenceManager pm;
     
-    
-    public EmployeeDAO(PersistenceManager pmf){
-        this.pm= pmf;
+    public EmployeeDAO(){
     }
+    
 
     public PersistenceManager getPmf() {
         return pm;
@@ -46,9 +45,13 @@ public class EmployeeDAO {
         return pm.getObjectById(Employee.class, k);
     }
     
+    
+    
     public static void addEmployee(Employee e){
+        pm = PMF.get().getPersistenceManager();
         Key key = KeyFactory.createKey(Employee.class.getSimpleName(), e.getEmail());
         e.setKey(key);
+        System.out.println("Null pointer is not the employee");
         pm.makePersistent(e);
     }
     

@@ -58,8 +58,6 @@ public class Employee {
      List<Shift> completedShifts = new ArrayList<>();
 
 
-     
-     
     public Employee(String name, String email, Double minhours, Double maxhours) {
         this.email = email;
         this.name = name;
@@ -76,7 +74,7 @@ public class Employee {
         if(email.equals("")){
             throw new IllegalArgumentException("email must not be null");
         }
-        String pass = RandomStringUtils.random(8);
+        String pass = RandomStringUtils.randomAlphanumeric(8);
         //email the employee the password they can use to login
         
         Properties props = new Properties();
@@ -104,6 +102,7 @@ public class Employee {
              Logger.getLogger(Employee.class.getName()).log(Level.SEVERE, null, ex);
          }
         //hash the string and set the employee's password to the hashed one. USED SHA256
+        System.out.println(pass);
         String hash = DigestUtils.sha256Hex(pass);
         return hash;
     }
