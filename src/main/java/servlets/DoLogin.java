@@ -35,16 +35,21 @@ public class DoLogin extends HttpServlet {
         String email = request.getParameter("username");
         String passwd = request.getParameter("password");
         String hashpwd = DigestUtils.sha256Hex(passwd);
-        try{
+        System.out.println(email);
+        System.out.println(passwd);
+        System.out.println(hashpwd);
+        //try{
             Employee e = EmployeeDAO.getEmployeeByEmail(email);
             if(e.getEmail().equals(email) && e.getPassword().equals(hashpwd)){
+                System.out.println("employee found");
                 HttpSession session = request.getSession();
-                session.setAttribute(email, e); // this will need to be checked at each page
-                response.sendRedirect("sucess.jsp"); //this page will need to check what type of employee (i.e isAdmin) and redirect them to the correct home page
+                session.setAttribute("verified", e.getEmail()); // this will need to be checked at each page
+                response.sendRedirect("success.jsp"); //this page will need to check what type of employee (i.e isAdmin) and redirect them to the correct home page
             }
-            if(e.getEmail().equals(email) && e.getPassword().equals(hashpwd) && e.getFirstLogin()==true){
+            else if(e.getEmail().equals(email) && e.getPassword().equals(hashpwd) && e.getFirstLogin()==true){
+                System.out.println("employee found, first login");
                 HttpSession session = request.getSession();
-                session.setAttribute(email, e);
+                session.setAttribute("email", e.getEmail());
                 response.sendRedirect("newPassword.jsp");
             }
             else{
@@ -52,11 +57,11 @@ public class DoLogin extends HttpServlet {
                 response.sendRedirect("login.jsp?employeeFound=false");
             }
             
-        }
-        catch(Exception ex){
-            System.out.println("Employee not found");
-            response.sendRedirect("login.jsp?employeeFound=false"); //remind me to edit the login jsp to include this functionality
-        }
+        //}
+        //catch(Exception ex){
+           // System.out.println("Employee not found");
+            //response.sendRedirect("login.jsp?employeeFound=false"); //remind me to edit the login jsp to include this functionality
+       //}
         
     }
 

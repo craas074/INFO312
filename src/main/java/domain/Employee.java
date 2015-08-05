@@ -8,7 +8,6 @@ package domain;
 
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.repackaged.org.apache.commons.codec.digest.DigestUtils;
-import dao.EmployeeDAO;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +48,7 @@ public class Employee {
      private Double maxhours;
     @Persistent
      private Double currenthours;
-
+    @Persistent
      private Boolean firstLogin;
 
      
@@ -65,7 +64,7 @@ public class Employee {
         this.maxhours = maxhours;
         this.password = newPassword(email);
         this.currenthours = 0.00;
-        this.firstLogin=Boolean.TRUE;  
+        this.firstLogin=true;  
     }
     
     /* email generated pass to the employee, hash that pass and store the employee in the DAO
@@ -91,7 +90,7 @@ public class Employee {
                 + "Administration",getName(), getEmail(), RandomStringUtils.random(8));
         try{
             Message msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress("noreply.unipol.admin@gmail.com", "Administration"));
+            msg.setFrom(new InternetAddress("admin@poised-resource-99801.appspotmail.com", "Administration"));
             msg.addRecipient(Message.RecipientType.TO, new InternetAddress(getEmail(), getName()));
             msg.setSubject("Your account has been activated");
             msg.setText(messagebody);
