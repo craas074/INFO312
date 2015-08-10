@@ -5,49 +5,54 @@
  */
 package dao;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 import domain.Employee;
-import java.util.Map;
-import java.util.TreeMap;
+
+import javax.jdo.PersistenceManager;
+import jdo.PMF;
 
 /**
  *
  * @author benjamindawson-bruce
  */
+
 public class EmployeeDAO {
     
+    private static PersistenceManager pm;
+    
+    public EmployeeDAO(){
+    }
+    
 
-    private static Map<String, Employee> employees = new TreeMap<>();
+    public PersistenceManager getPmf() {
+        return pm;
+    }
+    
+    public void toggleEmployeeLogStatus(Employee employee) {
+    try {
+        Employee e = pm.getObjectById(Employee.class, employee.getEmail());
+        e.setFirstLogin(!e.getFirstLogin());
 
-
-    public Map<String, Employee> getEmployees() {
-        return employees;
+        
+    } finally {
+        pm.close();
     }
-
-    public void setEmployees(Map<String, Employee> employees) {
-        this.employees = employees;
-    }
+}
     
-    
-    public void addEmployee(Employee e){
-        employees.put(e.getId(), e);
-    }
-    
-    public void deleteEmployee(Employee e){
-        employees.remove(e.getId());
-    }
-    
-    public void updateEmployee(Employee e){
-        //updates??
-    }
-    
-    public Employee getEmployee(String id){
-       return employees.get(id);
-       
+    public static Employee getEmployeeByEmail(String email){
+        Key k = KeyFactory.createKey(Employee.class.getSimpleName(), email);
+        return pm.getObjectById(Employee.class, k);
     }
     
     
-    public void save(){
-        //method ?
+    
+    public static void addEmployee(Employee e){
+        pm = PMF.get().getPersistenceManager();
+        Key key = KeyFactory.createKey(Employee.class.getSimpleName(), e.getEmail());
+        e.setKey(key);
+        System.out.println("Null pointer is not the employee");
+        pm.makePersistent(e);
     }
     
 }

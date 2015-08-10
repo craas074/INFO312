@@ -1,0 +1,284 @@
+01:49:37,388 (main) ERROR [DataNucleus.Persistence] - Error : An error occurred trying to instantiate an instance of the API adapter "org.datanucleus.api.jdo.JDOAdapter" (perhaps you dont have the requisite datanucleus-api-XXX jar in the CLASSPATH, or the api jar for the persistence spec you are using?) : {1}
+java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/datanucleus/util/Localiser;
+	at org.datanucleus.api.jdo.JDOAdapter.<clinit>(JDOAdapter.java:68)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:115)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+01:52:19,400 (main) ERROR [DataNucleus.Persistence] - Error : An error occurred trying to instantiate an instance of the API adapter "org.datanucleus.api.jdo.JDOAdapter" (perhaps you dont have the requisite datanucleus-api-XXX jar in the CLASSPATH, or the api jar for the persistence spec you are using?) : {1}
+java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/datanucleus/util/Localiser;
+	at org.datanucleus.api.jdo.JDOAdapter.<clinit>(JDOAdapter.java:68)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:115)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+01:54:50,971 (main) ERROR [DataNucleus.Persistence] - Error : An error occurred trying to instantiate an instance of the API adapter "org.datanucleus.api.jdo.JDOAdapter" (perhaps you dont have the requisite datanucleus-api-XXX jar in the CLASSPATH, or the api jar for the persistence spec you are using?) : {1}
+java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/datanucleus/util/Localiser;
+	at org.datanucleus.api.jdo.JDOAdapter.<clinit>(JDOAdapter.java:68)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:115)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+02:02:53,447 (main) ERROR [DataNucleus.Persistence] - Error : An error occurred trying to instantiate an instance of the API adapter "org.datanucleus.api.jdo.JDOAdapter" (perhaps you dont have the requisite datanucleus-api-XXX jar in the CLASSPATH, or the api jar for the persistence spec you are using?) : {1}
+java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/datanucleus/util/Localiser;
+	at org.datanucleus.api.jdo.JDOAdapter.<clinit>(JDOAdapter.java:68)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:115)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+02:12:10,616 (main) ERROR [DataNucleus.Persistence] - Error : An error occurred trying to instantiate an instance of the API adapter "org.datanucleus.api.jdo.JDOAdapter" (perhaps you dont have the requisite datanucleus-api-XXX jar in the CLASSPATH, or the api jar for the persistence spec you are using?) : {1}
+java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/datanucleus/util/Localiser;
+	at org.datanucleus.api.jdo.JDOAdapter.<clinit>(JDOAdapter.java:68)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:115)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+02:12:55,058 (main) ERROR [DataNucleus.Persistence] - Error : An error occurred trying to instantiate an instance of the API adapter "org.datanucleus.api.jdo.JDOAdapter" (perhaps you dont have the requisite datanucleus-api-XXX jar in the CLASSPATH, or the api jar for the persistence spec you are using?) : {1}
+java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/datanucleus/util/Localiser;
+	at org.datanucleus.api.jdo.JDOAdapter.<clinit>(JDOAdapter.java:68)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:606)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:301)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:115)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:161)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:148)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1108)
+02:17:19,111 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+02:17:19,439 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+02:17:19,694 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 0 classes. Timings : input=253 ms, enhance=0 ms, total=253 ms. Consult the log for full details
+02:17:19,695 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed and no classes were enhanced. Consult the log for full details
+03:16:21,009 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:16:21,390 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:16:21,873 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+03:16:21,874 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=403 ms, enhance=79 ms, total=482 ms. Consult the log for full details
+03:46:08,365 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:46:08,901 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:46:09,612 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+03:46:09,613 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=639 ms, enhance=69 ms, total=708 ms. Consult the log for full details
+19:30:12,454 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+19:30:12,844 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+19:30:13,335 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+19:30:13,336 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=413 ms, enhance=77 ms, total=490 ms. Consult the log for full details
+19:33:18,124 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+19:33:18,339 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+19:33:18,737 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+19:33:18,739 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=314 ms, enhance=82 ms, total=396 ms. Consult the log for full details
+19:33:58,522 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+19:33:58,730 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+19:33:59,080 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+19:33:59,081 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=269 ms, enhance=78 ms, total=347 ms. Consult the log for full details
+19:39:17,759 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+19:39:17,992 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+19:39:18,327 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+19:39:18,328 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=260 ms, enhance=72 ms, total=332 ms. Consult the log for full details
+19:43:50,681 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+19:43:50,916 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+19:43:51,290 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+19:43:51,293 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=304 ms, enhance=70 ms, total=374 ms. Consult the log for full details
+19:44:24,822 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+19:44:25,194 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+19:44:25,716 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+19:44:25,717 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=484 ms, enhance=37 ms, total=521 ms. Consult the log for full details
+19:49:07,831 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+19:49:08,145 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+19:49:08,815 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+19:49:08,816 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=530 ms, enhance=138 ms, total=668 ms. Consult the log for full details
+12:24:21,706 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+12:24:22,089 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+12:24:22,544 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+12:24:22,545 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=368 ms, enhance=85 ms, total=453 ms. Consult the log for full details
+12:27:17,115 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+12:27:17,590 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+12:27:18,407 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+12:27:18,408 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=725 ms, enhance=89 ms, total=814 ms. Consult the log for full details
+12:31:59,293 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+12:31:59,505 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+12:31:59,839 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+12:31:59,840 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=265 ms, enhance=62 ms, total=327 ms. Consult the log for full details
+12:36:21,287 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+12:36:21,634 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+12:36:22,076 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+12:36:22,077 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=362 ms, enhance=74 ms, total=436 ms. Consult the log for full details
+12:51:58,541 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+12:51:58,753 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+12:51:59,099 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+12:51:59,100 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=277 ms, enhance=66 ms, total=343 ms. Consult the log for full details
+12:58:01,956 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+12:58:02,224 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+12:58:02,508 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+12:58:02,509 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=250 ms, enhance=32 ms, total=282 ms. Consult the log for full details
+13:04:21,756 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:04:21,991 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:04:22,505 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:04:22,506 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=448 ms, enhance=65 ms, total=513 ms. Consult the log for full details
+13:27:58,618 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:27:58,800 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:27:59,155 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:27:59,156 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=286 ms, enhance=68 ms, total=354 ms. Consult the log for full details
+13:29:34,494 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:29:34,675 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:29:35,004 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+13:29:35,014 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=290 ms, enhance=46 ms, total=336 ms. Consult the log for full details
+13:30:39,397 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:30:39,596 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:30:39,893 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+13:30:39,893 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=265 ms, enhance=31 ms, total=296 ms. Consult the log for full details
+13:39:45,182 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:39:45,382 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:39:45,693 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:39:45,694 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=240 ms, enhance=71 ms, total=311 ms. Consult the log for full details
+13:40:37,583 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:40:37,778 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:40:38,079 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+13:40:38,079 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=269 ms, enhance=30 ms, total=299 ms. Consult the log for full details
+13:40:56,117 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:40:56,320 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:40:56,639 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:40:56,640 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=253 ms, enhance=66 ms, total=319 ms. Consult the log for full details
+13:41:54,808 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:41:55,046 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:41:55,354 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:41:55,355 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=240 ms, enhance=65 ms, total=305 ms. Consult the log for full details
+13:42:43,954 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:42:44,179 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:42:44,559 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+13:42:44,560 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=346 ms, enhance=32 ms, total=378 ms. Consult the log for full details
+13:43:14,252 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:43:14,437 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:43:14,766 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:43:14,766 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=264 ms, enhance=63 ms, total=327 ms. Consult the log for full details
+13:45:11,791 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:45:12,090 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:45:12,470 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:45:12,471 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=313 ms, enhance=65 ms, total=378 ms. Consult the log for full details
+13:45:45,911 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:45:46,141 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:45:46,467 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:45:46,468 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=247 ms, enhance=78 ms, total=325 ms. Consult the log for full details
+13:47:20,004 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+13:47:20,369 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+13:47:20,680 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+13:47:20,681 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=228 ms, enhance=82 ms, total=310 ms. Consult the log for full details
+14:11:27,894 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:11:28,358 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:11:28,805 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
+14:11:28,816 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=379 ms, enhance=67 ms, total=446 ms. Consult the log for full details
+14:17:28,800 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:17:29,302 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:17:29,916 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+14:17:29,917 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=505 ms, enhance=108 ms, total=613 ms. Consult the log for full details
+14:28:03,945 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:28:04,183 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:28:04,591 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+14:28:04,593 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=341 ms, enhance=66 ms, total=407 ms. Consult the log for full details
+14:29:40,067 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:29:40,306 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:29:40,701 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+14:29:40,701 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=328 ms, enhance=64 ms, total=392 ms. Consult the log for full details
+14:32:48,539 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:32:48,789 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:32:49,214 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:32:49,215 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=389 ms, enhance=34 ms, total=423 ms. Consult the log for full details
+14:45:42,023 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:45:42,346 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:45:42,911 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+14:45:42,912 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=495 ms, enhance=68 ms, total=563 ms. Consult the log for full details
+14:46:06,176 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:46:06,371 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:46:06,711 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:46:06,712 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=303 ms, enhance=36 ms, total=339 ms. Consult the log for full details
+14:48:37,756 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:48:37,974 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:48:38,401 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:48:38,403 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=384 ms, enhance=43 ms, total=427 ms. Consult the log for full details
+14:50:07,771 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:50:07,970 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:50:08,366 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:50:08,367 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=357 ms, enhance=34 ms, total=391 ms. Consult the log for full details
+14:53:20,443 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:53:20,668 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:53:20,972 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:53:20,972 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=272 ms, enhance=30 ms, total=302 ms. Consult the log for full details
+15:03:16,425 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:03:16,913 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:03:17,662 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+15:03:17,664 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=656 ms, enhance=89 ms, total=745 ms. Consult the log for full details
+15:05:32,877 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:05:33,328 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:05:33,984 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:05:33,997 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=594 ms, enhance=43 ms, total=637 ms. Consult the log for full details
+15:10:31,609 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:10:32,075 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:10:32,599 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:10:32,600 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=487 ms, enhance=34 ms, total=521 ms. Consult the log for full details
+15:13:01,729 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:13:02,261 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:13:02,736 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:13:02,737 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=441 ms, enhance=33 ms, total=474 ms. Consult the log for full details
+15:28:05,007 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:28:05,503 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:28:05,960 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:28:05,962 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=415 ms, enhance=41 ms, total=456 ms. Consult the log for full details
+15:31:48,692 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:31:49,314 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:31:50,756 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:31:50,760 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=1402 ms, enhance=39 ms, total=1441 ms. Consult the log for full details
+15:36:31,901 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:36:32,425 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:36:33,139 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+15:36:33,141 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=585 ms, enhance=127 ms, total=712 ms. Consult the log for full details
+15:40:47,973 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:40:48,393 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:40:48,790 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:40:48,805 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=358 ms, enhance=37 ms, total=395 ms. Consult the log for full details
