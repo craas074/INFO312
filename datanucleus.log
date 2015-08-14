@@ -102,3 +102,55 @@ java.lang.NoSuchMethodError: org.datanucleus.util.Localiser.getInstance(Ljava/la
 03:16:21,390 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
 03:16:21,873 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/classes/domain/Employee.class" with enhanced definition
 03:16:21,874 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=403 ms, enhance=79 ms, total=482 ms. Consult the log for full details
+14:03:58,936 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:03:59,421 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:04:00,055 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/benjamindawson-bruce/NetBeansProjects/INFO312 dev/INFO312project/INFO312project/target/classes/domain/Employee.class" with enhanced definition
+14:04:00,056 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=504 ms, enhance=129 ms, total=633 ms. Consult the log for full details
+14:06:20,630 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:06:20,973 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:06:21,351 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:06:21,353 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=341 ms, enhance=35 ms, total=376 ms. Consult the log for full details
+14:09:07,337 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:09:07,652 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:09:07,993 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:09:07,993 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=305 ms, enhance=33 ms, total=338 ms. Consult the log for full details
+14:10:58,153 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:10:58,373 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:10:58,698 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:10:58,698 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=288 ms, enhance=36 ms, total=324 ms. Consult the log for full details
+14:16:03,975 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:16:04,238 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:16:04,614 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:16:04,614 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=333 ms, enhance=42 ms, total=375 ms. Consult the log for full details
+14:19:06,016 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:19:06,814 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:19:07,658 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:19:07,659 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=770 ms, enhance=74 ms, total=844 ms. Consult the log for full details
+14:53:13,178 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:53:14,010 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:53:14,932 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:53:14,932 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=847 ms, enhance=74 ms, total=921 ms. Consult the log for full details
+14:54:42,387 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:54:42,929 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:54:43,753 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+14:54:43,754 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=758 ms, enhance=66 ms, total=824 ms. Consult the log for full details
+15:03:12,120 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:03:12,519 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:03:13,313 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:03:13,314 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=742 ms, enhance=50 ms, total=792 ms. Consult the log for full details
+15:04:14,205 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:04:14,980 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:04:15,835 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:04:15,835 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=781 ms, enhance=73 ms, total=854 ms. Consult the log for full details
+15:05:09,409 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:05:10,319 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:05:11,251 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:05:11,252 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=859 ms, enhance=72 ms, total=931 ms. Consult the log for full details
+14:56:15,475 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+14:56:16,275 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+14:56:17,288 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/benjamindawson-bruce/NetBeansProjects/INFO312 dev/INFO312project/INFO312project/target/classes/domain/Employee.class" with enhanced definition
+14:56:17,290 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=858 ms, enhance=155 ms, total=1013 ms. Consult the log for full details
+15:04:48,288 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+15:04:48,558 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+15:04:49,521 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+15:04:49,522 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=927 ms, enhance=31 ms, total=958 ms. Consult the log for full details
