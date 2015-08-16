@@ -1,5 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<%@page import="java.util.GregorianCalendar"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<!DOCTYPE html>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="dao.ShiftDAO"%>
@@ -10,10 +14,32 @@
 
 <%
     
-    //will need a reference to data to fill the appropriate cells
-    
-    String testDynamicDate = "test";
+    String name = (String)session.getAttribute("name");
+    String name1 = "TestTest";
 
+%>
+
+<%!
+    
+    //these start values will need to come from a predefined 3 weekly pointer
+    int day = 1;
+    int month = 0;
+    int year = 2015;
+        
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
+    Calendar calendar;
+
+    public String incrementDate(int amount) {
+
+        int day = this.day;
+        int month = this.month;
+        int year = this.year;
+
+        calendar = new GregorianCalendar(year, month, day);
+        calendar.add(Calendar.DAY_OF_MONTH, amount);
+        return sdf.format(calendar.getTime());
+    }
+    
     
 
 %>
@@ -32,7 +58,7 @@
         <!-- Header -->
     <header id="header">
         <a href="#" class="image avatar"><img src="images/otago1.jpg" alt="" /></a>
-        <h1><strong>Welcome, Ashton</strong>. Submit your<br />
+        <h1><strong>Welcome, <%=name1%></strong>. Submit your<br />
             shift availability using the given schedules<br /></h1>
     </header>
 
@@ -49,17 +75,17 @@
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
-                            <th id="<%=testDynamicDate %>">Mon</th>
-                            <th id="<%=testDynamicDate %>">Tue</th>
-                            <th id="<%=testDynamicDate %>">Wed</th>
-                            <th id="<%=testDynamicDate %>">Thu</th>
-                            <th id="<%=testDynamicDate %>">Fri </th>
-                            <th id="<%=testDynamicDate %>">Sat</th>
-                            <th id="<%=testDynamicDate %>">Sun</th>
+                            <th id="<%=incrementDate(0) + "/" + year %>">Mon <br> <%=incrementDate(0) %></th>
+                            <th id="<%=incrementDate(1) + "/" + year %>">Tue <br> <%=incrementDate(1) %></th>
+                            <th id="<%=incrementDate(2) + "/" + year %>">Wed <br> <%=incrementDate(2) %></th>
+                            <th id="<%=incrementDate(3) + "/" + year %>">Thu <br> <%=incrementDate(3) %></th>
+                            <th id="<%=incrementDate(4) + "/" + year %>">Fri <br> <%=incrementDate(4) %> </th>
+                            <th id="<%=incrementDate(5) + "/" + year %>">Sat <br> <%=incrementDate(5) %></th>
+                            <th id="<%=incrementDate(6) + "/" + year %>">Sun <br> <%=incrementDate(6) %></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr id="0600 0900">
                             <td>0600 - 0900</td>
                             <td></td>
                             <td></td>
@@ -69,7 +95,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="0900 1200">
                             <td>0900 - 1200</td>
                             <td></td>
                             <td></td>
@@ -79,7 +105,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="1200 1500">
                             <td>1200 - 1500</td>
                             <td></td>
                             <td></td>
@@ -89,7 +115,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="1500 1900">
                             <td>1500 - 1900</td>
                             <td></td>
                             <td></td>
@@ -99,7 +125,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="1900 2300">
                             <td> 1900 - 2300</td>
                             <td></td>
                             <td></td>
@@ -124,17 +150,17 @@
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
-                            <th id="dynamicDateMON">Mon</th>
-                            <th id="dynamicDateTUE">Tue</th>
-                            <th id="dynamicDateWED">Wed</th>
-                            <th id="dynamicDateTHU">Thu</th>
-                            <th id="dynamicDateFRI">Fri </th>
-                            <th id="dynamicDateSAT">Sat</th>
-                            <th id="dynamicDateSUN">Sun</th>
+                            <th id="<%=incrementDate(7) + "/" + year %>">Mon <br> <%=incrementDate(7) %></th>
+                            <th id="<%=incrementDate(8) + "/" + year %>">Tue <br> <%=incrementDate(8) %></th>
+                            <th id="<%=incrementDate(9) + "/" + year %>">Wed <br> <%=incrementDate(9) %></th>
+                            <th id="<%=incrementDate(10) + "/" + year %>">Thu <br> <%=incrementDate(10) %></th>
+                            <th id="<%=incrementDate(11) + "/" + year %>">Fri <br> <%=incrementDate(11) %> </th>
+                            <th id="<%=incrementDate(12) + "/" + year %>">Sat <br> <%=incrementDate(12) %></th>
+                            <th id="<%=incrementDate(13) + "/" + year %>">Sun <br> <%=incrementDate(13) %></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr id="0600 0900">
                             <td>0600 - 0900</td>
                             <td></td>
                             <td></td>
@@ -144,7 +170,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="0900 1200">
                             <td>0900 - 1200</td>
                             <td></td>
                             <td></td>
@@ -154,7 +180,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="1200 1500">
                             <td>1200 - 1500</td>
                             <td></td>
                             <td></td>
@@ -164,7 +190,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="1500 1900">
                             <td>1500 - 1900</td>
                             <td></td>
                             <td></td>
@@ -174,7 +200,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="1900 2300">
                             <td> 1900 - 2300</td>
                             <td></td>
                             <td></td>
@@ -183,7 +209,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
+                        </tr> 
                     </tbody>
                 </table>
             </div>
@@ -201,13 +227,13 @@
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
-                            <th id="dynamicDateMON">Mon</th>
-                            <th id="dynamicDateTUE">Tue</th>
-                            <th id="dynamicDateWED">Wed</th>
-                            <th id="dynamicDateTHU">Thu</th>
-                            <th id="dynamicDateFRI">Fri </th>
-                            <th id="dynamicDateSAT">Sat</th>
-                            <th id="dynamicDateSUN">Sun</th>
+                            <th id="<%=incrementDate(14) + "/" + year %>">Mon <br> <%=incrementDate(14) %></th>
+                            <th id="<%=incrementDate(15) + "/" + year %>">Tue <br> <%=incrementDate(15) %></th>
+                            <th id="<%=incrementDate(16) + "/" + year %>">Wed <br> <%=incrementDate(16) %></th>
+                            <th id="<%=incrementDate(17) + "/" + year %>">Thu <br> <%=incrementDate(17) %></th>
+                            <th id="<%=incrementDate(18) + "/" + year %>">Fri <br> <%=incrementDate(18) %> </th>
+                            <th id="<%=incrementDate(19) + "/" + year %>">Sat <br> <%=incrementDate(19) %></th>
+                            <th id="<%=incrementDate(20) + "/" + year %>">Sun <br> <%=incrementDate(20) %></th>
                         </tr>
                     </thead>
                     <tbody>

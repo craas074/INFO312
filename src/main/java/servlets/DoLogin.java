@@ -32,6 +32,7 @@ public class DoLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String email = request.getParameter("username");
         String passwd = request.getParameter("password");
         String hashpwd = DigestUtils.sha256Hex(passwd);
@@ -44,7 +45,9 @@ public class DoLogin extends HttpServlet {
                 System.out.println("employee found");
                 HttpSession session = request.getSession();
                 session.setAttribute("verified", e.getEmail()); // this will need to be checked at each page
-                response.sendRedirect("success.jsp"); //this page will need to check what type of employee (i.e isAdmin) and redirect them to the correct home page
+                session.setAttribute("name", e.getName());
+                session.setAttribute("id", e.getKey());
+                response.sendRedirect("index.jsp"); //this page will need to check what type of employee (i.e isAdmin) and redirect them to the correct home page
             }
             else if(e.getEmail().equals(email) && e.getPassword().equals(hashpwd) && e.getFirstLogin()==true){
                 System.out.println("employee found, first login");

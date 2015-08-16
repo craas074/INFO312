@@ -24,6 +24,7 @@ public class Shift {
 
     }
 
+  
     public Shift(String id, String start, String end, Date date) {
         this.id = id;
         this.start = start;
@@ -77,5 +78,11 @@ public class Shift {
         return "";
 
     }
+    
+     @Override
+    public String toString() {
+        return "Shift{" + "id=" + id + ", start=" + start + ", end=" + end + ", date=" + date + ", employee=" + employee + '}';
+    }
+
 
 }

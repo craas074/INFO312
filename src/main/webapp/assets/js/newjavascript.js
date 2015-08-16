@@ -59,13 +59,13 @@ var selections = (function () {
             /*  */
             var tableIdString = targetCell.parentNode.parentNode.parentNode.getAttribute("id");
             var tableIdActual = document.getElementById(tableIdString);
-            var day = tableIdActual.rows[0].cells[columnNumber].innerHTML;
+            //var day = tableIdActual.rows[0].cells[columnNumber].innerHTML;
             var id = tableIdActual.rows[0].cells[columnNumber].getAttribute("id");
-            var time = rowCells[0].innerHTML; // or can make the id a formatted time or specific value
+            var time = rowCells[0].parentNode.getAttribute("id");
+           
+            var identifier = id + " " + time;
             
-            console.log("Table: " + tableIdString + ", Day: " + day + ", Date: " + id + ", Time: " + time);
-
-            var identifier = day + time + id;
+            console.log(identifier);
             
             /* Check if the selection doesn't exist. If its doesn't, store (create) the shift. 
              * Otherwise, remove it as a stored selection */
