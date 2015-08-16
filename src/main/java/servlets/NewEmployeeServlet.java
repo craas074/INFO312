@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author cameron
  */
-@WebServlet("admin/new-employee")
+@WebServlet("/new-employee")
 public class NewEmployeeServlet extends HttpServlet {
 
 

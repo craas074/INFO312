@@ -5,8 +5,6 @@
  */
 package domain;
 
-
-
 import java.util.Date;
 
 /**
@@ -14,21 +12,25 @@ import java.util.Date;
  * @author benjamindawson-bruce
  */
 public class Shift {
-    
-    
-   private String id;
-   private Integer start;
-   private Integer end;
-   //made start and end integers, easier to work with in 24 hr time
-   private Date date;
-   private Employee employee;
 
-    public Shift(String id, Integer start, Integer end, Date date) {
+    private String id;
+    private String start;
+    private String end;
+    //made start and end integers, easier to work with in 24 hr time
+    private Date date;
+    private Employee employee;
+
+    public Shift() {
+
+    }
+
+  
+    public Shift(String id, String start, String end, Date date) {
         this.id = id;
         this.start = start;
         this.end = end;
         this.date = date;
- 
+
     }
 
     public String getId() {
@@ -39,19 +41,19 @@ public class Shift {
         this.id = id;
     }
 
-    public Integer getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(Integer start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public Integer getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(Integer end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 
@@ -67,23 +69,20 @@ public class Shift {
         return employee;
     }
 
-    
-    
-    public void assign (Employee employee){
+    public void assign(Employee employee) {
         this.employee = employee;
     }
 
-            
-    public Integer getShiftLength(){
-        
-        
-        return end-start;
-    
+    public String getShiftLength() {
+
+        return "";
+
     }
-   
-   
-   
     
+     @Override
+    public String toString() {
+        return "Shift{" + "id=" + id + ", start=" + start + ", end=" + end + ", date=" + date + ", employee=" + employee + '}';
+    }
+
+
 }
-
-

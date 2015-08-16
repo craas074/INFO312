@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Create New Employee</h1>
-        <form name="newEmployeeForm" method="post" action="/CreateNewEmployee">
+        <form name="newEmployeeForm" method="post" action="">
             <label for="name">Name</label>
             <input type="text" id="name" class="formTextIn" name="name">
             <label for="email">Email</label>

@@ -52,8 +52,7 @@ public class Employee {
      private Boolean firstLogin;
 
      
-     List<Shift> availableShifts = new ArrayList<>();
-     
+     List<Shift> availableShifts = new ArrayList<>(); 
      List<Shift> completedShifts = new ArrayList<>();
 
 

@@ -5,13 +5,24 @@
  */
 package servlets;
 
+import dao.ShiftDAO;
+import domain.Shift;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,20 +43,42 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        /*get multiple parameters from the request, i.e. the #shifts id */
-            //--->
-            //--->
-        
+        Shift shift;
+        ShiftDAO shiftDAO = new ShiftDAO();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");          
         String[] shifts = request.getParameterValues("shifts");
+        HttpSession session = request.getSession();
+        String employeeId = (String) session.getAttribute("id");
         
-        /*not working yet*/
         if (shifts != null) {
-            for (String shift : shifts) {
-                System.out.println(shift);
+            for (String selectedShift : shifts) {
+
+                String sDate = selectedShift.split(" ")[0];
+                String sStart = selectedShift.split(" ")[1];
+                String sFinish = selectedShift.split(" ")[2];
+
+                try {
+                    
+                    //Date d = formatter.parse(sDate);
+                    Date date = formatter.parse(sDate); // for testing only
+                    System.out.println("Date: " + date.toString() + "||| Formatted date: " + formatter.format(new Date()));
+                    //shift = new Shift(employeeId, start, finish, d);
+                    shift = new Shift("testID", sStart, sFinish, date);
+                    shiftDAO.add(shift);                    
+                    
+                } catch (ParseException ex) {
+                    System.out.println("ex");
+                }   
             }
+            
+            /* -------------------Testing------------------*/
+            List<Shift> shiftsList = shiftDAO.getShifts();
+               for (Shift shuft : shiftsList){
+                   System.out.println(shuft);
+               }
+            //-----------------------------------------------
         }
         
-        //System.out.println("works"); //check server output window
         response.sendRedirect("/unipol/index.jsp");
     }
 
