@@ -46,11 +46,11 @@ public class AddShiftServlet extends HttpServlet {
         String start = request.getParameter("start");
         String end = request.getParameter("end");
         String date = request.getParameter("date");
-        String employee = request.getParameter("employee");
+        String empName = request.getParameter("employee");
         // might need this to be employee email
         
-        EmployeeDAO dao = new EmployeeDAO(null);
-        Employee employee = dao.getEmployeeByName(employee);
+        EmployeeDAO dao = new EmployeeDAO();
+        Employee employee = EmployeeDAO.getEmployeeByName(empName);
         
         
            DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
@@ -86,7 +86,11 @@ public class AddShiftServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(AddShiftServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -100,7 +104,11 @@ public class AddShiftServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(AddShiftServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

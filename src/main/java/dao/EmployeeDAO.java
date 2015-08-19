@@ -17,7 +17,7 @@ import jdo.PMF;
  * @author benjamindawson-bruce
  */
 
-public class EmployeeDAO {
+public final class EmployeeDAO {
     
     private static PersistenceManager pm;
     
@@ -25,41 +25,51 @@ public class EmployeeDAO {
     }
     
 
-    public PersistenceManager getPmf() {
+    public static PersistenceManager getPmf() {
         return pm;
     }
     
-    public void toggleEmployeeLogStatus(Employee employee) {
-    try {
-        Employee e = pm.getObjectById(Employee.class, employee.getEmail());
-        e.setFirstLogin(!e.getFirstLogin());
-
-        
-    } finally {
+    public static void toggleEmployeeLogStatus(Employee employee) {
+        pm = PMF.get().getPersistenceManager();
+        try{
+            Employee e = pm.getObjectById(Employee.class, employee.getEmail());
+            e.setFirstLogin(!e.getFirstLogin());
+    }    finally {
         pm.close();
     }
 }
     
     public static Employee getEmployeeByEmail(String email){
-        Key k = KeyFactory.createKey(Employee.class.getSimpleName(), email);
-        return pm.getObjectById(Employee.class, k);
+        pm = PMF.get().getPersistenceManager();
+        try{
+            Key k = KeyFactory.createKey(Employee.class.getSimpleName(), email);
+            return pm.getObjectById(Employee.class, k);
+        }
+        finally{
+            pm.close();
+        }
     }
     
     
-<<<<<<< HEAD
-=======
+
+
     public static Employee getEmployeeByName(String name){
         Key k = KeyFactory.createKey(Employee.class.getSimpleName(), name);
         return pm.getObjectById(Employee.class, k);
     }
->>>>>>> 7407e8a528b5e38a43727b99cb6c3225c6956722
+
     
     public static void addEmployee(Employee e){
         pm = PMF.get().getPersistenceManager();
         Key key = KeyFactory.createKey(Employee.class.getSimpleName(), e.getEmail());
         e.setKey(key);
         System.out.println("Null pointer is not the employee");
-        pm.makePersistent(e);
+        try{
+            pm.makePersistent(e);
+        }
+        finally{
+            pm.close();
+        }
     }
     
 }

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : NewEmployee
-    Created on : 1/08/2015, 1:08:20 AM
-    Author     : cameron
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +8,7 @@
     </head>
     <body>
         <h1>Create New Employee</h1>
-        <form name="newEmployeeForm" method="post" action="">
+        <form name="newEmployeeForm" method="post" action="/new-employee">
             <label for="name">Name</label>
             <input type="text" id="name" class="formTextIn" name="name">
             <label for="email">Email</label>

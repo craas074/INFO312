@@ -57,6 +57,10 @@ public class ShiftDAO {
     public void save(){
         //will be for db persistence. 
     }
+
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
   
     

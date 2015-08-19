@@ -32,6 +32,7 @@ public class NewEmployeeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        EmployeeDAO dao = new EmployeeDAO();
         String name=request.getParameter("name");
         String email=request.getParameter("email");
         Double minhrs = Double.parseDouble(request.getParameter("minHrs"));
@@ -40,8 +41,7 @@ public class NewEmployeeServlet extends HttpServlet {
         Employee e = new Employee(name,email,minhrs,maxhrs);
         EmployeeDAO.addEmployee(e);
         
-        response.sendRedirect("/admin/employees.jsp?newEmployee="+e.getEmail());
-        //next up, do login
+        response.sendRedirect("/admin/employees.jsp?newEmployee="+e.getEmail()+"&passwd="+e.getPassword());
     }
 
     /**
