@@ -91,6 +91,17 @@ public final class EmployeeDAO {
         }
     }
     
+    public static void deleteEmployee(String id){
+        pm = PMF.get().getPersistenceManager();
+        try{
+            Employee e = getEmployeeById(id);
+            pm.deletePersistent(e);
+        }
+        finally{
+            pm.close();
+        }
+    }
+    
     public static Employee getEmployeeByEmail(String email){
         pm = PMF.get().getPersistenceManager();
         try{

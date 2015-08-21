@@ -12,6 +12,10 @@
         <servlet-name>EditEmployee</servlet-name>
         <servlet-class>servlets.EditEmployee</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>deleteEmployee</servlet-name>
+        <servlet-class>servlets.deleteEmployee</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewEmployeeServlet</servlet-name>
         <url-pattern>/new-employee</url-pattern>
@@ -23,5 +27,9 @@
     <servlet-mapping>
         <servlet-name>EditEmployee</servlet-name>
         <url-pattern>/editEmployee</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteEmployee</servlet-name>
+        <url-pattern>/deleteEmployee</url-pattern>
     </servlet-mapping>
 </web-app>
