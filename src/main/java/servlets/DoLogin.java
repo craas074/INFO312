@@ -46,8 +46,8 @@ public class DoLogin extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("verified", e.getEmail()); // this will need to be checked at each page
                 session.setAttribute("name", e.getName());
-                session.setAttribute("id", e.getKey());
-                response.sendRedirect("index.jsp"); //this page will need to check what type of employee (i.e isAdmin) and redirect them to the correct home page
+                session.setAttribute("id", e.getId());
+                response.sendRedirect("/index.jsp"); //this page will need to check what type of employee (i.e isAdmin) and redirect them to the correct home page
             }
             else if(e.getEmail().equals(email) && e.getPassword().equals(hashpwd) && e.getFirstLogin()==true){
                 System.out.println("employee found, first login");
@@ -58,8 +58,7 @@ public class DoLogin extends HttpServlet {
             else{
                 //send em packing
                 response.sendRedirect("login.jsp?employeeFound=false");
-            }
-            
+            }            
         //}
         //catch(Exception ex){
            // System.out.println("Employee not found");

@@ -8,6 +8,10 @@
         <servlet-name>DoLogin</servlet-name>
         <servlet-class>servlets.DoLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditEmployee</servlet-name>
+        <servlet-class>servlets.EditEmployee</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewEmployeeServlet</servlet-name>
         <url-pattern>/new-employee</url-pattern>
@@ -15,5 +19,9 @@
     <servlet-mapping>
         <servlet-name>DoLogin</servlet-name>
         <url-pattern>/DoLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditEmployee</servlet-name>
+        <url-pattern>/editEmployee</url-pattern>
     </servlet-mapping>
 </web-app>

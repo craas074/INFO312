@@ -12,6 +12,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.jdo.annotations.IdGeneratorStrategy;
@@ -30,12 +31,14 @@ import org.apache.commons.lang3.RandomStringUtils;
  *
  * @author benjamindawson-bruce
  */
-@PersistenceCapable
+@PersistenceCapable(detachable="true")
 public class Employee {
     
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
      private Key key;
+    @Persistent
+     private String id;
     @Persistent
      private String email;
     @Persistent
@@ -57,6 +60,7 @@ public class Employee {
 
 
     public Employee(String name, String email, Double minhours, Double maxhours) {
+        this.id = UUID.randomUUID().toString();
         this.email = email;
         this.name = name;
         this.minhours=minhours;
@@ -68,6 +72,7 @@ public class Employee {
     
     /* email generated pass to the employee, hash that pass and store the employee in the DAO
     we want to avoid this being accessed, so keep it private*/
+    // TODO: ensure that the pass string matches azAZ09
     private String newPassword(String email){
         if(email.equals("")){
             throw new IllegalArgumentException("email must not be null");
@@ -86,7 +91,7 @@ public class Employee {
                 + "password: %s %n"
                 + "%n"
                 + "Regards,"
-                + "Administration",getName(), getEmail(), RandomStringUtils.random(8));
+                + "Administration",getName(), getEmail(), pass);
         try{
             Message msg = new MimeMessage(session);
             msg.setFrom(new InternetAddress("admin@poised-resource-99801.appspotmail.com", "Administration"));
@@ -103,6 +108,10 @@ public class Employee {
         System.out.println(pass);
         String hash = DigestUtils.sha256Hex(pass);
         return hash;
+    }
+
+    public String getId() {
+        return id;
     }
     
     public String getEmail() {

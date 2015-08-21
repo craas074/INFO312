@@ -19,5 +19,6 @@
             <input type="text" id="minHrs" class="formTextIn" name="maxHrs">
             <input type="submit" value="Create Employee">
         </form>
+       
     </body>
 </html>

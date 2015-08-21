@@ -5,7 +5,14 @@
 --%>
 
 <!DOCTYPE html>
+<html>
+    <head>
+        <title>Unipol Availability Submission</title>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+    <body id="top">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="dao.ShiftDAO"%>
 <%@page import="domain.Shift"%>
@@ -28,14 +35,6 @@
     }
 %>
 
-<html>
-    <head>
-        <title>Unipol Availability Submission</title>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-    </head>
-    <body id="top">
 
 
         <!-- Main -->
@@ -55,6 +54,7 @@
                 </div>
                 
             </section>
+        </div>
     </body>
 </html>
 
