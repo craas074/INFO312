@@ -35,13 +35,16 @@ public class AmendShiftServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        HttpSession session = request.getSession();
+        System.out.println("Test amend shift");
+        /*HttpSession session = request.getSession();
         Shift shift = (Shift) session.getAttribute("shift");
         String employee = request.getParameter("employee");
         
         ShiftDAO dao = new ShiftDAO();
-        dao.update();
-       
+        //dao.update();
+       */
+        
+        response.sendRedirect("login.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

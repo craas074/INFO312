@@ -46,13 +46,10 @@ public class EmployeeDAO {
     }
     
     
-<<<<<<< HEAD
-=======
     public static Employee getEmployeeByName(String name){
         Key k = KeyFactory.createKey(Employee.class.getSimpleName(), name);
         return pm.getObjectById(Employee.class, k);
     }
->>>>>>> 7407e8a528b5e38a43727b99cb6c3225c6956722
     
     public static void addEmployee(Employee e){
         pm = PMF.get().getPersistenceManager();

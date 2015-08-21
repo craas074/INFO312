@@ -8,6 +8,10 @@
         <servlet-name>DoLogin</servlet-name>
         <servlet-class>servlets.DoLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddShiftServlet2</servlet-name>
+        <servlet-class>servlets.AddShiftServlet2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateNewEmployee</servlet-name>
         <url-pattern>/CreateNewEmployee</url-pattern>
@@ -15,5 +19,9 @@
     <servlet-mapping>
         <servlet-name>DoLogin</servlet-name>
         <url-pattern>/DoLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddShiftServlet2</servlet-name>
+        <url-pattern>/AddShiftServlet2</url-pattern>
     </servlet-mapping>
 </web-app>
