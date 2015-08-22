@@ -35,42 +35,37 @@ public class AddShiftServlet extends HttpServlet {
      * methods.
      *
      * @param request servlet request
-     * @param response servlet response
+     * @param response servlet respons.
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ParseException {
-        response.setContentType("text/html;charset=UTF-8");
+            throws ServletException, IOException {
 
-        String start = request.getParameter("start");
-        String end = request.getParameter("end");
-        String date = request.getParameter("date");
-        String employee = request.getParameter("employee");
-        // might need this to be employee email
-        
-        EmployeeDAO dao = new EmployeeDAO(null);
-        Employee employee = dao.getEmployeeByName(employee);
-        
-        
-           DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
-      
+        try {
+
+            String start = request.getParameter("start");
+            String end = request.getParameter("end");
+            String date = request.getParameter("date");
+            String employee = request.getParameter("employee");
+            // might need this to be employee email
+
+            EmployeeDAO dao = new EmployeeDAO();
+            //Employee employee = dao.getEmployeeByName(employee);
+
+            DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+
             Date thedate = format.parse(date);
-        
-        
-        Shift shift = new Shift("1", start, end, thedate , employee);
-        
-        ShiftDAO shiftdao = new ShiftDAO();
-        shiftdao.add(shift);
-        
-        response.sendRedirect("/addShiftSuccess.jsp");
-        
-     
-      
-        
-        
-       
-        
+
+            //Shift shift = new Shift("1", start, end, thedate, employee);
+            ShiftDAO shiftdao = new ShiftDAO();
+            //shiftdao.add(shift);
+
+            response.sendRedirect("/addShiftSuccess.jsp");
+
+        } catch (ParseException ex) {
+            System.out.println(ex);
+        }
 
     }
 
