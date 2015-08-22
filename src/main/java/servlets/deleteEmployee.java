@@ -29,9 +29,9 @@ public class deleteEmployee extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        EmployeeDAO.deleteEmployee(request.getParameter("id"));
+        EmployeeDAO.deleteEmployee(request.getParameter("email"));
         response.sendRedirect("/admin/employees.jsp");
     }
 

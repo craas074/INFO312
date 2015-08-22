@@ -7,16 +7,12 @@ package servlets;
 
 import dao.EmployeeDAO;
 import dao.ShiftDAO;
-import domain.Employee;
-import domain.Shift;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -81,11 +77,8 @@ public class AddShiftServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
             processRequest(request, response);
-        } catch (ParseException ex) {
-            Logger.getLogger(AddShiftServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
 
     /**
@@ -99,16 +92,12 @@ public class AddShiftServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
             processRequest(request, response);
-        } catch (ParseException ex) {
-            Logger.getLogger(AddShiftServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
 
     /**
      * Returns a short description of the servlet.
-     *
      * @return a String containing servlet description
      */
     @Override

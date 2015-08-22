@@ -7,8 +7,10 @@ package domain;
 
 
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.repackaged.org.apache.commons.codec.binary.Base64;
 import com.google.appengine.repackaged.org.apache.commons.codec.digest.DigestUtils;
 import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -38,7 +40,7 @@ public class Employee {
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
      private Key key;
     @Persistent
-     private final String id;
+     private String id;
     @Persistent
      private String email;
     @Persistent
@@ -60,7 +62,7 @@ public class Employee {
 
 
     public Employee(String name, String email, Double minhours, Double maxhours) {
-        this.id = UUID.randomUUID().toString();
+        this.id = uuidToBase64(UUID.randomUUID().toString());
         this.email = email;
         this.name = name;
         this.minhours=minhours;
@@ -86,9 +88,8 @@ public class Employee {
     
     /* email generated pass to the employee, hash that pass and store the employee in the DAO
     we want to avoid this being accessed, so keep it private*/
-    // TODO: ensure that the pass string matches azAZ09
     private String newPassword(String email){
-        /*if(email.equals("")){
+        if(email.equals("")){
             throw new IllegalArgumentException("email must not be null");
         }
         String pass = RandomStringUtils.randomAlphanumeric(8);
@@ -122,10 +123,21 @@ public class Employee {
         System.out.println(pass);
         String hash = DigestUtils.sha256Hex(pass);
         return hash;
-                */
-        return "";
+    }
+    
+    private static String uuidToBase64(String str) {
+        UUID uuid = UUID.fromString(str);
+        ByteBuffer bb = ByteBuffer.wrap(new byte[16]);
+        bb.putLong(uuid.getMostSignificantBits());
+        bb.putLong(uuid.getLeastSignificantBits());
+        return Base64.encodeBase64URLSafeString(bb.array());
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    
     public String getId() {
         return id;
     }

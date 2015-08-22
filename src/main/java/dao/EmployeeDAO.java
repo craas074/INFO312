@@ -35,15 +35,17 @@ public final class EmployeeDAO {
     
     /* Gets all employees in storage */
     public static Collection<Employee> getAll(){
-        Collection<Employee> employees;
+        //Collection<Employee> employees;
         pm = PMF.get().getPersistenceManager();
         Transaction tx = pm.currentTransaction();
         try{
             tx.begin();
             Query q = pm.newQuery(domain.Employee.class);
-            Collection query_emps = (Collection<Employee>)q.execute();
-            employees = pm.detachCopy(query_emps);
+            Collection<Employee> query_emps = (Collection<Employee>)q.execute();
+            //
+            //employees = (Collection<Employee>)pm.detachCopy(query_emps);
             tx.commit();
+            return query_emps;
         }
         finally{
             if(tx.isActive()){
@@ -51,7 +53,7 @@ public final class EmployeeDAO {
             }
             pm.close();
         }
-        return employees;
+        //return employees;
     }
     
     public static void toggleEmployeeLogStatus(Employee employee) {
@@ -62,17 +64,6 @@ public final class EmployeeDAO {
         }       
         finally {
         pm.close();
-        }
-    }
-    
-    public static Employee getEmployeeById(String id){
-        pm = PMF.get().getPersistenceManager();
-        try{
-            Key k = KeyFactory.createKey(Employee.class.getSimpleName(), id);
-            return pm.getObjectById(Employee.class, k);
-        }
-        finally{
-            pm.close();
         }
     }
     
@@ -94,13 +85,15 @@ public final class EmployeeDAO {
     public static void deleteEmployee(String id){
         pm = PMF.get().getPersistenceManager();
         try{
-            Employee e = getEmployeeById(id);
+            Key k = KeyFactory.createKey(Employee.class.getSimpleName(), id);
+            Employee e = pm.getObjectById(Employee.class, k);
             pm.deletePersistent(e);
         }
         finally{
             pm.close();
         }
     }
+    
     
     public static Employee getEmployeeByEmail(String email){
         pm = PMF.get().getPersistenceManager();

@@ -29,7 +29,7 @@
                         <td><%= e.getEmail() %></td>
                         <td><%= e.getMinhours()%></td>
                         <td><%= e.getMaxhours() %></td>
-                        <td><a href="/admin/editemployee.jsp?id="<%=e.getId()%>>Edit</a></td>
+                        <td><a href="/admin/editemployee.jsp?email=<%=e.getEmail()%>">Edit</a></td>
                     </tr>
                     <%
                 }

@@ -39,7 +39,7 @@ public class NewEmployeeServlet extends HttpServlet {
         Employee e = new Employee(name,email,minhrs,maxhrs);
         EmployeeDAO.addEmployee(e);
         
-        response.sendRedirect("/admin/employees.jsp?newEmployee="+e.getEmail()+"&passwd="+e.getPassword());
+        response.sendRedirect("/admin/employees.jsp?newEmployee="+e.getId()+"&passwd="+e.getPassword());
     }
 
     /**
