@@ -38,7 +38,7 @@ public class Employee {
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
      private Key key;
     @Persistent
-     private String id;
+     private final String id;
     @Persistent
      private String email;
     @Persistent
@@ -69,6 +69,20 @@ public class Employee {
         this.currenthours = 0.00;
         this.firstLogin=true;  
     }
+
+    // FOR USE WHEN CREATING TEST DATA / INIT DATA ONLY!!!!!!!!!
+    public Employee(String id, String email, String password, String name, Double minhours, Double maxhours, Double currenthours, Boolean firstLogin) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.minhours = minhours;
+        this.maxhours = maxhours;
+        this.currenthours = currenthours;
+        this.firstLogin = firstLogin;
+    }
+    
+    
     
     /* email generated pass to the employee, hash that pass and store the employee in the DAO
     we want to avoid this being accessed, so keep it private*/

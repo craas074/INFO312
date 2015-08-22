@@ -41,7 +41,7 @@ public final class EmployeeDAO {
         try{
             tx.begin();
             Query q = pm.newQuery(domain.Employee.class);
-            Collection query_emps = (Collection)q.execute();
+            Collection query_emps = (Collection<Employee>)q.execute();
             employees = pm.detachCopy(query_emps);
             tx.commit();
         }
