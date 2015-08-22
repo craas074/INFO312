@@ -20,29 +20,22 @@ public class Shift {
     private Date date;
     private Employee employee;
 
-
     public Shift() {
 
     }
 
+    public Shift(String id, String start, String end, Date date) {
+    
+    }
 
     public Shift(String id, String start, String end, Date date, Employee employee) {
-
+        
         this.id = id;
         this.start = start;
         this.end = end;
         this.date = date;
+
         this.employee = employee;
-
-    }
-    
-    public Shift(String id, String start, String end, Date date) {
-
-        this.id = id;
-        this.start = start;
-        this.end = end;
-        this.date = date;
-
     }
 
     public String getId() {
@@ -80,18 +73,18 @@ public class Shift {
     public Employee getEmployee() {
         return employee;
     }
+    
 
     public void assign(Employee employee) {
         this.employee = employee;
     }
-
 
     
      @Override
     public String toString() {
         return "Shift{" + "id=" + id + ", start=" + start + ", end=" + end + ", date=" + date + ", employee=" + employee + '}';
     }
-
+    
     public Integer getShiftLength() {
         return null;
 

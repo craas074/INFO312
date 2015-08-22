@@ -85,6 +85,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr id="0545 0900">
+                            <td>0545 - 0900</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                         <tr id="0600 0900">
                             <td>0600 - 0900</td>
                             <td></td>
@@ -95,6 +105,27 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <tr id="0745 1300">
+                            <td>0745 - 1300</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="0800 1300">
+                            <td>0900 - 1200</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        
                         <tr id="0900 1200">
                             <td>0900 - 1200</td>
                             <td></td>
@@ -115,8 +146,28 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <tr id="1300 1700">
+                            <td>1300 - 1700</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                         <tr id="1500 1900">
                             <td>1500 - 1900</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="1700 2100">
+                            <td>1700 - 2100</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -160,6 +211,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr id="0545 0900">
+                            <td>0545 - 0900</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                         <tr id="0600 0900">
                             <td>0600 - 0900</td>
                             <td></td>
@@ -170,6 +231,27 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <tr id="0745 1300">
+                            <td>0745 - 1300</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="0800 1300">
+                            <td>0900 - 1200</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        
                         <tr id="0900 1200">
                             <td>0900 - 1200</td>
                             <td></td>
@@ -190,8 +272,28 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <tr id="1300 1700">
+                            <td>1300 - 1700</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                         <tr id="1500 1900">
                             <td>1500 - 1900</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="1700 2100">
+                            <td>1700 - 2100</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -237,7 +339,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr id="0545 0900">
+                            <td>0545 - 0900</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="0600 0900">
                             <td>0600 - 0900</td>
                             <td></td>
                             <td></td>
@@ -247,7 +359,17 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="0745 1300">
+                            <td>0745 - 1300</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="0800 1300">
                             <td>0900 - 1200</td>
                             <td></td>
                             <td></td>
@@ -257,7 +379,18 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        
+                        <tr id="0900 1200">
+                            <td>0900 - 1200</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="1200 1500">
                             <td>1200 - 1500</td>
                             <td></td>
                             <td></td>
@@ -267,7 +400,17 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="1300 1700">
+                            <td>1300 - 1700</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="1500 1900">
                             <td>1500 - 1900</td>
                             <td></td>
                             <td></td>
@@ -277,8 +420,8 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
-                            <td> 1900 - 2300</td>
+                        <tr id="1700 2100">
+                            <td>1700 - 2100</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -287,6 +430,16 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <tr id="1900 2300">
+                            <td> 1900 - 2300</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr> 
                     </tbody>
                 </table>
             </div>

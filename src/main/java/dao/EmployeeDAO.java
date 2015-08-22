@@ -114,13 +114,10 @@ public final class EmployeeDAO {
     }
     
     
-
-
     public static Employee getEmployeeByName(String name){
         Key k = KeyFactory.createKey(Employee.class.getSimpleName(), name);
         return pm.getObjectById(Employee.class, k);
     }
-
     
     public static void addEmployee(Employee e){
         pm = PMF.get().getPersistenceManager();

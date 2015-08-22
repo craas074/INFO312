@@ -88,7 +88,7 @@ public class Employee {
     we want to avoid this being accessed, so keep it private*/
     // TODO: ensure that the pass string matches azAZ09
     private String newPassword(String email){
-        if(email.equals("")){
+        /*if(email.equals("")){
             throw new IllegalArgumentException("email must not be null");
         }
         String pass = RandomStringUtils.randomAlphanumeric(8);
@@ -122,6 +122,8 @@ public class Employee {
         System.out.println(pass);
         String hash = DigestUtils.sha256Hex(pass);
         return hash;
+                */
+        return "";
     }
 
     public String getId() {
