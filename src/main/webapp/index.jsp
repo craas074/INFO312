@@ -71,7 +71,7 @@
                 <h2><%="Date displayed here"%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt" id="table1">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -197,7 +197,7 @@
                 <h2> Date displayed here</h2>
             </header>
             <div class="table-wrapper">
-                <table id="table2">
+                <table class="alt" id="table2">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -325,7 +325,7 @@
                 <h2> Date displayed here</h2>
             </header>
             <div class="table-wrapper">
-                <table id="table3">
+                <table class="alt" id="table3">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -489,6 +489,6 @@
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/newjavascript.js"></script>
         <script src="assets/js/main.js"></script>
-
+    </div>
     </body>
 </html>

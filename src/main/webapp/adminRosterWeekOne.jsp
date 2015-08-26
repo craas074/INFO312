@@ -70,7 +70,7 @@
                 <h2><%=incrementDate(0)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                     <th>Name </th>
@@ -86,8 +86,12 @@
                             <td><%=shift.getEmployee().getName()%></td>
                             <td><%=shift.getStart()%> - <%=shift.getEnd()%></td>
                             <td>
-                                <form method="post" action="/unipol/AmendShiftServlet" style="margin: 0;">
+                                <form method="post" action="/AmendShift" style="margin: 0;">
                                     <input id="submitButton" type="submit" value="Edit"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getName()%>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getStart() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEnd() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getDate() %>"/>
                                 </form>
                             </td>
                         </tr>
@@ -108,7 +112,7 @@
                 <h2><%=incrementDate(1)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                     <th>Name </th>
@@ -147,7 +151,7 @@
                 <h2><%=incrementDate(2)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -167,7 +171,7 @@
                 <h2><%=incrementDate(3)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -187,7 +191,7 @@
                 <h2><%=incrementDate(4)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -207,7 +211,7 @@
                 <h2><%=incrementDate(5)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -227,7 +231,7 @@
                 <h2><%=incrementDate(6)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -264,9 +268,11 @@
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-        <script src="assets/js/newjavascript.js"></script>
         <script src="assets/js/main.js"></script>
 
     </body>
 </html>
+
+
+
 

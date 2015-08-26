@@ -32,9 +32,9 @@ public class ShiftDAO {
         try {
 
             //Monday
-            shifts.add(new Shift("1", "545", "900", df.parse("01/01/2015"), emp2));
-            shifts.add(new Shift("2", "600", "900", df.parse("01/01/2015"), emp2));
-            shifts.add(new Shift("3", "900", "1200", df.parse("01/01/2015"), emp2));
+            shifts.add(new Shift("1", "0545", "0900", df.parse("01/01/2015"), emp2));
+            shifts.add(new Shift("2", "0600", "0900", df.parse("01/01/2015"), emp2));
+            shifts.add(new Shift("3", "0900", "1200", df.parse("01/01/2015"), emp2));
             shifts.add(new Shift("4", "1200", "1500", df.parse("01/01/2015"), emp2));
             shifts.add(new Shift("5", "1500", "1900", df.parse("01/01/2015"), emp2));
             shifts.add(new Shift("6", "1900", "2300", df.parse("01/01/2015"), emp2));
@@ -96,6 +96,10 @@ public class ShiftDAO {
     
     public List<Shift> getShifts() {
         return shifts;
+    }
+    
+    public void deleteAllShifts(){
+        shifts.clear();
     }
     
     
