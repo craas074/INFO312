@@ -5,7 +5,9 @@
  */
 package servlets;
 
+import dao.EmployeeDAO;
 import dao.ShiftDAO;
+import domain.Employee;
 import domain.Shift;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,10 +20,10 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author benjamindawson-bruce
+ * @author ashtoncranmer
  */
-@WebServlet(name = "SelectedShiftServlet", urlPatterns = {"/SelectedShiftServlet"})
-public class SelectedShiftServlet extends HttpServlet {
+@WebServlet(name = "ShiftAmendmentFinalise", urlPatterns = {"/ShiftAmendmentFinalise"})
+public class ShiftAmendmentFinalise extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,29 +36,34 @@ public class SelectedShiftServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-    
-        
-    
-        String theshift = request.getParameter("shiftId");
-        
-        Shift shift = new ShiftDAO().getById(Integer.parseInt(theshift));
-        
-
-    
 
         
+        String[] things = request.getParameterValues("newTimes");
+        HttpSession session = request.getSession();
+        String shifty = (String) session.getAttribute("shiftId");
+        Integer shiftId = Integer.parseInt(shifty);
+       
+        
+        String sHour = "";
+        String sMin = "";
+        String fHour = "";
+        String fMin = "";
 
-            HttpSession session = request.getSession();
-            session.setAttribute("shift", shift);
-            
-            response.sendRedirect("/ammendShift.jsp");
+        for (String thing : things){
+            sHour = thing.split(" ")[0];
+            sMin = thing.split(" ")[1];
+            fHour = thing.split(" ")[2];
+            fMin = thing.split(" ")[3];
+         }
         
+        System.out.println(shiftId + "<< finalise");
         
-        //calls the amend shift jsp
+        ShiftDAO dao = new ShiftDAO();
+        Shift shift = dao.getById(shiftId);
+        shift.setStart(sHour + sMin);
+        shift.setEnd(fHour + fMin);
         
-        
-        
+        response.sendRedirect("adminRosterWeekOne.jsp");
         
     }
 

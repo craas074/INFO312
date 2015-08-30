@@ -5,7 +5,9 @@
  */
 package servlets;
 
+import dao.EmployeeDAO;
 import dao.ShiftDAO;
+import domain.Employee;
 import domain.Shift;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,7 +50,8 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");          
         String[] shifts = request.getParameterValues("shifts");
         HttpSession session = request.getSession();
-        String employeeId = (String) session.getAttribute("id");
+        String employeeId = (String) session.getAttribute("employeeId");
+        Employee employee = EmployeeDAO.getEmployeeByEmail(employeeId);
         
         if (shifts != null) {
             for (String selectedShift : shifts) {
@@ -62,8 +65,7 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
                     //Date d = formatter.parse(sDate);
                     Date date = formatter.parse(sDate); // for testing only
                     System.out.println("Date: " + date.toString() + "||| Formatted date: " + formatter.format(new Date()));
-                    //shift = new Shift(employeeId, start, finish, d);
-                    shift = new Shift("testID", sStart, sFinish, date);
+                    shift = new Shift(11111, sStart, sFinish, date, employee); // needs dynamic shift ID
                     shiftDAO.add(shift);                    
                     
                 } catch (ParseException ex) {

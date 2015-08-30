@@ -51,8 +51,9 @@
                     <h2>Amend shift for <%=name%></h2>
 
                     <!-- get the values = document.getElementById("timepicker1").getAttribute("data-timepicki-tim")-->
-                    
-                    <form method="post" action="#">
+                    <!-- set the attribute value document.getElementById("timepicker1").setAttribute('data-timepicki-tim', "28") -->
+
+                    <form method="post" action="/AmendShiftFinalise" onsubmit="return submitFunc()">
                         <div class="row uniform 50%">
                             <table class="alt" ">
                                 <thead>
@@ -65,8 +66,8 @@
                                 <tbody>
                                     <tr>
                                         <td><%=date%></td>
-                                        <td><%=fillStartHours%>:<%=fillStartMins%></td>
-                                        <td><%=fillFinishHours%>:<%=fillFinishMins%></td>
+                                        <td><%=fillStartHours%> : <%=fillStartMins%></td>
+                                        <td><%=fillFinishHours%> : <%=fillFinishMins%></td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -81,25 +82,30 @@
                                     <tr>
                                         <td style="vertical-align: middle; background-color: #f7f7f7;">Set start:</td>
                                         <td style="margin: 0; padding: 0;">
-                                            <input style="text-align: center; background-color: white;" id="timepicker1" type="text" name="timepicker1" value="<%=fillStartHours%>:<%=fillStartMins%>"/>
+                                            <input style="text-align: center; background-color: white;" id="timepicker1" type="text" name="timepicker1" value="<%=fillStartHours%> : <%=fillStartMins%>"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="vertical-align: middle;">Set finish:</td>
                                         <td style="margin: 0; padding: 0;">
-                                            <input style="text-align: center; background-color: white;" id="timepicker2" type="text" name="timepicker1" value="<%=fillFinishHours%>:<%=fillFinishMins%>"/>
+                                            <input style="text-align: center; background-color: white;" id="timepicker2" type="text" name="timepicker1" value="<%=fillFinishHours%> : <%=fillFinishMins%>"/>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
 
+                            <div id="newTimes">
+
+                            </div>
+
+
                             <div class="12u$">
                                 <ul class="actions">
                                     <li><input type="submit" value="Ok" class="special" /></li>
-                                    <li><input type="reset" value="Reset" /></li>
+                                    <li><input type="reset" value="Reset" onclick="reset()" /></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>              
                     </form>
             </section>
 
@@ -134,8 +140,51 @@
 
             <!-- Timepicker config -->
             <script type="text/javascript">$('#timepicker1').timepicki(
-                    {start_time: ["<%=fillStartHours%>", "<%=fillStartMins%>"]});
+                        {start_time: ["<%=fillStartHours%>", "<%=fillStartMins%>"]});
             </script>
+            <script type="text/javascript">$('#timepicker2').timepicki(
+                        {start_time: ["<%=fillFinishHours%>", "<%=fillFinishMins%>"]});
+            </script>
+
+            <script type="text/javascript">
+
+                reset(); // preload current times as selected values
+
+                function reset() {
+                    document.getElementById("timepicker1").setAttribute('data-timepicki-tim', "<%=fillStartHours%>");
+                    document.getElementById("timepicker1").setAttribute('data-timepicki-mini', "<%=fillStartMins%>");
+                    document.getElementById("timepicker2").setAttribute('data-timepicki-tim', "<%=fillFinishHours%>");
+                    document.getElementById("timepicker2").setAttribute('data-timepicki-mini', "<%=fillFinishMins%>");
+                }
+                // If page is refreshed, send back to roster page (so we don't need to persist chosen times in a session)
+                if (sessionStorage.getItem("is_reloaded")) {
+                    sessionStorage.clear();
+                    history.go(-1);
+                } else {
+                    sessionStorage.setItem("is_reloaded", true);
+                }
+                
+                function submitFunc() {
+                    
+                   var sHour = document.getElementById("timepicker1").getAttribute("data-timepicki-tim");
+                   var sMin = document.getElementById("timepicker1").getAttribute("data-timepicki-mini");
+                   var fHour = document.getElementById("timepicker2").getAttribute("data-timepicki-tim");
+                   var fMin = document.getElementById("timepicker2").getAttribute("data-timepicki-mini");
+                   
+                   var confirmed = confirm("  Confirm shift?\n\n" + sHour + " : " + sMin + "  –  " + fHour + " : " + fMin );
+
+                   if (confirmed === true){
+                       console.log("here");
+                       $("#newTimes").append("<input name='newTimes' id='' type='text' value='" + sHour + " " + sMin + " " + fHour + " " + fMin + "' style='display: none'/>");
+                       return true;
+                   } else {
+                       return false;
+                   }
+                }
+     
+            </script>
+
+
 
         </div>  
     </body>

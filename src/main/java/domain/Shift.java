@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Shift {
 
-    private String id;
+    private Integer id;
     private String start;
     private String end;
     //made start and end integers, easier to work with in 24 hr time
@@ -21,28 +21,21 @@ public class Shift {
     private Employee employee;
 
     public Shift() {
-
     }
 
-    public Shift(String id, String start, String end, Date date) {
-    
-    }
-
-    public Shift(String id, String start, String end, Date date, Employee employee) {
-        
+    public Shift(Integer id, String start, String end, Date date, Employee employee) {
         this.id = id;
         this.start = start;
         this.end = end;
         this.date = date;
-
         this.employee = employee;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -73,22 +66,15 @@ public class Shift {
     public Employee getEmployee() {
         return employee;
     }
-    
 
-    public void assign(Employee employee) {
+    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 
     
-     @Override
-    public String toString() {
-        return "Shift{" + "id=" + id + ", start=" + start + ", end=" + end + ", date=" + date + ", employee=" + employee + '}';
-    }
-    
     public Integer getShiftLength() {
         return null;
 
-      //  return end-start;
     }
 
 }

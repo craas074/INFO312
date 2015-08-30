@@ -14,7 +14,7 @@
 
 <%
     
-    String name = (String)session.getAttribute("name");
+    //String name = (String)session.getAttribute("name");
     String name1 = "TestTest";
 
 %>

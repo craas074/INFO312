@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  * @author benjamindawson-bruce
  */
 @WebServlet(name = "AmendShiftServlet", urlPatterns = {"/AmendShiftServlet"})
-public class AmendShiftServlet extends HttpServlet {
+public class ShiftAmendmentSetup extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,8 +46,10 @@ public class AmendShiftServlet extends HttpServlet {
         String employee = employeeDetails[0];
         String start = employeeDetails[1];
         String finish = employeeDetails[2];
+        String employeeId = employeeDetails[4];
+        String shiftId = employeeDetails[5];
         String date = "";
-
+        System.out.println(shiftId + "<< setup");
         try {
 
             Date parsedDate = initialFormat.parse(employeeDetails[3]);
@@ -62,6 +64,8 @@ public class AmendShiftServlet extends HttpServlet {
         session.setAttribute("startEdit", start);
         session.setAttribute("finishEdit", finish);
         session.setAttribute("dateEdit", date);
+        session.setAttribute("employeeId", employeeId);
+        session.setAttribute("shiftId", shiftId);
 
         response.sendRedirect("amendShift.jsp");
     }

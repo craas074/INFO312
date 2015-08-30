@@ -186,9 +186,8 @@
 					// next time the picker is opened
 					ele.attr('data-timepicki-tim', tim);
 					ele.attr('data-timepicki-mini', mini);
-                                        
-                                        //call method here to update 
-					
+                       
+              
 					if(settings.show_meridian){
 						ele.attr('data-timepicki-meri', meri);
 						// set the formatted value
@@ -229,6 +228,7 @@
 
 			function set_date(start_time) {
 				var d, ti, mi, mer;
+                                
 
 				// if a value was already picked we will remember that value
 				if (ele.is('[data-timepicki-tim]')) {
@@ -237,6 +237,7 @@
 					if(settings.show_meridian){
 						mer = ele.attr('data-timepicki-meri');
 					}
+                         
 				// developer can specify a custom starting value
 				} else if (typeof start_time === 'object') {
 					ti = Number(start_time[0]);

@@ -11,7 +11,9 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+
 <%!
+    
     
 
     ShiftDAO shiftDAO = new ShiftDAO();
@@ -64,6 +66,7 @@
             <li><a href="adminRosterWeekTwo.jsp">Week 2</a></li>
             <li><a href="adminRosterWeekThree.jsp">Week 3</a></li>
         </ul>
+        
 
         <section id="one">
             <header class="major">
@@ -86,12 +89,14 @@
                             <td><%=shift.getEmployee().getName()%></td>
                             <td><%=shift.getStart()%> - <%=shift.getEnd()%></td>
                             <td>
-                                <form method="post" action="/AmendShift" style="margin: 0;">
+                                <form method="post" onsubmit="return clearSesh();" action="/AmendShift" style="margin: 0;">
                                     <input id="submitButton" type="submit" value="Edit"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getName()%>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getStart() %>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getEnd() %>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getDate() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getId() %>"/>
+                                    
                                 </form>
                             </td>
                         </tr>
@@ -269,6 +274,14 @@
         <script src="assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
+        <script>
+            
+            function clearSesh() { //just handles user clicking back (destroys session created using amend page)
+                sessionStorage.clear();
+                return true;
+            }
+                    
+        </script>       
 
     </body>
 </html>
