@@ -96,7 +96,7 @@
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getEnd() %>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getDate() %>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getId() %>"/>
-                                    
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getId() %>"/>
                                 </form>
                             </td>
                         </tr>
