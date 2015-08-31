@@ -1,3 +1,6 @@
+<%-- 
+    Author     : ashtoncranmer
+--%>
 
 <!DOCTYPE html>
 
@@ -24,7 +27,7 @@
     int month = 0;
     int year = 2015;
         
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YY");
     Calendar calendar;
 
     public String incrementDate(int amount) {
@@ -90,7 +93,7 @@
                             <td><%=shift.getStart()%> - <%=shift.getEnd()%></td>
                             <td>
                                 <form method="post" onsubmit="return clearSesh();" action="/AmendShift" style="margin: 0;">
-                                    <input id="submitButton" type="submit" value="Edit"/>
+                                    <input class="button small"id="submitButton" type="submit" value="Edit"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getName()%>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getStart() %>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getEnd() %>"/>
@@ -105,7 +108,11 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td> <a href="url">Add Shift</a></td>
+                            <td><form method="post" onsubmit="return clearSesh();" action="/addShift.jsp" style="margin: 0;">
+                                    <input class="button special small" id="submitButton" type="submit" value="Add shift"/>
+                                    <input name="shiftDate" style="display: none" value="<%=incrementDate(0)%>"/>
+                                </form>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

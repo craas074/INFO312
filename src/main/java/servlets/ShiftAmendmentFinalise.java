@@ -43,7 +43,6 @@ public class ShiftAmendmentFinalise extends HttpServlet {
         String shifty = (String) session.getAttribute("shiftId");
         Integer shiftId = Integer.parseInt(shifty);
        
-        
         String sHour = "";
         String sMin = "";
         String fHour = "";

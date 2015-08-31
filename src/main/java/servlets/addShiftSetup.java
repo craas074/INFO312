@@ -5,14 +5,8 @@
  */
 package servlets;
 
-import dao.EmployeeDAO;
-import dao.ShiftDAO;
-
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,48 +15,27 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author benjamindawson-bruce
+ * @author ashtoncranmer
  */
-@WebServlet(name = "AddShiftServlet", urlPatterns = {"/AddShiftServlet"})
-public class AddShiftServlet extends HttpServlet {
+@WebServlet(name = "addShiftSetup", urlPatterns = {"/addShiftSetup"})
+public class addShiftSetup extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
      * @param request servlet request
-     * @param response servlet respons.
+     * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        try {
-
-            String start = request.getParameter("start");
-            String end = request.getParameter("end");
-            String date = request.getParameter("date");
-            String employee = request.getParameter("employee");
-            // might need this to be employee email
-
-            EmployeeDAO dao = new EmployeeDAO();
-            //Employee employee = dao.getEmployeeByName(employee);
-
-            DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
-
-            Date thedate = format.parse(date);
-
-            //Shift shift = new Shift("1", start, end, thedate, employee);
-            ShiftDAO shiftdao = new ShiftDAO();
-            //shiftdao.add(shift);
-
-            response.sendRedirect("/addShiftSuccess.jsp");
-
-        } catch (ParseException ex) {
-            System.out.println(ex);
-        }
-
+        String date = request.getParameter("shiftDate");
+        
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -77,8 +50,7 @@ public class AddShiftServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            processRequest(request, response);
-        
+        processRequest(request, response);
     }
 
     /**
@@ -92,12 +64,12 @@ public class AddShiftServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            processRequest(request, response);
-        
+        processRequest(request, response);
     }
 
     /**
      * Returns a short description of the servlet.
+     *
      * @return a String containing servlet description
      */
     @Override
