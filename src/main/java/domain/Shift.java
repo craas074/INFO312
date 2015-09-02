@@ -31,7 +31,6 @@ public class Shift {
     private String constraint;
 
     public Shift() {
-
     }
 
     public Shift(String start, String end) {
@@ -61,11 +60,11 @@ public class Shift {
         this.date = date;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -96,9 +95,8 @@ public class Shift {
     public Employee getEmployee() {
         return employee;
     }
-    
 
-    public void assign(Employee employee) {
+    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 
@@ -112,15 +110,9 @@ public class Shift {
 
     
     
-     @Override
-    public String toString() {
-        return "Shift{" + "id=" + id + ", start=" + start + ", end=" + end + ", date=" + date + ", employee=" + employee + '}';
-    }
-    
     public Integer getShiftLength() {
         return null;
 
-      //  return end-start;
     }
 
 }

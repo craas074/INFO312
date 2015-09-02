@@ -90,7 +90,10 @@ public class Employee {
     
     /* email generated pass to the employee, hash that pass and store the employee in the DAO
     we want to avoid this being accessed, so keep it private*/
+    
     private String newPassword(String email){
+        
+        /*
         if(email.equals("")){
             throw new IllegalArgumentException("email must not be null");
         }
@@ -125,6 +128,9 @@ public class Employee {
         System.out.println(pass);
         String hash = DigestUtils.sha256Hex(pass);
         return hash;
+                
+                */
+        return null;
     }
     
     private static String uuidToBase64(String str) {

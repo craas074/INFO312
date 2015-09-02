@@ -105,6 +105,17 @@ public final class EmployeeDAO {
         }
     }
     
+    public static Employee getEmployeeById(String id){
+        pm = PMF.get().getPersistenceManager();
+        try{
+            Key k = KeyFactory.createKey(Employee.class.getSimpleName(), id);
+            return pm.getObjectById(Employee.class, k);
+        }
+        finally{
+            pm.close();
+        }
+    }
+    
     
     public static Employee getEmployeeByEmail(String email){
         pm = PMF.get().getPersistenceManager();
@@ -116,7 +127,6 @@ public final class EmployeeDAO {
             pm.close();
         }
     }
-    
     
     public static Employee getEmployeeByName(String name){
         Key k = KeyFactory.createKey(Employee.class.getSimpleName(), name);

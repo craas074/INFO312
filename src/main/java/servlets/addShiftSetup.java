@@ -5,22 +5,20 @@
  */
 package servlets;
 
-import dao.ShiftDAO;
-import domain.Shift;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author benjamindawson-bruce
+ * @author ashtoncranmer
  */
-@WebServlet(name = "AmendShiftServlet", urlPatterns = {"/AmendShiftServlet"})
-public class AmendShiftServlet extends HttpServlet {
+@WebServlet(name = "addShiftSetup", urlPatterns = {"/addShiftSetup"})
+public class addShiftSetup extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,18 +31,11 @@ public class AmendShiftServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+
+        String date = request.getParameter("shiftDate");
         
-        System.out.println("Test amend shift");
-        /*HttpSession session = request.getSession();
-        Shift shift = (Shift) session.getAttribute("shift");
-        String employee = request.getParameter("employee");
         
-        ShiftDAO dao = new ShiftDAO();
-        //dao.update();
-       */
         
-        response.sendRedirect("login.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

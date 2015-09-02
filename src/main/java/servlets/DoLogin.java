@@ -46,7 +46,7 @@ public class DoLogin extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("email", email); // this will need to be checked at each page
                 session.setAttribute("name", e.getName());
-                session.setAttribute("id", e.getId());
+                session.setAttribute("employeeId", e.getId());
                 response.sendRedirect("/index.jsp"); //this page will need to check what type of employee (i.e isAdmin) and redirect them to the correct home page
             }
             else if(e.getEmail().equals(email) && e.getPassword().equals(hashpwd) && e.getFirstLogin()==true){

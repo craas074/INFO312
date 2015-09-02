@@ -5,12 +5,16 @@
         <servlet-class>servlets.NewEmployeeServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddShiftServlet</servlet-name>
-        <servlet-class>servlets.AddShiftServlet</servlet-class>
+        <servlet-name>AmendShift</servlet-name>
+        <servlet-class>servlets.ShiftAmendmentSetup</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AmendShiftServlet</servlet-name>
-        <servlet-class>servlets.AmendShiftServlet</servlet-class>
+        <servlet-name>AmendShiftFinalise</servlet-name>
+        <servlet-class>servlets.ShiftAmendmentFinalise</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddShift</servlet-name>
+        <servlet-class>servlets.addShiftSetup</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DoLogin</servlet-name>
@@ -27,10 +31,6 @@
     <servlet>
         <servlet-name>EmployeeAvailabilityServlet</servlet-name>
         <servlet-class>servlets.EmployeeAvailabilityServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SelectedShiftServlet</servlet-name>
-        <servlet-class>servlets.SelectedShiftServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>NewEmployeeServlet</servlet-name>
@@ -49,19 +49,19 @@
         <url-pattern>/deleteEmployee</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AddShiftServlet</servlet-name>
-        <url-pattern>/AddShift</url-pattern>
+        <servlet-name>AmendShift</servlet-name>
+        <url-pattern>/AmendShift</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AmendShiftServlet</servlet-name>
-        <url-pattern>/AmendShift</url-pattern>
+        <servlet-name>AmendShiftFinalise</servlet-name>
+        <url-pattern>/AmendShiftFinalise</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EmployeeAvailabilityServlet</servlet-name>
         <url-pattern>/EmployeeAvailability</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SelectedShiftServlet</servlet-name>
-        <url-pattern>/SelectedShift</url-pattern>
+        <servlet-name>AddShift</servlet-name>
+        <url-pattern>/AddShift</url-pattern>
     </servlet-mapping>
 </web-app>

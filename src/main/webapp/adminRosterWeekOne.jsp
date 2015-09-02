@@ -1,3 +1,6 @@
+<%-- 
+    Author     : ashtoncranmer
+--%>
 
 <!DOCTYPE html>
 
@@ -11,7 +14,9 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+
 <%!
+    
     
 
     ShiftDAO shiftDAO = new ShiftDAO();
@@ -22,7 +27,7 @@
     int month = 0;
     int year = 2015;
         
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YY");
     Calendar calendar;
 
     public String incrementDate(int amount) {
@@ -64,13 +69,14 @@
             <li><a href="adminRosterWeekTwo.jsp">Week 2</a></li>
             <li><a href="adminRosterWeekThree.jsp">Week 3</a></li>
         </ul>
+        
 
         <section id="one">
             <header class="major">
                 <h2><%=incrementDate(0)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                     <th>Name </th>
@@ -86,8 +92,14 @@
                             <td><%=shift.getEmployee().getName()%></td>
                             <td><%=shift.getStart()%> - <%=shift.getEnd()%></td>
                             <td>
-                                <form method="post" action="/unipol/AmendShiftServlet" style="margin: 0;">
-                                    <input id="submitButton" type="submit" value="Edit"/>
+                                <form method="post" onsubmit="return clearSesh();" action="/AmendShift" style="margin: 0;">
+                                    <input class="button small"id="submitButton" type="submit" value="Edit"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getName()%>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getStart() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEnd() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getDate() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getId() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getId() %>"/>
                                 </form>
                             </td>
                         </tr>
@@ -96,7 +108,11 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td> <a href="url">Add Shift</a></td>
+                            <td><form method="post" onsubmit="return clearSesh();" action="/addShift.jsp" style="margin: 0;">
+                                    <input class="button special small" id="submitButton" type="submit" value="Add shift"/>
+                                    <input name="shiftDate" style="display: none" value="<%=incrementDate(0)%>"/>
+                                </form>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -108,7 +124,7 @@
                 <h2><%=incrementDate(1)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                     <th>Name </th>
@@ -147,7 +163,7 @@
                 <h2><%=incrementDate(2)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -167,7 +183,7 @@
                 <h2><%=incrementDate(3)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -187,7 +203,7 @@
                 <h2><%=incrementDate(4)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -207,7 +223,7 @@
                 <h2><%=incrementDate(5)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -227,7 +243,7 @@
                 <h2><%=incrementDate(6)%></h2>
             </header>
             <div class="table-wrapper">
-                <table id="table1">
+                <table class="alt">
                     <thead>
                         <tr>
                             <th><p style="display: none">null</p></th>
@@ -264,9 +280,19 @@
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-        <script src="assets/js/newjavascript.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            
+            function clearSesh() { //just handles user clicking back (destroys session created using amend page)
+                sessionStorage.clear();
+                return true;
+            }
+                    
+        </script>       
 
     </body>
 </html>
+
+
+
 
