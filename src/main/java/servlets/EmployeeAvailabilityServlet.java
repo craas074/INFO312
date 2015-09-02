@@ -7,6 +7,7 @@ package servlets;
 
 import dao.EmployeeDAO;
 import dao.ShiftDAO;
+import domain.Employee;
 import domain.Shift;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -51,6 +52,7 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
         String[] shifts = request.getParameterValues("shifts");
         HttpSession session = request.getSession();
         String employeeId = (String) session.getAttribute("email");
+        System.out.println(employeeId);
         ArrayList<Shift> newShifts = new ArrayList<>();
         if (shifts != null) {
             for (String selectedShift : shifts) {
@@ -72,17 +74,18 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
                     System.out.println("ex");
                 }   
             }
+            for(Shift shifty: newShifts){
+                System.out.println(shifty);
+            }
             EmployeeDAO.editAvailibleShifts(employeeId, newShifts);
             
             /* -------------------Testing------------------*/
-            List<Shift> shiftsList = shiftDAO.getShifts();
-               for (Shift shuft : shiftsList){
-                   System.out.println(shuft);
-               }
+            Employee e = EmployeeDAO.getEmployeeByEmail(employeeId);
+            System.out.println(e.toString());
             //-----------------------------------------------
         }
         
-        response.sendRedirect("/unipol/index.jsp");
+        //response.sendRedirect("/index.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

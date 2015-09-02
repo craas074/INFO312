@@ -6,19 +6,28 @@
 package domain;
 
 import java.util.Date;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 
 /**
  *
  * @author benjamindawson-bruce
  */
+@PersistenceCapable
 public class Shift {
 
+    @Persistent
     private String id;
+    @Persistent
     private String start;
+    @Persistent
     private String end;
     //made start and end integers, easier to work with in 24 hr time
+    @Persistent
     private Date date;
+    @Persistent
     private Employee employee;
+    @Persistent
     private String constraint;
 
     public Shift() {

@@ -28,7 +28,7 @@
             <input type="text" id="minHrs" class="formTextIn" name="minHrs" value="<%=e.getMinhours()%>">
             <label for="maxHrs">Maximum Hours</label>
             <input type="text" id="minHrs" class="formTextIn" name="maxHrs" value="<%=e.getMaxhours()%>">
-            <input type="hidden" name="id" value=<%='"'+e.getId()+'"'%>>
+            <input type="hidden" name="id" value=<%='"'+e.getEmail()+'"'%>>
             <input type="submit" value="Edit Employee">
         </form>
         <form name="deleteEmployee" method="post" action="/deleteEmployee">

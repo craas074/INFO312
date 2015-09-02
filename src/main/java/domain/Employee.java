@@ -33,7 +33,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  *
  * @author benjamindawson-bruce
  */
-@PersistenceCapable(detachable="true")
+@PersistenceCapable//(detachable="true")
 public class Employee {
     
     @PrimaryKey
@@ -224,6 +224,11 @@ public class Employee {
 
     public void setCurrenthours(Double currenthours) {
         this.currenthours = currenthours;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" + "key=" + key + ", id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", minhours=" + minhours + ", maxhours=" + maxhours + ", currenthours=" + currenthours + ", firstLogin=" + firstLogin + ", constraints=" + constraints + ", availibleShifts=" + availibleShifts + '}';
     }
     
     

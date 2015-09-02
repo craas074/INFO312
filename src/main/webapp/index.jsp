@@ -450,7 +450,7 @@
             <h2>Additional comments</h2>
                 <div class="row">
                     <div class="8u 12u$(small)">
-                        <form method="post" action="/unipol/EmployeeAvailabilityServlet">
+                        <form method="post" action="EmployeeAvailability">
                             
                             <div class="row uniform 50%">
                                 <div class="12u$"><textarea name="message" id="message" placeholder="" rows="6"></textarea></div>
