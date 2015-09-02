@@ -35,7 +35,6 @@ public final class EmployeeDAO {
     
     /* Gets all employees in storage */
     public static Collection<Employee> getAll(){
-        //Collection<Employee> employees;
         pm = PMF.get().getPersistenceManager();
         Transaction tx = pm.currentTransaction();
         try{
@@ -128,7 +127,6 @@ public final class EmployeeDAO {
         pm = PMF.get().getPersistenceManager();
         Key key = KeyFactory.createKey(Employee.class.getSimpleName(), e.getEmail());
         e.setKey(key);
-        System.out.println("Null pointer is not the employee");
         try{
             pm.makePersistent(e);
         }

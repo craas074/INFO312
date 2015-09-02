@@ -5,8 +5,10 @@
  */
 package servlets;
 
+import dao.AvailabilityDAO;
 import dao.EmployeeDAO;
 import dao.ShiftDAO;
+import domain.Availability;
 import domain.Employee;
 import domain.Shift;
 import java.io.IOException;
@@ -16,6 +18,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -46,14 +49,12 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        Shift shift;
         ShiftDAO shiftDAO = new ShiftDAO();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");          
         String[] shifts = request.getParameterValues("shifts");
         HttpSession session = request.getSession();
         String employeeId = (String) session.getAttribute("email");
         System.out.println(employeeId);
-        ArrayList<Shift> newShifts = new ArrayList<>();
         if (shifts != null) {
             for (String selectedShift : shifts) {
 
@@ -62,26 +63,23 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
                 String sFinish = selectedShift.split(" ")[2];
 
                 try {
-                    
                     //Date d = formatter.parse(sDate);
                     Date date = formatter.parse(sDate); // for testing only
                     System.out.println("Date: " + date.toString() + "||| Formatted date: " + formatter.format(new Date()));
                     //shift = new Shift(employeeId, start, finish, d);
-                    shift = new Shift(sStart, sFinish, date);
-                    newShifts.add(shift);
+                    Availability shift = new Availability(employeeId, sStart, sFinish, date);
+                    AvailabilityDAO.addAvailability(shift);
                     
                 } catch (ParseException ex) {
                     System.out.println("ex");
                 }   
             }
-            for(Shift shifty: newShifts){
-                System.out.println(shifty);
-            }
-            EmployeeDAO.editAvailibleShifts(employeeId, newShifts);
             
             /* -------------------Testing------------------*/
-            Employee e = EmployeeDAO.getEmployeeByEmail(employeeId);
-            System.out.println(e.toString());
+            Collection<Availability> newav = AvailabilityDAO.getByEmail(employeeId);
+            for(Availability av : newav){
+                System.out.println("av1 "+newav.toString());
+            }
             //-----------------------------------------------
         }
         
