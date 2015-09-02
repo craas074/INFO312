@@ -19,7 +19,6 @@ public class Shift {
     //made start and end integers, easier to work with in 24 hr time
     private Date date;
     private Employee employee;
-    private Boolean confirmed;//if the shift is a representation of avail this = false
     private String constraint;
 
     public Shift() {
@@ -47,12 +46,10 @@ public class Shift {
     }
     
     //to be assigned to employees
-    public Shift(String start, String end, Date date, Employee emp){
+    public Shift(String start, String end, Date date){
         this.start = start;
         this.end = end;
         this.date = date;
-        this.employee = emp;
-        this.confirmed = false;
     }
 
     public String getId() {
@@ -94,14 +91,6 @@ public class Shift {
 
     public void assign(Employee employee) {
         this.employee = employee;
-    }
-
-    public Boolean getConfirmed() {
-        return confirmed;
-    }
-
-    public void setConfirmed(Boolean confirmed) {
-        this.confirmed = confirmed;
     }
 
     public String getConstraint() {

@@ -55,10 +55,10 @@ public class Employee {
      private Double currenthours;
     @Persistent
      private Boolean firstLogin;
-
-     
-     List<Shift> availableShifts = new ArrayList<>(); 
-     List<Shift> completedShifts = new ArrayList<>();
+    @Persistent
+     private ArrayList<String> constraints;
+    @Persistent
+     private ArrayList<Shift> availibleShifts;
 
 
     public Employee(String name, String email, Double minhours, Double maxhours) {
@@ -67,6 +67,8 @@ public class Employee {
         this.name = name;
         this.minhours=minhours;
         this.maxhours = maxhours;
+        this.constraints = new ArrayList<>();
+        this.availibleShifts = new ArrayList<>();
         this.password = newPassword(email);
         this.currenthours = 0.00;
         this.firstLogin=true;  
@@ -133,6 +135,24 @@ public class Employee {
         return Base64.encodeBase64URLSafeString(bb.array());
     }
 
+    public ArrayList<Shift> getAvailibleShifts() {
+        return availibleShifts;
+    }
+
+    public void setAvailibleShifts(ArrayList<Shift> availibleShifts) {
+        this.availibleShifts = availibleShifts;
+    }
+    
+    
+
+    public ArrayList<String> getConstraints() {
+        return constraints;
+    }
+
+    public void setConstraints(ArrayList<String> constraints) {
+        this.constraints = constraints;
+    }
+    
     public void setId(String id) {
         this.id = id;
     }
@@ -178,7 +198,7 @@ public class Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public  void setName(String name) {
         this.name = name;
     }
 
@@ -205,34 +225,7 @@ public class Employee {
     public void setCurrenthours(Double currenthours) {
         this.currenthours = currenthours;
     }
-
-    public List<Shift> getAvailableShifts() {
-        return availableShifts;
-    }
-
-    public void setAvailableShifts(List<Shift> availableShifts) {
-        this.availableShifts = availableShifts;
-    }
-
-    public List<Shift> getCompletedShifts() {
-        return completedShifts;
-    }
-
-    public void setCompletedShifts(List<Shift> completedShifts) {
-        this.completedShifts = completedShifts;
-    }
-     
-     
     
-    public void addAvailableShift(Shift shift){
-        
-        availableShifts.add(shift);
-    }
     
-    public void addCompletedShift(Shift shift){
-        
-        completedShifts.add(shift);
-    }
-     
     
 }

@@ -5,6 +5,7 @@
  */
 package servlets;
 
+import dao.EmployeeDAO;
 import dao.ShiftDAO;
 import domain.Shift;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -48,8 +50,8 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");          
         String[] shifts = request.getParameterValues("shifts");
         HttpSession session = request.getSession();
-        String employeeId = (String) session.getAttribute("id");
-        
+        String employeeId = (String) session.getAttribute("email");
+        ArrayList<Shift> newShifts = new ArrayList<>();
         if (shifts != null) {
             for (String selectedShift : shifts) {
 
@@ -63,13 +65,14 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
                     Date date = formatter.parse(sDate); // for testing only
                     System.out.println("Date: " + date.toString() + "||| Formatted date: " + formatter.format(new Date()));
                     //shift = new Shift(employeeId, start, finish, d);
-                    shift = new Shift("testID", sStart, sFinish, date);
-                    shiftDAO.add(shift);                    
+                    shift = new Shift(sStart, sFinish, date);
+                    newShifts.add(shift);
                     
                 } catch (ParseException ex) {
                     System.out.println("ex");
                 }   
             }
+            EmployeeDAO.editAvailibleShifts(employeeId, newShifts);
             
             /* -------------------Testing------------------*/
             List<Shift> shiftsList = shiftDAO.getShifts();
