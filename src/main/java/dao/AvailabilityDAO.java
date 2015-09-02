@@ -34,9 +34,22 @@ public final class AvailabilityDAO {
         }
     }
     
+   public static Collection<Availability> getAll(){
+       pm = PMF.get().getPersistenceManager();
+       Query q = pm.newQuery(domain.Availability.class);
+       try{
+           Collection<Availability> res = (Collection<Availability>)q.execute();
+           return res;
+       }
+       finally{
+           q.closeAll();
+           pm.close();
+       }
+   }
+    
     public static Collection<Availability> getByEmail(String email){
         pm = PMF.get().getPersistenceManager();
-        Query q = pm.newQuery(Availability.class);
+        Query q = pm.newQuery(domain.Availability.class);
         q.setFilter("email == emailParam");
         q.declareParameters("String emailParam");
         try{
@@ -44,6 +57,7 @@ public final class AvailabilityDAO {
             return res;
         }
         finally{
+            q.closeAll();
             pm.close();
         }
     }
