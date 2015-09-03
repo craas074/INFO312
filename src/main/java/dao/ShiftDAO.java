@@ -5,17 +5,22 @@
  */
 package dao;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 import domain.Employee;
-import domain.Shift;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
+import jdo.PMF;
 
 /**
  *
@@ -24,43 +29,46 @@ import java.util.TreeMap;
 public class ShiftDAO {
     
     
-    private static Map<Integer, Shift> shifts = new TreeMap<>();
-
+    private static PersistenceManager pm;
     
-    public ShiftDAO() {
-
-        Employee emp2 = new Employee("Mr Employee", "blahblah@gmail.com", 30.0, 15.0);
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-
-       
+    public static void addAvailability(Shift s){
+        pm = PMF.get().getPersistenceManager();
+        Key key = KeyFactory.createKey(Shift.class.getSimpleName(), s.getEmail());
+        s.setKey(key);
+        try{
+            pm.makePersistent(s);
+        }
+        finally{
+            pm.close();
+        }
     }
     
-    public List<Shift> getShifts() {
-        
-        List<Shift> list = new ArrayList<Shift>(shifts.values());
-        return list;
-    }
+   public static Collection<Shift> getAll(){
+       pm = PMF.get().getPersistenceManager();
+       Query q = pm.newQuery(domain.Availability.class);
+       try{
+           Collection<Shift> res = (Collection<Shift>)q.execute();
+           return res;
+       }
+       finally{
+           q.closeAll();
+           pm.close();
+       }
+   }
     
-    /*
-    
-    public void deleteAllShifts(){
-        shifts.clear();
-    }
-    */
-
-    public Shift getById(Integer id) {
-        return shifts.get(id);
-    }
-    
-    public void add(Shift s){
-    }
-    
-    public void save(){
-        //will be for db persistence. 
-    }
-
-    public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Collection<Shift> getByRosterId(String id){
+        pm = PMF.get().getPersistenceManager();
+        Query q = pm.newQuery(domain.Shift.class);
+        q.setFilter("id == idParam");
+        q.declareParameters("String idParam");
+        try{
+            Collection<Shift> res = (Collection<Shift>) q.execute(id);
+            return res;
+        }
+        finally{
+            q.closeAll();
+            pm.close();
+        }
     }
     
   

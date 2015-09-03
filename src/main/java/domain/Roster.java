@@ -5,7 +5,13 @@ package domain;
 
 import com.google.appengine.api.datastore.Key;
 import dao.DateContainerDAO;
-import java.util.HashMap;
+import dao.ShiftDAO;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.UUID;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
@@ -21,79 +27,112 @@ public class Roster {
     @Persistent
     private Key key;
     @Persistent
+    private String id;
+    @Persistent
+    private Date startDate;
     
-    private HashMap<Integer, Shift> shifts;
+    private Collection<Shift> shifts;
     
 
-    public Roster() {
-        //i reps day of week where 1 = sunday
-        //Calendar c = Calendar.getInstance();
-        //c.setTime(yourDate);
-        //int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+    public Roster() throws ParseException {
+        this.id = UUID.randomUUID().toString();
         DateContainer d = DateContainerDAO.getContainer();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        this.startDate = formatter.parse(d.getDay()+"/"+d.getMonth()+"/"+d.getYear());
         
-        for (int i = 1; i < 8; i++) {
-            if (i == 1) {
-                shifts.put(i, new Shift("0845", "1200"));
-                shifts.put(i, new Shift("0900", "1200"));
-                shifts.put(i, new Shift("1200", "1500"));
-                shifts.put(i, new Shift("1200", "1500"));
-                shifts.put(i, new Shift("1500", "1900"));
-                shifts.put(i, new Shift("1500", "1900"));
-                shifts.put(i, new Shift("1500", "1900"));
-                shifts.put(i, new Shift("1900", "2300", "W8"));
-                shifts.put(i, new Shift("1900", "2300"));
-                shifts.put(i, new Shift("1900", "2300"));
+        Calendar c = Calendar.getInstance();
+        c.setTime(this.startDate);
+        for (int i = 0; i < 21; i++) {
+            c.add(Calendar.DAY_OF_MONTH, 1);
+            if (c.get(Calendar.DAY_OF_WEEK) == 1) {
+                shifts.add(new Shift(this.id, c.getTime(), "0845", "0900"));
+                shifts.add(new Shift(this.id, c.getTime(), "0900", "1200"));
+                shifts.add(new Shift(this.id, c.getTime(), "1200", "1500"));
+                shifts.add(new Shift(this.id, c.getTime(), "1200", "1500"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900"));
+                shifts.add(new Shift(this.id, c.getTime(), "1900", "2300", "W8"));
+                shifts.add(new Shift(this.id, c.getTime(), "1900", "2300"));
+                shifts.add(new Shift(this.id, c.getTime(), "1900", "2300"));
             }
-            if (i == 3 || i == 6) {
-                shifts.put(i, new Shift("0545", "0845"));
-                shifts.put(i, new Shift("0545", "0845", "C13"));
-                shifts.put(i, new Shift("0900", "1200", "C13"));
-                shifts.put(i, new Shift("0845", "1200"));
-                shifts.put(i, new Shift("1200", "1500"));
-                shifts.put(i, new Shift("1200", "1500"));
-                shifts.put(i, new Shift("1500", "1900", "C10"));
-                shifts.put(i, new Shift("1500", "1900"));
-                shifts.put(i, new Shift("1500", "1900"));
-                shifts.put(i, new Shift("1900", "2300"));
-                shifts.put(i, new Shift("1900", "2300", "W8"));
-                shifts.put(i, new Shift("1900", "2300", "C11"));
+            if (c.get(Calendar.DAY_OF_WEEK) == 3 || c.get(Calendar.DAY_OF_WEEK) == 6) {
+                shifts.add(new Shift(this.id, c.getTime(), "0545", "0845"));
+                shifts.add(new Shift(this.id, c.getTime(), "0545", "0845", "C13"));
+                shifts.add(new Shift(this.id, c.getTime(), "0900", "1200", "C13"));
+                shifts.add(new Shift(this.id, c.getTime(), "0845", "1200"));
+                shifts.add(new Shift(this.id, c.getTime(), "1200", "1500"));
+                shifts.add(new Shift(this.id, c.getTime(), "1200", "1500"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900", "C10"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900"));
+                shifts.add(new Shift(this.id, c.getTime(), "1900", "2300"));
+                shifts.add(new Shift(this.id, c.getTime(), "1900", "2300", "W8"));
+                shifts.add(new Shift(this.id, c.getTime(), "1900", "2300", "C11"));
             }
-            if (i == 7) {
-                shifts.put(i, new Shift("0745", "1300"));
-                shifts.put(i, new Shift("0800", "1300"));
-                shifts.put(i, new Shift("0800", "1300", "C10"));
-                shifts.put(i, new Shift("1300", "1700"));
-                shifts.put(i, new Shift("1300", "1700"));
-                shifts.put(i, new Shift("1300", "1700", "W8"));
-                shifts.put(i, new Shift("1500", "2100"));
-                shifts.put(i, new Shift("1500", "2100", "W8"));
+            if (c.get(Calendar.DAY_OF_WEEK) == 7) {
+                shifts.add(new Shift(this.id, c.getTime(), "0745", "1300"));
+                shifts.add(new Shift(this.id, c.getTime(), "0800", "1300"));
+                shifts.add(new Shift(this.id, c.getTime(), "0800", "1300", "C10"));
+                shifts.add(new Shift(this.id, c.getTime(), "1300", "1700"));
+                shifts.add(new Shift(this.id, c.getTime(), "1300", "1700"));
+                shifts.add(new Shift(this.id, c.getTime(), "1300", "1700", "W8"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "2100"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "2100", "W8"));
             } else {
-                shifts.put(i, new Shift("0545", "0845"));
-                shifts.put(i, new Shift("0600", "0900", "C13"));
-                shifts.put(i, new Shift("0900", "1200", "C13"));
-                shifts.put(i, new Shift("0900", "1200"));
-                shifts.put(i, new Shift("1200", "1500"));
-                shifts.put(i, new Shift("1200", "1500"));
-                shifts.put(i, new Shift("1500", "1900", "C10"));
-                shifts.put(i, new Shift("1500", "1900"));
-                shifts.put(i, new Shift("1500", "1900"));
-                shifts.put(i, new Shift("1900", "2300"));
-                shifts.put(i, new Shift("1900", "2300", "C11"));
-                shifts.put(i, new Shift("1500", "1900", "W8"));
+                shifts.add(new Shift(this.id, c.getTime(), "0545", "0845"));
+                shifts.add(new Shift(this.id, c.getTime(), "0600", "0900", "C13"));
+                shifts.add(new Shift(this.id, c.getTime(), "0900", "1200", "C13"));
+                shifts.add(new Shift(this.id, c.getTime(), "0900", "1200"));
+                shifts.add(new Shift(this.id, c.getTime(), "1200", "1500"));
+                shifts.add(new Shift(this.id, c.getTime(), "1200", "1500"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900", "C10"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900"));
+                shifts.add(new Shift(this.id, c.getTime(), "1900", "2300"));
+                shifts.add(new Shift(this.id, c.getTime(), "1900", "2300", "C11"));
+                shifts.add(new Shift(this.id, c.getTime(), "1500", "1900", "W8"));
             }
-
+        }
+        for(Shift shift : shifts){
+            ShiftDAO.addShift(shift);
         }
 
     }
 
-    public HashMap<Integer, Shift> getShifts() {
+    public Collection<Shift> getShifts() {
         return shifts;
     }
 
-    public void setShifts(HashMap<Integer, Shift> shifts) {
+    public void setShifts(Collection<Shift> shifts) {
         this.shifts = shifts;
     }
+
+    public Key getKey() {
+        return key;
+    }
+
+    public void setKey(Key key) {
+        this.key = key;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+    
+    
     
     
 

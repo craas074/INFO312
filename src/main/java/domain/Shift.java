@@ -3,10 +3,9 @@ import java.util.Date;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
-
 @PersistenceCapable
-public class Shift{
-    
+public class Shift {
+
     @Persistent
     private Date date;
     @Persistent
@@ -37,8 +36,6 @@ public class Shift{
         this.finish = finish;
         this.constraint = constraint;
     }
-    
-    
 
     public Shift(Date date, String empEmail, String rosterId, String start, String finish) {
         this.date = date;
@@ -48,9 +45,7 @@ public class Shift{
         this.finish = finish;
         this.assigned = true;
     }
-    
-    
-    
+
     public Date getDate() {
         return date;
     }
@@ -106,9 +101,5 @@ public class Shift{
     public void setConstraint(String constraint) {
         this.constraint = constraint;
     }
-    
-    
-    
-    
-    
+
 }

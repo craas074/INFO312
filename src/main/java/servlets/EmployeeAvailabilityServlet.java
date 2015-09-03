@@ -6,23 +6,12 @@
 package servlets;
 
 import dao.AvailabilityDAO;
-import dao.EmployeeDAO;
-import dao.ShiftDAO;
 import domain.Availability;
-import domain.Employee;
-import domain.Shift;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,7 +38,6 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        ShiftDAO shiftDAO = new ShiftDAO();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");          
         String[] shifts = request.getParameterValues("shifts");
         HttpSession session = request.getSession();
