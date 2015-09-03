@@ -13,6 +13,7 @@
 <%@page import="dao.DateContainerDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+    
     String newDate = "";
     try {
             DateContainer dc = DateContainerDAO.getContainer();
