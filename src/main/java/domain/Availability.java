@@ -27,12 +27,15 @@ public class Availability {
     private String finish;
     @Persistent
     private Date date;
+    @Persistent
+    private Boolean consumed;
 
     public Availability(String email, String start, String finish, Date date) {
         this.email = email;
         this.start = start;
         this.finish = finish;
         this.date = date;
+        this.consumed = false;
     }
 
     public Key getKey() {
@@ -75,6 +78,14 @@ public class Availability {
         this.date = date;
     }
 
+    public Boolean getConsumed() {
+        return consumed;
+    }
+
+    public void setConsumed(Boolean consumed) {
+        this.consumed = consumed;
+    }
+    
     @Override
     public String toString() {
         return "Availability{" + "key=" + key + ", email=" + email + ", start=" + start + ", finish=" + finish + ", date=" + date + '}';

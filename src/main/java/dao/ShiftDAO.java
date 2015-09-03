@@ -32,35 +32,7 @@ public class ShiftDAO {
         Employee emp2 = new Employee("Mr Employee", "blahblah@gmail.com", 30.0, 15.0);
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 
-        if (shifts.isEmpty()) { //singleton for adding dummy shifts for testing
-
-            try {
-
-                //Monday
-                shifts.put(1, new Shift(1, "0545", "0900", df.parse("01/01/2015"), emp2));
-                /*
-                 shifts.add(new Shift(2, "0600", "0900", df.parse("01/01/2015"), emp2));
-                 shifts.add(new Shift(3, "0900", "1200", df.parse("01/01/2015"), emp2));
-                 shifts.add(new Shift(4, "1200", "1500", df.parse("01/01/2015"), emp2));
-                 shifts.add(new Shift(5, "1500", "1900", df.parse("01/01/2015"), emp2));
-                 shifts.add(new Shift(6, "1900", "2300", df.parse("01/01/2015"), emp2));
-                 */
-
-                //Tuesday
-                shifts.put(7, new Shift(7, "0900", "1700", df.parse("02/01/2015"), emp2));
-
-                /*
-                 shifts.add(new Shift(8, "600", "900", df.parse("02/01/2015"), emp2));
-                 shifts.add(new Shift(9, "900", "1200", df.parse("02/01/2015"), emp2));
-                 shifts.add(new Shift(10, "1200", "1500", df.parse("02/01/2015"), emp2));
-                 shifts.add(new Shift(11, "1500", "1900", df.parse("02/01/2015"), emp2));
-                 shifts.add(new Shift(12, "1900", "2300", df.parse("02/01/2015"), emp2));
-                 */
-            } catch (ParseException ex) {
-
-            }
-
-        }
+       
     }
     
     public List<Shift> getShifts() {

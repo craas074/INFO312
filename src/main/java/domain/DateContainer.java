@@ -57,6 +57,11 @@ public class DateContainer {
     public void setYear(String year) {
         this.year = year;
     }
+
+    @Override
+    public String toString() {
+        return day + "/" + month + "/" + year;
+    }
     
     
             

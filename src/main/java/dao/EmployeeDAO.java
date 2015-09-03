@@ -8,7 +8,6 @@ package dao;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import domain.Employee;
-import domain.Shift;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.jdo.PersistenceManager;
@@ -75,18 +74,6 @@ public final class EmployeeDAO {
             e.setName(name);
             e.setMinhours(minhrs);
             e.setMaxhours(maxhrs);
-        }
-        finally{
-            pm.close();
-        }
-    }
-    
-    public static void editAvailibleShifts(String email, ArrayList<Shift> newShifts){
-        pm = PMF.get().getPersistenceManager();
-        try{
-            Key k = KeyFactory.createKey(Employee.class.getSimpleName(), email);
-            Employee e = pm.getObjectById(Employee.class, k);
-            e.setAvailibleShifts(newShifts); //this will refresh due to submission only being possible once. 
         }
         finally{
             pm.close();

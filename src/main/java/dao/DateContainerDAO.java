@@ -27,7 +27,7 @@ public class DateContainerDAO {
         return pm;
     }
     
-    public DateContainer getContainer(){
+    public static DateContainer getContainer(){
         pm = PMF.get().getPersistenceManager();
         try{
             Key k = KeyFactory.createKey(DateContainer.class.getSimpleName(), 1);

@@ -1,71 +1,78 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package domain;
 
 import java.util.Date;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
-/**
- *
- * @author benjamindawson-bruce
- */
-@PersistenceCapable
-public class Shift {
 
-    @Persistent
-    private String id;
-    @Persistent
-    private String start;
-    @Persistent
-    private String end;
-    //made start and end integers, easier to work with in 24 hr time
+@PersistenceCapable
+public class Shift{
+    
     @Persistent
     private Date date;
     @Persistent
-    private Employee employee;
+    private String empEmail;
+    @Persistent
+    private String rosterId;
+    @Persistent
+    private String start;
+    @Persistent
+    private String finish;
+    @Persistent
+    private Boolean assigned;
     @Persistent
     private String constraint;
 
-    public Shift() {
+    public Shift(String rosterId, Date date, String start, String finish) {
+        this.date = date;
+        this.rosterId = rosterId;
+        this.start = start;
+        this.finish = finish;
+        this.assigned = false;
     }
 
-    public Shift(String start, String end) {
+    public Shift(String rosterId, Date date, String start, String finish, String constraint) {
+        this.date = date;
+        this.rosterId = rosterId;
         this.start = start;
-        this.end = end;
-    }
-    
-    public Shift(String start, String end, String constraint) {
-        this.start = start;
+        this.finish = finish;
         this.constraint = constraint;
-        this.end = end;
-    }
-
-    public Shift(String id, String start, String end, Date date, Employee employee) {
-        
-        this.id = id;
-        this.start = start;
-        this.end = end;
-        this.date = date;
-        this.employee = employee;
     }
     
-    //to be assigned to employees
-    public Shift(String start, String end, Date date){
+    
+
+    public Shift(Date date, String empEmail, String rosterId, String start, String finish) {
+        this.date = date;
+        this.empEmail = empEmail;
+        this.rosterId = rosterId;
         this.start = start;
-        this.end = end;
+        this.finish = finish;
+        this.assigned = true;
+    }
+    
+    
+    
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public Integer getId() {
-        return id;
+    public String getEmpEmail() {
+        return empEmail;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setEmpEmail(String empEmail) {
+        this.empEmail = empEmail;
+    }
+
+    public String getRosterId() {
+        return rosterId;
+    }
+
+    public void setRosterId(String rosterId) {
+        this.rosterId = rosterId;
     }
 
     public String getStart() {
@@ -76,28 +83,20 @@ public class Shift {
         this.start = start;
     }
 
-    public String getEnd() {
-        return end;
+    public String getFinish() {
+        return finish;
     }
 
-    public void setEnd(String end) {
-        this.end = end;
+    public void setFinish(String finish) {
+        this.finish = finish;
     }
 
-    public Date getDate() {
-        return date;
+    public Boolean getAssigned() {
+        return assigned;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setAssigned(Boolean assigned) {
+        this.assigned = assigned;
     }
 
     public String getConstraint() {
@@ -107,12 +106,9 @@ public class Shift {
     public void setConstraint(String constraint) {
         this.constraint = constraint;
     }
-
     
     
-    public Integer getShiftLength() {
-        return null;
-
-    }
-
+    
+    
+    
 }

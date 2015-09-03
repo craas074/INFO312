@@ -3,22 +3,35 @@
  */
 package domain;
 
+import com.google.appengine.api.datastore.Key;
+import dao.DateContainerDAO;
 import java.util.HashMap;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 
 /**
  *
  * @author cameron
- * @version 0.1 Representation of the static roster of shifts
+ * @version 0.1 Representation of the static roster of shifts.. for now
+ * Will actually be used to hold finalised roster with specified employees.
  */
+@PersistenceCapable
 public class Roster {
 
+    @Persistent
+    private Key key;
+    @Persistent
+    
     private HashMap<Integer, Shift> shifts;
+    
 
     public Roster() {
         //i reps day of week where 1 = sunday
         //Calendar c = Calendar.getInstance();
         //c.setTime(yourDate);
         //int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        DateContainer d = DateContainerDAO.getContainer();
+        
         for (int i = 1; i < 8; i++) {
             if (i == 1) {
                 shifts.put(i, new Shift("0845", "1200"));
