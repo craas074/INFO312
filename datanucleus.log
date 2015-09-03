@@ -572,3 +572,51 @@
 21:49:17,428 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
 21:49:17,434 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/DateContainer.class" with enhanced definition
 21:49:17,441 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=399 ms, enhance=111 ms, total=510 ms. Consult the log for full details
+22:22:30,290 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:22:30,499 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:22:30,988 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Roster.class" with enhanced definition
+22:22:30,996 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Shift.class" with enhanced definition
+22:22:31,001 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Availability.class" with enhanced definition
+22:22:31,010 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+22:22:31,017 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/DateContainer.class" with enhanced definition
+22:22:31,023 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=421 ms, enhance=92 ms, total=513 ms. Consult the log for full details
+22:39:56,475 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:39:56,924 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:39:57,504 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Roster" is already enhanced.
+22:39:57,506 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Shift" is already enhanced.
+22:39:57,544 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Availability.class" with enhanced definition
+22:39:57,546 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+22:39:57,547 (main) INFO  [DataNucleus.Enhancer] - Class "domain.DateContainer" is already enhanced.
+22:39:57,548 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=534 ms, enhance=87 ms, total=621 ms. Consult the log for full details
+22:42:11,522 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:42:11,775 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:42:12,390 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Roster" is already enhanced.
+22:42:12,391 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Shift" is already enhanced.
+22:42:12,393 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Availability" is already enhanced.
+22:42:12,397 (main) INFO  [DataNucleus.Enhancer] - Class "domain.Employee" is already enhanced.
+22:42:12,404 (main) INFO  [DataNucleus.Enhancer] - Class "domain.DateContainer" is already enhanced.
+22:42:12,404 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=556 ms, enhance=71 ms, total=627 ms. Consult the log for full details
+22:43:58,706 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:43:58,963 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:43:59,526 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Roster.class" with enhanced definition
+22:43:59,536 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Shift.class" with enhanced definition
+22:43:59,543 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Availability.class" with enhanced definition
+22:43:59,556 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+22:43:59,570 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/DateContainer.class" with enhanced definition
+22:43:59,571 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=499 ms, enhance=106 ms, total=605 ms. Consult the log for full details
+22:45:08,105 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:45:08,420 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:45:09,006 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Roster.class" with enhanced definition
+22:45:09,015 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Shift.class" with enhanced definition
+22:45:09,021 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Availability.class" with enhanced definition
+22:45:09,041 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+22:45:09,045 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/DateContainer.class" with enhanced definition
+22:45:09,046 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=492 ms, enhance=132 ms, total=624 ms. Consult the log for full details
+22:46:35,263 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:46:35,620 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:46:36,241 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Roster.class" with enhanced definition
+22:46:36,252 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Shift.class" with enhanced definition
+22:46:36,261 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Availability.class" with enhanced definition
+22:46:36,290 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+22:46:36,294 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/home/cameron/Documents/dev/INFO312/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/DateContainer.class" with enhanced definition
+22:46:36,295 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=529 ms, enhance=145 ms, total=674 ms. Consult the log for full details

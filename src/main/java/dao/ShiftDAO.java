@@ -7,18 +7,8 @@ package dao;
 
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
-import domain.Employee;
 import domain.Shift;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import jdo.PMF;

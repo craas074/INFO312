@@ -93,7 +93,7 @@ public class Employee {
     
     private String newPassword(String email){
         
-        /*
+        
         if(email.equals("")){
             throw new IllegalArgumentException("email must not be null");
         }
@@ -128,9 +128,6 @@ public class Employee {
         System.out.println(pass);
         String hash = DigestUtils.sha256Hex(pass);
         return hash;
-                
-                */
-        return null;
     }
     
     private static String uuidToBase64(String str) {

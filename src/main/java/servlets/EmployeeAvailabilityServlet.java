@@ -66,7 +66,7 @@ public class EmployeeAvailabilityServlet extends HttpServlet {
             /* -------------------Testing------------------*/
             Collection<Availability> newav = AvailabilityDAO.getByEmail(employeeId);
             for(Availability av : newav){
-                System.out.println("av1 "+newav.toString());
+                System.out.println("av1 "+av.toString());
             }
             //-----------------------------------------------
         }
