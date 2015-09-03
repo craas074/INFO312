@@ -8,7 +8,6 @@ package dao;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import domain.Employee;
-import java.util.ArrayList;
 import java.util.Collection;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
@@ -62,6 +61,18 @@ public final class EmployeeDAO {
         }       
         finally {
         pm.close();
+        }
+    }
+    
+    public static void updateEmployeeHrs(String email, Double currentHours){
+        pm = PMF.get().getPersistenceManager();
+        try{
+            Key k = KeyFactory.createKey(Employee.class.getSimpleName(), email);
+            Employee e = pm.getObjectById(Employee.class, k);
+            e.setCurrenthours(currentHours);
+        }
+        finally{
+            pm.close();
         }
     }
     
