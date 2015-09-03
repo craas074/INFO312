@@ -1,11 +1,18 @@
+package domain;
 
+import com.google.appengine.api.datastore.Key;
 import java.util.Date;
+import java.util.UUID;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
 @PersistenceCapable
 public class Shift {
 
+    @Persistent
+    private Key key;
+    @Persistent
+    private String id;
     @Persistent
     private Date date;
     @Persistent
@@ -22,6 +29,7 @@ public class Shift {
     private String constraint;
 
     public Shift(String rosterId, Date date, String start, String finish) {
+        this.id = UUID.randomUUID().toString();
         this.date = date;
         this.rosterId = rosterId;
         this.start = start;
@@ -30,6 +38,7 @@ public class Shift {
     }
 
     public Shift(String rosterId, Date date, String start, String finish, String constraint) {
+        this.id = UUID.randomUUID().toString();
         this.date = date;
         this.rosterId = rosterId;
         this.start = start;
@@ -38,12 +47,21 @@ public class Shift {
     }
 
     public Shift(Date date, String empEmail, String rosterId, String start, String finish) {
+        this.id = UUID.randomUUID().toString();
         this.date = date;
         this.empEmail = empEmail;
         this.rosterId = rosterId;
         this.start = start;
         this.finish = finish;
         this.assigned = true;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Date getDate() {
@@ -101,5 +119,15 @@ public class Shift {
     public void setConstraint(String constraint) {
         this.constraint = constraint;
     }
+
+    public Key getKey() {
+        return key;
+    }
+
+    public void setKey(Key key) {
+        this.key = key;
+    }
+    
+    
 
 }

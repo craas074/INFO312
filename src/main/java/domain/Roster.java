@@ -27,7 +27,7 @@ public class Roster {
     @Persistent
     private Key key;
     @Persistent
-    private String id;
+    private String id; //actually just "dd/MM/yyyy of startdate
     @Persistent
     private Date startDate;
     
@@ -35,10 +35,10 @@ public class Roster {
     
 
     public Roster() throws ParseException {
-        this.id = UUID.randomUUID().toString();
         DateContainer d = DateContainerDAO.getContainer();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         this.startDate = formatter.parse(d.getDay()+"/"+d.getMonth()+"/"+d.getYear());
+        this.id = d.getDay()+"/"+d.getMonth()+"/"+d.getYear();
         
         Calendar c = Calendar.getInstance();
         c.setTime(this.startDate);
@@ -94,10 +94,6 @@ public class Roster {
                 shifts.add(new Shift(this.id, c.getTime(), "1500", "1900", "W8"));
             }
         }
-        for(Shift shift : shifts){
-            ShiftDAO.addShift(shift);
-        }
-
     }
 
     public Collection<Shift> getShifts() {

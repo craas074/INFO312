@@ -8,6 +8,7 @@ package dao;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import domain.Employee;
+import domain.Shift;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,9 +32,9 @@ public class ShiftDAO {
     
     private static PersistenceManager pm;
     
-    public static void addAvailability(Shift s){
+    public static void addShift(Shift s){
         pm = PMF.get().getPersistenceManager();
-        Key key = KeyFactory.createKey(Shift.class.getSimpleName(), s.getEmail());
+        Key key = KeyFactory.createKey(Shift.class.getSimpleName(), s.getRosterId());
         s.setKey(key);
         try{
             pm.makePersistent(s);
@@ -59,11 +60,44 @@ public class ShiftDAO {
     public static Collection<Shift> getByRosterId(String id){
         pm = PMF.get().getPersistenceManager();
         Query q = pm.newQuery(domain.Shift.class);
-        q.setFilter("id == idParam");
+        q.setFilter("rosterId == idParam");
         q.declareParameters("String idParam");
         try{
             Collection<Shift> res = (Collection<Shift>) q.execute(id);
             return res;
+        }
+        finally{
+            q.closeAll();
+            pm.close();
+        }
+    }
+    
+    public static Shift getById(String id){
+        pm = PMF.get().getPersistenceManager();
+        Query q = pm.newQuery(domain.Shift.class);
+        q.setFilter("id == idParam");
+        q.declareParameters("String idParam");
+        try{
+            Shift res = (Shift) q.execute(id);
+            return res;
+        }
+        finally{
+            q.closeAll();
+            pm.close();
+        }
+    }
+    
+    public static void editShift(String id, String start, String finish, String empEmail, Boolean assigned){
+        pm = PMF.get().getPersistenceManager();
+        Query q = pm.newQuery(domain.Shift.class);
+        q.setFilter("id == idParam");
+        q.declareParameters("String idParam");
+        try{
+            Shift res = (Shift) q.execute(id);
+            res.setStart(start);
+            res.setFinish(finish);
+            res.setEmpEmail(empEmail);
+            res.setAssigned(assigned);
         }
         finally{
             q.closeAll();

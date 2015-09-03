@@ -40,8 +40,8 @@ public class ShiftAmendmentFinalise extends HttpServlet {
         
         String[] things = request.getParameterValues("newTimes");
         HttpSession session = request.getSession();
-        String shifty = (String) session.getAttribute("shiftId");
-        Integer shiftId = Integer.parseInt(shifty);
+        String shiftId = (String) session.getAttribute("shiftId");
+
        
         String sHour = "";
         String sMin = "";
@@ -57,10 +57,9 @@ public class ShiftAmendmentFinalise extends HttpServlet {
         
         System.out.println(shiftId + "<< finalise");
         
-        ShiftDAO dao = new ShiftDAO();
-        Shift shift = dao.getById(shiftId);
-        shift.setStart(sHour + sMin);
-        shift.setEnd(fHour + fMin);
+
+        Shift shift = ShiftDAO.getById(shiftId);
+        //ShiftDAO.editShift(params)
         
         response.sendRedirect("adminRosterWeekOne.jsp");
         
