@@ -39,6 +39,18 @@ public class DateContainerDAO {
         }
     }
     
+    public static void deleteContainer(){
+        pm = PMF.get().getPersistenceManager();
+        Key k = KeyFactory.createKey(DateContainer.class.getSimpleName(), 1);
+        try{
+            DateContainer d = pm.getObjectById(DateContainer.class, k);
+            pm.deletePersistent(d);
+        }
+        finally{
+            pm.close();
+        }
+    }
+    
     public static DateContainer getContainer(){
         pm = PMF.get().getPersistenceManager();
         try{

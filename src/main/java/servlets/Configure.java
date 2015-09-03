@@ -6,7 +6,6 @@ package servlets;
 import dao.DateContainerDAO;
 import domain.DateContainer;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -53,6 +52,7 @@ public class Configure extends HttpServlet {
         int year = now.get(Calendar.YEAR);
         DateContainer c = new DateContainer(Integer.toString(day),Integer.toString(month),Integer.toString(year));       
         DateContainerDAO.saveContainer(c);
+        response.sendRedirect("/admin/NewEmployee.jsp");
         //if someone could add a bunch of employees and availabilities that'd be awesome.
         
     }
