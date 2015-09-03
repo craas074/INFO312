@@ -55,6 +55,10 @@ public class Shift {
         this.finish = finish;
         this.assigned = true;
     }
+    
+    public int getTime(){
+        return Integer.parseInt(start)-Integer.parseInt(finish);
+    }
 
     public String getId() {
         return id;
