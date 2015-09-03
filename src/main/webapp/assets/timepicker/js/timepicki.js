@@ -11,7 +11,6 @@
 			format_output: function(tim, mini, meri) {
 				if(settings.show_meridian){
 					return tim + " : " + mini + " : " + meri;
-                                        
 				}else{
 					return tim + " : " + mini;
 				}
@@ -19,8 +18,8 @@
 			increase_direction: 'up',
 			custom_classes: '',
 			min_hour_value: 5,
-			max_hour_value: 23,
-			show_meridian: false,
+			max_hour_value: 11,
+			show_meridian: true,
 			step_size_hours: '1',
 			step_size_minutes: '5',
 			overflow_minutes: false,
@@ -186,8 +185,7 @@
 					// next time the picker is opened
 					ele.attr('data-timepicki-tim', tim);
 					ele.attr('data-timepicki-mini', mini);
-                       
-              
+					
 					if(settings.show_meridian){
 						ele.attr('data-timepicki-meri', meri);
 						// set the formatted value
@@ -228,7 +226,6 @@
 
 			function set_date(start_time) {
 				var d, ti, mi, mer;
-                                
 
 				// if a value was already picked we will remember that value
 				if (ele.is('[data-timepicki-tim]')) {
@@ -237,7 +234,6 @@
 					if(settings.show_meridian){
 						mer = ele.attr('data-timepicki-meri');
 					}
-                         
 				// developer can specify a custom starting value
 				} else if (typeof start_time === 'object') {
 					ti = Number(start_time[0]);

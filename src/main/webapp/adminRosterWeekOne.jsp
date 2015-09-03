@@ -2,6 +2,7 @@
     Author     : ashtoncranmer
 --%>
 
+<%@page import="dao.EmployeeDAO"%>
 <!DOCTYPE html>
 
 <%@page import="java.util.ArrayList"%>
@@ -20,7 +21,11 @@
     
 
     ShiftDAO shiftDAO = new ShiftDAO();
-    List<Shift> shifts = shiftDAO.getShifts();
+    EmployeeDAO employeeDAO = new EmployeeDAO();
+    //List<Shift> shifts = shiftDAO.getShifts();
+    List<Shift> shifts = new ArrayList();
+
+    
     
     //these start values will need to come from a predefined 3 weekly pointer
     int day = 1;
@@ -89,17 +94,23 @@
                         <% for (Shift shift : shifts) {%>
 
                         <tr>
-                            <td><%=shift.getEmployee().getName()%></td>
-                            <td><%=shift.getStart()%> - <%=shift.getEnd()%></td>
+                            <td><%=EmployeeDAO.getEmployeeByEmail(shift.getEmpEmail()).getName()%></td>
+                            <td><%=shift.getStart()%> - <%=shift.getFinish()%></td>
                             <td>
                                 <form method="post" onsubmit="return clearSesh();" action="/AmendShift" style="margin: 0;">
                                     <input class="button small"id="submitButton" type="submit" value="Edit"/>
-                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getName()%>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=EmployeeDAO.getEmployeeByEmail(shift.getEmpEmail()).getName()%>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getStart() %>"/>
-                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEnd() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getFinish() %>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getDate() %>"/>
-                                    <input name="employeeDetails" style="display: none" value="<%=shift.getEmployee().getId() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=EmployeeDAO.getEmployeeByEmail(shift.getEmpEmail()).getId() %>"/>
                                     <input name="employeeDetails" style="display: none" value="<%=shift.getId() %>"/>
+                                <form method="post" action="/AmendShift" style="margin: 0;">
+                                    <input id="submitButton" type="submit" value="Edit"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=EmployeeDAO.getEmployeeByEmail(shift.getEmpEmail()).getName()%>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getStart() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getFinish() %>"/>
+                                    <input name="employeeDetails" style="display: none" value="<%=shift.getDate() %>"/>
                                 </form>
                             </td>
                         </tr>
