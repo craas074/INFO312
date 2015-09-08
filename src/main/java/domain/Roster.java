@@ -32,7 +32,6 @@ public class Roster {
     private Date startDate;
     
     private Collection<Shift> shifts;
-    
 
     public Roster(DateContainer d) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
