@@ -34,35 +34,36 @@ public class ShiftTypesDAO {
 
         for (String day : days) {
             
-            if (day.equals("SAT")){
+            switch (day) {
                 
-                map.put(day, new ShiftType("0745", "1300"));
-                map.put(day, new ShiftType("0800", "1300"));
-                map.put(day, new ShiftType("0800", "1300", "C10"));
-                map.put(day, new ShiftType("1300", "1700"));
-                map.put(day, new ShiftType("1700", "2100"));                
-                
-            } else if (day.equals("SUN")) {
-                
-                map.put(day, new ShiftType("0845", "1200"));
-                map.put(day, new ShiftType("0900", "1200"));
-                map.put(day, new ShiftType("1200", "1500"));
-                map.put(day, new ShiftType("1500", "1900"));
-                map.put(day, new ShiftType("1900", "2300"));
-                map.put(day, new ShiftType("1900", "2300", "W8"));
-                
-            } else {
-                
-                map.put(day, new ShiftType("0545", "0900"));
-                map.put(day, new ShiftType("0600", "0900", "C13"));
-                map.put(day, new ShiftType("0900", "1200", "C13"));
-                map.put(day, new ShiftType("0900", "1200"));
-                map.put(day, new ShiftType("1200", "1500"));
-                map.put(day, new ShiftType("1500", "1900", "C10"));
-                map.put(day, new ShiftType("1500", "1900"));
-                map.put(day, new ShiftType("1900", "2300", "C11"));
-                map.put(day, new ShiftType("1900", "2300"));
-  
+                case "SAT":
+                    map.put(day, new ShiftType("0745", "1300"));
+                    map.put(day, new ShiftType("0800", "1300"));
+                    map.put(day, new ShiftType("0800", "1300", "C10"));
+                    map.put(day, new ShiftType("1300", "1700"));
+                    map.put(day, new ShiftType("1700", "2100"));
+                    break;
+                    
+                case "SUN":
+                    map.put(day, new ShiftType("0845", "1200"));
+                    map.put(day, new ShiftType("0900", "1200"));
+                    map.put(day, new ShiftType("1200", "1500"));
+                    map.put(day, new ShiftType("1500", "1900"));
+                    map.put(day, new ShiftType("1900", "2300"));
+                    map.put(day, new ShiftType("1900", "2300", "W8"));
+                    break;
+                    
+                default:
+                    map.put(day, new ShiftType("0545", "0900"));
+                    map.put(day, new ShiftType("0600", "0900", "C13"));
+                    map.put(day, new ShiftType("0900", "1200", "C13"));
+                    map.put(day, new ShiftType("0900", "1200"));
+                    map.put(day, new ShiftType("1200", "1500"));
+                    map.put(day, new ShiftType("1500", "1900", "C10"));
+                    map.put(day, new ShiftType("1500", "1900"));
+                    map.put(day, new ShiftType("1900", "2300", "C11"));
+                    map.put(day, new ShiftType("1900", "2300"));
+                    break;
             }
         }
        
