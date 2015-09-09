@@ -85,6 +85,11 @@ public class Employee {
     }
     
     
+    public String getEmployeesByShiftType(String shiftType){
+        return null;
+    }
+    
+    
     
     /* email generated pass to the employee, hash that pass and store the employee in the DAO
     we want to avoid this being accessed, so keep it private*/

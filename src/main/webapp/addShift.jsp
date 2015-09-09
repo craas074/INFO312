@@ -46,18 +46,44 @@
         <div id="main">
             <section style="border-style: solid; border-width: 2px; padding: 2%;">
                 <header class="major">
-                    <h2></h2>
+                    
+                                                                    
                     <form method="post" action="/AmendShiftFinalise" onsubmit="return submitFunc()">
+                        
                         <div class="row uniform 50%">
+                            
+                            <h2>Shift</h2>
                             <table class="alt">
-
+                           
+                                <tbody id="tBody">
+                                    <tr style="background-color:  white;" >
+                                        <td>Select from:</td>
+                                        <td>
+                                            <div class="4u 12u$(small)" style="height: 25px;" >
+                                                <input type="radio" id="allShifts" name="shifts" checked>
+                                                <label for="allShifts">All</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="4u 12u$(small)" style="height: 25px;">
+                                                <input type="radio" id="customShift" name="shifts">
+                                                <label for="customShift">Custom</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+        
+                                </tbody>
+                            </table>
+                            
+                            
+                            <table id="customShiftTable" class="alt">
                                 <tbody>
                                     <tr>
                                         <td></td>
                                         <td>Click time to set</td>
                                     </tr>
                                     <tr>
-                                        <td style="vertical-align: middle; background-color: #f7f7f7;">Set start:</td>
+                                        <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee:</td>
                                         <td style="margin: 0; padding: 0;">
                                             <input style="text-align: center; background-color: white;" id="timepicker1" type="text" name="timepicker1" value="05 : 45"/>
                                     </tr>
@@ -68,38 +94,89 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            
+                            <table id="allShiftsTable" class="alt">
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>Click time to set</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee</td>
+                                        <td> 
+                                            <select id="demo-category">
+                                                <option value="">-- Select pre-existing --</option>
+                                                <% for (Employee employee : allEmployees) {%>
+                                                <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
+                                                <% }%>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+            
+                            <h2>Employee</h2>    
+                                            
                             <table class="alt">
                            
                                 <tbody id="tBody">
                                     <tr style="background-color:  white;" >
-                                        <td>Select employee from:</td>
+                                        <td>Select from:</td>
                                         <td>
                                             <div class="4u 12u$(small)" style="height: 25px;" >
-                                                <input type="radio" id="allEmployees" name="demo-priority" checked>
+                                                <input type="radio" id="allEmployees" name="employees" checked>
                                                 <label for="allEmployees">All</label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="4u 12u$(small)" style="height: 25px;">
-                                                <input type="radio" id="availableEmployees" name="demo-priority">
-                                                <label for="availableEmployees">Available</label>
+                                                <input type="radio" id="allowedEmployees" name="employees">
+                                                <label for="allowedEmployees">Allowed</label>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr id="selectRow">
-                                        <td></td>
-                                        <td>
-                                            <div class="select-wrapper">
-                                                <select>
-                                                    <% for (Employee employee : allEmployees) {%>
-                                                        <option value="<%=employee.getId() %>"><%=employee.getName() %></option>
-                                                    <% }%>
-                                                </select> 
-                                            </div>
+        
+                                </tbody>
+                            </table>
+                                           
+                                            
+                            <table id="allowedEmployeesTable" class="alt">
+                                <tbody>
+                
+                                    <tr>
+                                        <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee:</td>
+                                        <td style="margin: 0; padding: 0;"> 
+                                            <select id="demo-category">
+                                                <option value="">-- Select from pre-existing --</option>
+                                                <% for (Employee employee : allEmployees) {%>
+                                                <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
+                                                <% }%>
+                                            </select>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+                           
+                            <table id="allEmployeesTable" class="alt">
+                                <tbody>
+
+                                    <tr>
+                                        <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee:</td>
+                                        <td style="margin: 0; padding: 0;"> 
+                                            <select id="demo-category">
+                                                <option value="">-- Select from all --</option>
+                                                <% for (Employee employee : allEmployees) {%>
+                                                <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
+                                                <% }%>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                
+                                            
+
+
+
 
 
                             <div class="12u$">
@@ -141,23 +218,16 @@
             <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
             <script src="assets/js/main.js"></script>
 
-            <!-- Timepicker config -->
-            <script type="text/javascript">$('#timepicker1').timepicki(
-                        {start_time: ["5", "30"]});
-            </script>
-            <script type="text/javascript">$('#timepicker2').timepicki(
-                        {start_time: ["5", "30"]});
-            </script>
 
             <script type="text/javascript">
 
                 reset(); // preload current times as selected values
 
                 function reset() {
-                    document.getElementById("timepicker1").setAttribute('data-timepicki-tim', "");
-                    document.getElementById("timepicker1").setAttribute('data-timepicki-mini', "");
-                    document.getElementById("timepicker2").setAttribute('data-timepicki-tim', "");
-                    document.getElementById("timepicker2").setAttribute('data-timepicki-mini', "");
+                    document.getElementById("timepicker1").setAttribute('data-timepicki-tim', "05");
+                    document.getElementById("timepicker1").setAttribute('data-timepicki-mini', "45");
+                    document.getElementById("timepicker2").setAttribute('data-timepicki-tim', "11");
+                    document.getElementById("timepicker2").setAttribute('data-timepicki-mini', "00");
                 }
                 // If page is refreshed, send back to roster page (so we don't need to persist chosen times in a session)
                 if (sessionStorage.getItem("is_reloaded")) {
@@ -188,38 +258,51 @@
             </script>
             <script type="text/javascript"> // handle radio buttons
                  
-                var ex1 = document.getElementById('allEmployees');
-                var ex2 = document.getElementById('availableEmployees');
+                var ex1 = document.getElementById('allShifts');
+                var ex2 = document.getElementById('customShift');
+                var ex3 = document.getElementById('allowedEmployees');
+                var ex4 = document.getElementById('allEmployees');
 
-                ex1.onclick = handlerAll;
-                ex2.onclick = handlerAvail;
+                ex1.onclick = allShifts;
+                ex2.onclick = customShift;
+                ex3.onclick = allowedEmployees;
+                ex4.onclick = allEmployees;
+                
+                
+                $('#customShiftTable').hide();
+                $('#allowedEmployeesTable').hide();
+
                
-                
-                function handlerAll() {
-                   $("#selectRow").remove(); 
-                   $("#tBody").append("<tr id='selectRow'></tr>");
-                   $("#selectRow").append("<td></td><td><div id='selectCell' class='select-wrapper'></div></td>");
-                   $("#selectCell").append("<select id='selectBox';></select>");
-                   
-                   <% for (Employee employee : allEmployees) {%>
-                   
-                        $("#selectBox").append("<option value='<%=employee.getId() %>'><%=employee.getName()%></option>");
-                                            
-                   <% }%>
-                   }
-                
-                function handlerAvail() {
-                   $("#selectRow").remove(); 
-                   $("#tBody").append("<tr id='selectRow'></tr>");
-                   $("#selectRow").append("<td></td><td></td><td><div id='selectCell' class='select-wrapper'></div></td>");
-                   $("#selectCell").append("<select id='selectBox';></select>");
-                   
-                   <% for (Employee employee : availableEmployees) {%>
-                   
-                        $("#selectBox").append("<option value='<%=employee.getId() %>'><%=employee.getName()%></option>");
-                                            
-                   <% }%>
+                function allShifts(){
+                    $('#customShiftTable').hide();
+                    $('#allShiftsTable').show(); 
+                    document.getElementById('allowedEmployees').disabled = false;
+                    
                 }
+                function customShift(){
+                    
+                    $('#allShiftsTable').hide()
+                    $('#customShiftTable').show();
+                    $('#allowedEmployeesTable').hide();
+                    $('#allEmployeesTable').show();
+                    document.getElementById('allEmployees').checked = true;
+                    document.getElementById('allowedEmployees').disabled = true;
+                    
+
+                }
+                function allowedEmployees(){
+                    
+                    $('#allEmployeesTable').hide();
+                    $('#allowedEmployeesTable').show();
+                }
+                function allEmployees(){
+                    
+                    $('#allowedEmployeesTable').hide();
+                    $('#allEmployeesTable').show();
+                }
+               
+              
+                
                 
                 
             </script>
