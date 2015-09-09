@@ -2,6 +2,10 @@
     Author     : ashtoncranmer
 --%>
 
+<%@page import="java.util.Collection"%>
+<%@page import="dao.DateContainerDAO"%>
+<%@page import="domain.DateContainer"%>
+<%@page import="domain.DateContainer"%>
 <%@page import="dao.EmployeeDAO"%>
 <!DOCTYPE html>
 
@@ -23,25 +27,23 @@
     ShiftDAO shiftDAO = new ShiftDAO();
     EmployeeDAO employeeDAO = new EmployeeDAO();
     //List<Shift> shifts = shiftDAO.getShifts();
-    List<Shift> shifts = new ArrayList();
 
     
-    
+    DateContainer d = DateContainerDAO.getContainer();
     //these start values will need to come from a predefined 3 weekly pointer
-    int day = 1;
-    int month = 0;
-    int year = 2015;
+    int day = Integer.parseInt(d.getDay());
+    int month = Integer.parseInt(d.getMonth());
+    int year = Integer.parseInt(d.getYear());
+    Collection<Shift> shifts = ShiftDAO.getByRosterId(d.getDay()+"/"+d.getMonth()+"/"+d.getYear());
         
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YY");
-    Calendar calendar;
+    Calendar calendar = new GregorianCalendar(year,month,day);
 
     public String incrementDate(int amount) {
 
         int day = this.day;
         int month = this.month;
         int year = this.year;
-
-        calendar = new GregorianCalendar(year, month, day);
         calendar.add(Calendar.DAY_OF_MONTH, amount);
         return sdf.format(calendar.getTime());
     }

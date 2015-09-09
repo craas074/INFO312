@@ -8,6 +8,7 @@ package dao;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import domain.Employee;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
@@ -131,6 +132,8 @@ public final class EmployeeDAO {
         return pm.getObjectById(Employee.class, k);
     }
     
+    
+    
     public static void addEmployee(Employee e){
         pm = PMF.get().getPersistenceManager();
         Key key = KeyFactory.createKey(Employee.class.getSimpleName(), e.getEmail());
@@ -142,5 +145,20 @@ public final class EmployeeDAO {
             pm.close();
         }
     }
+    
+    public static ArrayList<Employee> getEmployeeByConstraint(String con){
+        Collection<Employee> emps = getAll();
+        ArrayList<Employee> retset = new ArrayList<>();
+        String regex = "/"+con+"/";
+        for(Employee e: emps){
+            if(e.getConstraints().matches(regex)){
+                retset.add(e);
+            }
+        }
+        return retset;
+        
+    }
+    
+    
     
 }
