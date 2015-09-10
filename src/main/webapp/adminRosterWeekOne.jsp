@@ -28,11 +28,8 @@
     EmployeeDAO employeeDAO = new EmployeeDAO();
     //List<Shift> shifts = shiftDAO.getShifts();
 
-    
-<<<<<<< HEAD
-=======
+
     DateContainer d = DateContainerDAO.getContainer();
->>>>>>> adca55d681e5d390dd9b585136b63a1c12dd7f6b
     //these start values will need to come from a predefined 3 weekly pointer
     int day = Integer.parseInt(d.getDay());
     int month = Integer.parseInt(d.getMonth());

@@ -995,3 +995,11 @@
 13:23:23,234 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/ashtoncranmer/Main/Uni/2015/Full Year/INFO312/Development/INFO312Proj/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Roster.class" with enhanced definition
 13:23:23,241 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/ashtoncranmer/Main/Uni/2015/Full Year/INFO312/Development/INFO312Proj/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Shift.class" with enhanced definition
 13:23:23,246 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=484 ms, enhance=236 ms, total=720 ms. Consult the log for full details
+18:25:03,763 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+18:25:03,925 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+18:25:04,421 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/ashtoncranmer/Main/Uni/2015/Full Year/INFO312/Development/INFO312Proj/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Availability.class" with enhanced definition
+18:25:04,454 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/ashtoncranmer/Main/Uni/2015/Full Year/INFO312/Development/INFO312Proj/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/DateContainer.class" with enhanced definition
+18:25:04,498 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/ashtoncranmer/Main/Uni/2015/Full Year/INFO312/Development/INFO312Proj/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Employee.class" with enhanced definition
+18:25:04,567 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/ashtoncranmer/Main/Uni/2015/Full Year/INFO312/Development/INFO312Proj/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Roster.class" with enhanced definition
+18:25:04,604 (main) INFO  [DataNucleus.Enhancer] - Writing class file "/Users/ashtoncranmer/Main/Uni/2015/Full Year/INFO312/Development/INFO312Proj/target/INFO312Project-1.0-SNAPSHOT/WEB-INF/classes/domain/Shift.class" with enhanced definition
+18:25:04,611 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 5 classes. Timings : input=311 ms, enhance=371 ms, total=682 ms. Consult the log for full details

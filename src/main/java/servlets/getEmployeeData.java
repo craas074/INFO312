@@ -5,6 +5,7 @@
  */
 package servlets;
 
+import com.google.appengine.repackaged.com.google.gson.Gson;
 import dao.EmployeeDAO;
 import domain.Employee;
 import java.io.IOException;
@@ -44,10 +45,14 @@ public class getEmployeeData extends HttpServlet {
         String minHrs = Double.toString(emp.getMinhours());
         String maxHrs = Double.toString(emp.getMaxhours());
         
+        
+        response.setContentType("application/json");
+        response.getWriter().write(new Gson().toJson(emp, Employee.class));
+        
 
-        response.setContentType("text/plain");
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().write(name + " " + email + " " + minHrs + " " + maxHrs);
+        //response.setContentType("text/plain");
+        //response.setCharacterEncoding("UTF-8");
+        //response.getWriter().write(name + " " + email + " " + minHrs + " " + maxHrs);
         
         
         

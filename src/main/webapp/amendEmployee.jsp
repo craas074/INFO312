@@ -82,24 +82,12 @@
                                     <tr style="background-color: white;" >
                                         <td>
                                             <div style="height: 32px;">
-                                                <label for="firstname"><h3>First name:</h3></label>
+                                                <label for="name"><h3>Name:</h3></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input name="demo-name" id="firstname" type="text" size="40" required>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr style="background-color: white;" >
-                                        <td>
-                                            <div style="height: 32px;">
-                                                <label for="lastname"><h3>Last name:</h3></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div style="height: 32px;">
-                                                <input name="demo-name" id="lastname" type="text" size="40" required>
+                                                <input name="demo-name" id="name" type="text" size="40" required>
                                             </div>
                                         </td>
                                     </tr>
@@ -111,7 +99,7 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input type="email" name="demo-name" id="email"size="40" required>
+                                                <input type="email" name="demo-name" id="email" size="40" required>
                                             </div>
                                         </td>
                                     </tr>
@@ -123,7 +111,7 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input style="width: 100%;" type="number" name="minHours" min="0" max="99" value="20">
+                                                <input style="width: 100%;" id="minhours" type="number" name="minHours" min="0" max="99" value="20">
                                             </div>
                                         </td>
                                     </tr>
@@ -135,7 +123,7 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input style="width: 100%;" type="number" name="maxHours" min="0"  max="99" value="20">
+                                                <input style="width: 100%;" id="maxhours" type="number" name="maxHours" min="0"  max="99" value="20">
                                             </div>
                                         </td>
                                     </tr>
@@ -144,11 +132,7 @@
                                 
                                 </tbody>
                             </table>
-                            <table>
-                                
-                                
-                                
-                            </table>
+
 
                             <div class="12u$">
                                 <ul class="actions">
@@ -197,7 +181,12 @@
                     
                     $.post( 'getEmployeeData', { name: employee })
                         .done(function( data ) {
-                        alert( "Data Loaded: " + data );
+                       
+                        $("#name").val(data.name)
+                        $("#email").val(data.email)
+                        $("#minhours").val(data.minhours)
+                        $("#maxhours").val(data.maxhours)
+
                     });
                     
                     

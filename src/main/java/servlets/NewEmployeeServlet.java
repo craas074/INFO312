@@ -6,6 +6,7 @@ package servlets;
 import dao.EmployeeDAO;
 import domain.Employee;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author cameron
  */
-@WebServlet("/new-employee")
+@WebServlet("/newEmployee")
 public class NewEmployeeServlet extends HttpServlet {
 
 
@@ -31,25 +32,17 @@ public class NewEmployeeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name=request.getParameter("name");
-        String email=request.getParameter("email");
-        Double minhrs = Double.parseDouble(request.getParameter("minHrs"));
-        Double maxhrs = Double.parseDouble(request.getParameter("maxHrs"));
+        String name= request.getParameter("ename");
+        String email= request.getParameter("email");
+        double minhrs = Double.parseDouble(request.getParameter("minHours"));
+        double maxhrs = Double.parseDouble(request.getParameter("maxHours"));
         
-        Employee e = new Employee(name,email,minhrs,maxhrs);
+        Employee e = new Employee(name, email, minhrs, maxhrs);
         EmployeeDAO.addEmployee(e);
         
-        response.sendRedirect("/admin/employees.jsp?newEmployee="+e.getId()+"&passwd="+e.getPassword());
-    }
+        response.sendRedirect("newEmployee.jsp");
+        //response.sendRedirect("newEmployee.jsp\"?newEmployee="+e.getId()+"&passwd="+e.getPassword());
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    }
 
 }
