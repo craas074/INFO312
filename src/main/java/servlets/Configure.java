@@ -1,12 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
  */
 package servlets;
 
+import dao.DateContainerDAO;
+import domain.DateContainer;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ashtoncranmer
+ * @author cameron
  */
-@WebServlet(name = "addShiftSetup", urlPatterns = {"/addShiftSetup"})
-public class addShiftSetup extends HttpServlet {
+@WebServlet(name = "Configure", urlPatterns = {"/admin/Configure"})
+public class Configure extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,12 +31,30 @@ public class addShiftSetup extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    //sets DateContainer to next Monday
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String date = request.getParameter("shiftDate");
         
-        
+        response.setContentType("text/html;charset=UTF-8");
+        Calendar now = Calendar.getInstance();
+        int weekday = now.get(Calendar.DAY_OF_WEEK);
+        if (weekday != Calendar.MONDAY) {
+        // calculate how much to add
+            // the 2 is the difference between Saturday and Monday
+            int days = (Calendar.SATURDAY - weekday + 2) % 7;
+            now.add(Calendar.DAY_OF_YEAR, days);
+        }
+        // now is the date you want
+        Date date = now.getTime();
+        String format = new SimpleDateFormat("dd/MM/yyyy").format(date);
+        int day = now.get(Calendar.DAY_OF_MONTH);
+        int month = now.get(Calendar.MONTH);
+        int year = now.get(Calendar.YEAR);
+        DateContainer c = new DateContainer(Integer.toString(day),Integer.toString(month),Integer.toString(year));       
+        DateContainerDAO.saveContainer(c);
+        response.sendRedirect("/admin/NewEmployee.jsp");
+        //if someone could add a bunch of employees and availabilities that'd be awesome.
         
     }
 

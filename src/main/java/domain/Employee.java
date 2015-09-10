@@ -56,9 +56,8 @@ public class Employee {
     @Persistent
      private Boolean firstLogin;
     @Persistent
-     private ArrayList<String> constraints;
-    @Persistent
-     private ArrayList<Shift> availibleShifts;
+     private String constraints;
+
 
 
     public Employee(String name, String email, Double minhours, Double maxhours) {
@@ -67,8 +66,7 @@ public class Employee {
         this.name = name;
         this.minhours=minhours;
         this.maxhours = maxhours;
-        this.constraints = new ArrayList<>();
-        this.availibleShifts = new ArrayList<>();
+        this.constraints = "";
         this.password = newPassword(email);
         this.currenthours = 0.00;
         this.firstLogin=true;  
@@ -84,6 +82,11 @@ public class Employee {
         this.maxhours = maxhours;
         this.currenthours = currenthours;
         this.firstLogin = firstLogin;
+    }
+    
+    
+    public String getEmployeesByShiftType(String shiftType){
+        return null;
     }
     
     
@@ -138,22 +141,12 @@ public class Employee {
         return Base64.encodeBase64URLSafeString(bb.array());
     }
 
-    public ArrayList<Shift> getAvailibleShifts() {
-        return availibleShifts;
-    }
-
-    public void setAvailibleShifts(ArrayList<Shift> availibleShifts) {
-        this.availibleShifts = availibleShifts;
-    }
-    
-    
-
-    public ArrayList<String> getConstraints() {
+    public String getConstraints() {
         return constraints;
     }
 
-    public void setConstraints(ArrayList<String> constraints) {
-        this.constraints = constraints;
+    public void addConstraints(String constraints) {
+        this.constraints += constraints;
     }
     
     public void setId(String id) {
@@ -231,8 +224,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" + "key=" + key + ", id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", minhours=" + minhours + ", maxhours=" + maxhours + ", currenthours=" + currenthours + ", firstLogin=" + firstLogin + ", constraints=" + constraints + ", availibleShifts=" + availibleShifts + '}';
+        return "Employee{" + "key=" + key + ", id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", minhours=" + minhours + ", maxhours=" + maxhours + ", currenthours=" + currenthours + ", firstLogin=" + firstLogin + ", constraints=" + constraints + '}';
     }
+
+    
     
     
     

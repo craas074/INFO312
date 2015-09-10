@@ -26,7 +26,6 @@
     List<Shift> shifts = new ArrayList();
 
     
-    
     //these start values will need to come from a predefined 3 weekly pointer
     int day = 1;
     int month = 0;
@@ -73,6 +72,8 @@
             <li>Week 1</li>
             <li><a href="adminRosterWeekTwo.jsp">Week 2</a></li>
             <li><a href="adminRosterWeekThree.jsp">Week 3</a></li>
+            <li><a href="newEmployee.jsp">new employee</a></li>
+            <li><a href="amendEmployee.jsp">amend employee</a></li>
         </ul>
         
 

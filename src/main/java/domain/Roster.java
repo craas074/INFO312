@@ -32,10 +32,8 @@ public class Roster {
     private Date startDate;
     
     private Collection<Shift> shifts;
-    
 
-    public Roster() throws ParseException {
-        DateContainer d = DateContainerDAO.getContainer();
+    public Roster(DateContainer d) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         this.startDate = formatter.parse(d.getDay()+"/"+d.getMonth()+"/"+d.getYear());
         this.id = d.getDay()+"/"+d.getMonth()+"/"+d.getYear();
