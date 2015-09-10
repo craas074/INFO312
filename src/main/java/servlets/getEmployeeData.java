@@ -5,6 +5,8 @@
  */
 package servlets;
 
+import dao.EmployeeDAO;
+import domain.Employee;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ashtoncranmer
  */
-@WebServlet(name = "addShiftSetup", urlPatterns = {"/addShiftSetup"})
-public class addShiftSetup extends HttpServlet {
+@WebServlet(name = "getEmployeeData", urlPatterns = {"/getEmployeeData"})
+public class getEmployeeData extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,8 +33,21 @@ public class addShiftSetup extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+        
+        String employeeName = request.getParameter("name");
+        Employee emp = EmployeeDAO.getEmployeeByName(employeeName);
+        
+        String name = emp.getName();
+        String email = emp.getEmail();
+        String minHrs = Double.toString(emp.getMinhours());
+        String maxHrs = Double.toString(emp.getMaxhours());
+        
 
-        String date = request.getParameter("shiftDate");
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(name + " " + email + " " + minHrs + " " + maxHrs);
         
         
         

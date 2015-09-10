@@ -45,7 +45,7 @@
         <!-- Main -->
         <div id="main">
             <section style="border-style: solid; border-width: 2px; padding: 2%;">
-                <header class="major">
+                <header class="major"></header>
                     
                                                                     
                     <form method="post" action="/AmendShiftFinalise" onsubmit="return submitFunc()">
@@ -104,12 +104,14 @@
                                     <tr>
                                         <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee</td>
                                         <td> 
+                                            <div class="select-wrapper">
                                             <select id="demo-category">
                                                 <option value="">-- Select pre-existing --</option>
                                                 <% for (Employee employee : allEmployees) {%>
                                                 <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
                                                 <% }%>
                                             </select>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -145,13 +147,15 @@
                 
                                     <tr>
                                         <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee:</td>
-                                        <td style="margin: 0; padding: 0;"> 
+                                        <td style="margin: 0; padding: 0;">
+                                            <div class="select-wrapper">
                                             <select id="demo-category">
                                                 <option value="">-- Select from pre-existing --</option>
                                                 <% for (Employee employee : allEmployees) {%>
                                                 <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
                                                 <% }%>
                                             </select>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -162,13 +166,15 @@
 
                                     <tr>
                                         <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee:</td>
-                                        <td style="margin: 0; padding: 0;"> 
+                                        <td style="margin: 0; padding: 0;">
+                                            <div class="select-wrapper">
                                             <select id="demo-category">
                                                 <option value="">-- Select from all --</option>
                                                 <% for (Employee employee : allEmployees) {%>
                                                 <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
                                                 <% }%>
                                             </select>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>

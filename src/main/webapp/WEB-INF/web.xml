@@ -13,10 +13,6 @@
         <servlet-class>servlets.ShiftAmendmentFinalise</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddShift</servlet-name>
-        <servlet-class>servlets.addShiftSetup</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>DoLogin</servlet-name>
         <servlet-class>servlets.DoLogin</servlet-class>
     </servlet>
@@ -32,6 +28,17 @@
         <servlet-name>EmployeeAvailabilityServlet</servlet-name>
         <servlet-class>servlets.EmployeeAvailabilityServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getEmployeeData</servlet-name>
+        <servlet-class>servlets.getEmployeeData</servlet-class>
+    </servlet>
+    
+    
+    
+    
+    
+    
+    
     <servlet-mapping>
         <servlet-name>NewEmployeeServlet</servlet-name>
         <url-pattern>/new-employee</url-pattern>
@@ -61,7 +68,10 @@
         <url-pattern>/EmployeeAvailability</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AddShift</servlet-name>
-        <url-pattern>/AddShift</url-pattern>
+        <servlet-name>getEmployeeData</servlet-name>
+        <url-pattern>/getEmployeeData</url-pattern>
     </servlet-mapping>
-</web-app>
+
+    getEmployeeData
+
+    </web-app>
