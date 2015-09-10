@@ -20,7 +20,6 @@ import jdo.PMF;
  * @author benjamindawson-bruce
  */
 
-
 public final class EmployeeDAO {
     
     private static PersistenceManager pm;
@@ -28,7 +27,6 @@ public final class EmployeeDAO {
     public EmployeeDAO(){
     }
     
-
     public static PersistenceManager getPmf() {
         return pm;
     }
@@ -130,8 +128,6 @@ public final class EmployeeDAO {
     
     
     public static Employee getEmployeeByName(String name){
-        
-            
         pm = PMF.get().getPersistenceManager();
         try{
             Key k = KeyFactory.createKey(Employee.class.getSimpleName(), name);
@@ -139,8 +135,7 @@ public final class EmployeeDAO {
         }
         finally{
             pm.close();
-        }
-          
+        }          
     }
     
     
@@ -166,10 +161,6 @@ public final class EmployeeDAO {
                 retset.add(e);
             }
         }
-        return retset;
-        
+        return retset;   
     }
-    
-    
-    
 }
