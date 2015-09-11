@@ -18,7 +18,7 @@
         
         <table>
             <tr>
-                <th>Name</th><th>Email</th><th>Minimum Hours</th><th>Maximum Hours</th><th>Edit</th>
+                <th>Name</th><th>Email</th><th>Minimum Hours</th><th>Maximum Hours</th><th>id</th><th>Edit</th>
             </tr>
             <% 
                 //get all employees as an arraylist
@@ -36,6 +36,12 @@
                 }
             %>
         </table>
+        
+        <form method="post" action="/Configure">
+            <li>Configure shit</li>
+            <li><input type="submit" value="Ok" class="special" /></li>
+            
+        </form>
         
     </body>
 </html>

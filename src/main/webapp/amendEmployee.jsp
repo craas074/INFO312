@@ -16,8 +16,7 @@
 
 
 <%
-    
-    List <Employee>availableEmployees = new ArrayList(); 
+
     ArrayList <Employee>allEmployees = new ArrayList(EmployeeDAO.getAll());
 
 %>
@@ -49,7 +48,7 @@
                 <header class="major"></header>
 
                 
-                <form method="post" action="">
+                <form method="post" id="form" onsubmit="//return submitFunc()">
                         
                         <div class="row uniform 50%">
                             
@@ -69,7 +68,7 @@
                                                 <select id="selectEmployee" onchange="changeFunc();" id="demo-category">
                                                     <option value=""></option>
                                                     <% for (Employee employee : allEmployees) {%>
-                                                    <option><%=employee.getName()%></option>
+                                                    <option value="<%=employee.getEmail() %>"><%=employee.getName()%></option>
                                                     <% }%>
                                                 </select>
                                             </div>
@@ -82,24 +81,12 @@
                                     <tr style="background-color: white;" >
                                         <td>
                                             <div style="height: 32px;">
-                                                <label for="firstname"><h3>First name:</h3></label>
+                                                <label for="ename"><h3>Name:</h3></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input name="demo-name" id="firstname" type="text" size="40" required>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr style="background-color: white;" >
-                                        <td>
-                                            <div style="height: 32px;">
-                                                <label for="lastname"><h3>Last name:</h3></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div style="height: 32px;">
-                                                <input name="demo-name" id="lastname" type="text" size="40" required>
+                                                <input id="ename" name="ename" type="text" size="30" required>
                                             </div>
                                         </td>
                                     </tr>
@@ -111,7 +98,7 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input type="email" name="demo-name" id="email"size="40" required>
+                                                <input id="email" type="email" name="email" size="30" required>
                                             </div>
                                         </td>
                                     </tr>
@@ -123,7 +110,7 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input style="width: 100%;" type="number" name="minHours" min="0" max="99" value="20">
+                                                <input id="minhrs" style="width: 100%" type="number" size="2" name="minHours"  step="0.5" min="0" max="99">
                                             </div>
                                         </td>
                                     </tr>
@@ -135,32 +122,25 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input style="width: 100%;" type="number" name="maxHours" min="0"  max="99" value="20">
+                                                <input id="maxhrs" style="width: 100%" type="number" size="2" name="maxHours" min="0" step="0.5" max="99">
                                             </div>
                                         </td>
                                     </tr>
-                                    
-                                    
-                                
                                 </tbody>
                             </table>
-                            <table>
-                                
-                                
-                                
-                            </table>
-
+                                                
+                                              
+                                                
+                            <div id="postId"></div>                    
                             <div class="12u$">
                                 <ul class="actions">
-                                    <li><input type="submit" value="Ok" class="special" /></li>
+                                    <li><input type="submit" name="Amend" value="Amend" class="special submitbutton" formaction="/editEmployee"/></li>
+                                    <li><input type="submit" name="Delete" value="Delete" class="submitbutton" formaction="/deleteEmployee"/></li>
                                     <li><input type="reset" value="Reset" onclick="reset()" /></li>
                                 </ul>
                             </div>
                         </div>              
                     </form>
-                
-                
-                
                 
                 
             </section>
@@ -193,15 +173,70 @@
                 function changeFunc(){
                     
 
-                    var employee = $('#selectEmployee :selected').text(); 
+                    var employeeEmail = $("#selectEmployee").val();
+                    $("#postId").empty();
                     
-                    $.post( 'getEmployeeData', { name: employee })
+                    $.post( 'getEmployeeData', { email: employeeEmail })
                         .done(function( data ) {
-                        alert( "Data Loaded: " + data );
+                            
+                        $("#ename").val(data.name);
+                        $("#email").val(data.email);
+                        $("#minhrs").val(data.minhours);
+                        $("#maxhrs").val(data.maxhours);
+                        
+                        $("#postId").append("<input type='hidden' name='id' value='" + data.email + "'>");
+
                     });
-                    
-                    
+ 
                 }
+                
+            </script>
+            <script>
+
+            $(function() {
+                
+                var buttonpressed;
+                    
+                $('.submitbutton').click(function() {
+                    buttonpressed = $(this).attr('name');
+                });
+                
+                $('form').submit(function() {                    
+                   var ename = $("#ename").val();
+                   var email = $("#email").val();
+                   var minhrs = $("#minhrs").val();
+                   var maxhrs = $("#maxhrs").val();
+                                      
+                   if (parseFloat(minhrs) > parseFloat(maxhrs)){
+                       alert("Minimum hours must not be more than maximum hours");
+                       return(false);
+                   }
+                   
+                   if (buttonpressed === "Amend"){
+                       
+                        var confirmed = confirm("Confirm employee details?\n\n\n" + "Name: " + ename + "\n\n" + "Email: " + email + "\n\n" + "Minimum hours: " + minhrs + "\n\n" + "Maximum hours: " + maxhrs );
+
+                        if (confirmed === true){
+                            return(true);
+                        } else {
+                            return(false);
+                        }
+                    
+                    } else if (buttonpressed === "Delete"){
+                        
+                        var confirmed = confirm("Confirm delete?");
+
+                        if (confirmed === true){
+                            return(true);
+                        } else {
+                            return(false);
+                        }
+                    }
+                     
+                });   
+            });
+     
+                
                 
             </script>
     

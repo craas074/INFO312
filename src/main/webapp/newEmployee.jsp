@@ -51,7 +51,7 @@
                     
                 
                 
-                <form method="post" action="">
+                <form method="post" action="/newEmployee" onsubmit="return submitFunc()">
                         
                         <div class="row uniform 50%">
                             
@@ -61,24 +61,12 @@
                                     <tr style="background-color: white;" >
                                         <td>
                                             <div style="height: 32px;">
-                                                <label for="firstname"><h3>First name:</h3></label>
+                                                <label for="ename"><h3>Name:</h3></label>
                                             </div>
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input name="demo-name" id="firstname" type="text" size="40" required>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr style="background-color: white;" >
-                                        <td>
-                                            <div style="height: 32px;">
-                                                <label for="lastname"><h3>Last name:</h3></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div style="height: 32px;">
-                                                <input name="demo-name" id="lastname" type="text" size="40" required>
+                                                <input id="ename" name="ename" type="text" size="30" required>
                                             </div>
                                         </td>
                                     </tr>
@@ -90,7 +78,7 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input type="email" name="demo-name" id="email"size="40" required>
+                                                <input id="email" type="email" name="email" size="30" required>
                                             </div>
                                         </td>
                                     </tr>
@@ -102,7 +90,7 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input style="width: 100%" type="number" size="2" name="minHours"  step="0.5" min="0" max="99" value="10">
+                                                <input id="minhrs" style="width: 100%" type="number" size="2" name="minHours"  step="0.5" min="0" max="99" value="10">
                                             </div>
                                         </td>
                                     </tr>
@@ -114,18 +102,13 @@
                                         </td>
                                         <td>
                                             <div style="height: 32px;">
-                                                <input style="width: 100%" type="number" size="2" name="maxHours" min="0" step="0.5" max="99" value="10">
+                                                <input id="maxhrs" style="width: 100%" type="number" size="2" name="maxHours" min="0" step="0.5" max="99" value="10">
                                             </div>
                                         </td>
                                     </tr>
                                     
                                 
                                 </tbody>
-                            </table>
-                            <table>
-                                
-                                
-                                
                             </table>
 
                             <div class="12u$">
@@ -136,11 +119,7 @@
                             </div>
                         </div>              
                     </form>
-                
-                
-                
-                
-                
+
             </section>
 
             <!-- Footer -->
@@ -164,6 +143,32 @@
             <script src="assets/js/util.js"></script>
             <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
             <script src="assets/js/main.js"></script>
+            
+            <script type="text/javascript">
+                
+                function submitFunc() {
+                    
+                   var ename = $("#ename").val();
+                   var email = $("#email").val();
+                   var minhrs = $("#minhrs").val();
+                   var maxhrs = $("#maxhrs").val();
+                   
+                   if (minhrs > maxhrs){
+                       
+                       alert("Minimum hours must not be more than maximum hours");
+                       return false;
+                   }
+                   
+                   var confirmed = confirm("Confirm employee?\n\n\n" + "Name: " + ename + "\n\n" + "Email: " + email + "\n\n" + "Minimum hours: " + minhrs + "\n\n" + "Maximum hours: " + maxhrs );
+
+                   if (confirmed === true){
+                       return true;
+                   } else {
+                       return false;
+                   }
+                }
+     
+            </script>
         </div>  
     </body>
 </html>

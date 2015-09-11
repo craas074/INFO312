@@ -1,4 +1,6 @@
 
+<%@page import="domain.ShiftType"%>
+<%@page import="dao.ShiftTypesDAO"%>
 <!DOCTYPE html>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,8 +19,11 @@
 
 <%
     
-    List <Employee>availableEmployees = new ArrayList(); 
+    //ArrayList <Employee>availableEmployees = new ArrayList(ShiftDAO.);
     ArrayList <Employee>allEmployees = new ArrayList(EmployeeDAO.getAll());
+    ShiftTypesDAO s = new ShiftTypesDAO();
+    ArrayList <ShiftType>shiftTypes = new ArrayList(new ArrayList(s.getShiftsForDay("SAT")));
+    
     
 %>
 
@@ -48,7 +53,7 @@
                 <header class="major"></header>
                     
                                                                     
-                    <form method="post" action="/AmendShiftFinalise" onsubmit="return submitFunc()">
+                    <form method="post" action="/AddShift" onsubmit="return submitFunc()">
                         
                         <div class="row uniform 50%">
                             
@@ -151,8 +156,8 @@
                                             <div class="select-wrapper">
                                             <select id="demo-category">
                                                 <option value="">-- Select from pre-existing --</option>
-                                                <% for (Employee employee : allEmployees) {%>
-                                                <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
+                                                <% for (ShiftType shiftType : shiftTypes) {%>
+                                                <option value="<%%>"><%=shiftType.toString() %></option>
                                                 <% }%>
                                             </select>
                                             </div>

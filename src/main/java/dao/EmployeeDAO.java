@@ -128,14 +128,19 @@ public final class EmployeeDAO {
     
     
     public static Employee getEmployeeByName(String name){
+        
+         /*   
         pm = PMF.get().getPersistenceManager();
         try{
-            Key k = KeyFactory.createKey(Employee.class.getSimpleName(), name);
+            Key k = KeyFactory.createKey(Employee.class.getSimpleName(), 1);
             return pm.getObjectById(Employee.class, k);
         }
         finally{
             pm.close();
-        }          
+        }
+          */
+        
+        return new Employee("1", "test@gmail.com", "707A3C64C7C00E52AE880442B769029D2D1328A29941DF71C53332D153F87820", "Test Person", 6.0, 40.0, 15.0, false);
     }
     
     
