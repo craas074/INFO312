@@ -40,6 +40,10 @@
         <servlet-name>newEmployee</servlet-name>
         <servlet-class>servlets.NewEmployeeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddShift</servlet-name>
+        <servlet-class>servlets.AddShiftServlet</servlet-class>
+    </servlet>
     
     
     
@@ -86,5 +90,9 @@
     <servlet-mapping>
         <servlet-name>newEmployee</servlet-name>
         <url-pattern>/newEmployee</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddShift</servlet-name>
+        <url-pattern>/AddShift</url-pattern>
     </servlet-mapping>
     </web-app>
