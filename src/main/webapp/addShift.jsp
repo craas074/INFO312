@@ -20,8 +20,9 @@
 
 
 <%
-    //ArrayList <Availability> availEmployees = new ArrayList(new ArrayList(AvailabilityDAO.getByDate("07/09/2015")));
-    Collection<Availability> availEmployees = AvailabilityDAO.getByDate("07/09/2015"); 
+    ArrayList <Availability> availEmployees = new ArrayList(new ArrayList(AvailabilityDAO.getByDate("07/09/2015")));
+    //Collection<Availability> availEmployees = AvailabilityDAO.getByDate("07/09/2015"); 
+
     
     ArrayList <Employee>allEmployees = new ArrayList(EmployeeDAO.getAll());
     ShiftTypesDAO s = new ShiftTypesDAO();
