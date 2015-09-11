@@ -21,8 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author cameron
- * creates some test data
+ * @author cameron creates some test data
  */
 @WebServlet(name = "Configure", urlPatterns = {"/Configure"})
 public class Configure extends HttpServlet {
@@ -39,7 +38,7 @@ public class Configure extends HttpServlet {
     //sets DateContainer to next Monday
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         response.setContentType("text/html;charset=UTF-8");
         Calendar now = Calendar.getInstance();
         int weekday = now.get(Calendar.DAY_OF_WEEK);
@@ -69,35 +68,74 @@ public class Configure extends HttpServlet {
         EmployeeDAO.addEmployee(new Employee("8", "ellis@gmail.com", "3C5DDD0948295663886511E0FD7A3AA89A86837D620648B702CC698C836F0166", "Ellis", 5.0, 20.0, 15.0, false));
         EmployeeDAO.addEmployee(new Employee("9", "lewis@gmail.com", "6C725C744767E0D745901FB74154FFD59924DCE57F1CB2D0137E368606BDFB62", "Lewis", 5.0, 10.0, 10.0, false));
         EmployeeDAO.addEmployee(new Employee("10", "fiona@gmail.com", "4C0DB82499CA9A6D65C396D1FBB8E77078E315BD8DB0E9476A88CD244AA76CA6", "Fiona", 5.0, 30.0, 25.0, false));
-        
-//and some availabilities
+
+        //and some availabilities
         /*
-        AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0845", "0900", "07/09/2015"));
-        AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", 0900", "1200", "07/09/2015"));
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
-        AvailabilityDAO.addAvailability();
+        
+         //Monday
+         AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0845", "0900", "07/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", 0900", "1200", "07/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", "07/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", "07/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "1900", "2300", "07/09/2015"));
+
+
+
+         //Tuesday
+         AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", "08/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0600", "0900", "08/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", 0900", "1200", "08/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", "08/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("sam@gmail.com", "1500", "1900", "08/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "1900", "2300", "08/09/2015"));
+
+
+         //Wednesday
+
+
+         AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", "09/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ellis@gmail.com", "0845", "1200", "09/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", 0900", "1200", "09/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", "09/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", "09/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "1900", "2300", "09/09/2015"));
+
+
+         //Thursday
+
+         AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", "10/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("sam@gmail.com", "0600", "0900", "10/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", 0900", "1200", "10/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", "10/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", "10/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "1900", "2300", "10/09/2015"));
+
+         //Friday
+
+         AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", "11/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0600", "0900", "11/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", 0900", "1200", "11/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", "11/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", "11/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "1900", "2300", "11/09/2015"));
+
+         //Saturday
+
+         AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "0545", "0845", "12/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0845", "1200", "12/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", 0900", "1200", "12/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", "12/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", "12/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "1900", "2300", "12/09/2015"));
+
+         //Sunday 
+
+         AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0745", "1300", "13/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "0800", "1300", "13/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("ellis@gmail.com", "1300", "1700", "13/09/2015"));
+         AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1500", "2100", "13/09/2015"));
+        
+        
         */
         response.sendRedirect("/admin/employees.jsp");
     }

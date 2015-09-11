@@ -37,8 +37,8 @@ public class getEmployeeData extends HttpServlet {
         
         
         
-        String employeeName = request.getParameter("name");
-        Employee emp = EmployeeDAO.getEmployeeByName(employeeName);
+        String e = request.getParameter("email");
+        Employee emp = EmployeeDAO.getEmployeeByEmail(e);
         
         String name = emp.getName();
         String email = emp.getEmail();
@@ -48,12 +48,6 @@ public class getEmployeeData extends HttpServlet {
         
         response.setContentType("application/json");
         response.getWriter().write(new Gson().toJson(emp, Employee.class));
-        
-
-        //response.setContentType("text/plain");
-        //response.setCharacterEncoding("UTF-8");
-        //response.getWriter().write(name + " " + email + " " + minHrs + " " + maxHrs);
-        
         
         
     }

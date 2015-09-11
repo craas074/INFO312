@@ -142,7 +142,7 @@ public final class EmployeeDAO {
         }
           */
         
-        return new Employee("1", "test@gmail.com", "707A3C64C7C00E52AE880442B769029D2D1328A29941DF71C53332D153F87820", "Test Person", 1.0, 40.0, 15.0, false);
+        return new Employee("1", "test@gmail.com", "707A3C64C7C00E52AE880442B769029D2D1328A29941DF71C53332D153F87820", "Test Person", 6.0, 40.0, 15.0, false);
     }
     
     

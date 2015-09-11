@@ -6,6 +6,7 @@ package servlets;
 import dao.EmployeeDAO;
 import domain.Employee;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,23 +30,16 @@ public class EditEmployee extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        
         EmployeeDAO.updateEmployee(request.getParameter("id"),
-                request.getParameter("name"),
+                request.getParameter("ename"),
                 request.getParameter("email"),
-                Double.parseDouble(request.getParameter("minHrs")),
-                Double.parseDouble(request.getParameter("maxHrs")));
-        response.sendRedirect("/admin/employees.jsp");
+                Double.parseDouble(request.getParameter("minHours")),
+                Double.parseDouble(request.getParameter("maxHours"))); 
+        
+        response.sendRedirect("/amendEmployee.jsp");
+        
                 
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }
