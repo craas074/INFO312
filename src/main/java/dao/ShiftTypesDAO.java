@@ -7,16 +7,15 @@ package dao;
 
 import com.google.appengine.repackaged.com.google.common.collect.ArrayListMultimap;
 import com.google.appengine.repackaged.com.google.common.collect.Multimap;
+import domain.ShiftType;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  *
  * @author ashtoncranmer
  */
-public class ShiftTypesDAO {
+public final class ShiftTypesDAO {
 
     Multimap<String, ShiftType> map = ArrayListMultimap.create();
     ArrayList<String> days = new ArrayList();
@@ -65,7 +64,13 @@ public class ShiftTypesDAO {
                     map.put(day, new ShiftType("1900", "2300"));
                     break;
             }
-        }
+        } 
+    }
+    
+    public Collection getShiftsForDay(String day){
+        
+        Collection <ShiftType> coll = (Collection) map.get(day);
+        return coll;
        
     }
     
@@ -85,40 +90,5 @@ public class ShiftTypesDAO {
             }
         } 
     }
-    
-    
-    class ShiftType {
-
-        private String start;
-        private String finish;
-        private String type;
-
-        private ShiftType(String start, String finish, String type) {
-            this.start = start;
-            this.finish = finish;
-            this.type = type;
-        }
-        
-        private ShiftType(String start, String finish) {
-            this.start = start;
-            this.finish = finish;
-        }
-
-        public String getStart() {
-            return start;
-        }
-
-        public String getFinish() {
-            return finish;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-        
-    }
+   
 }

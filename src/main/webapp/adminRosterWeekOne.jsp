@@ -22,23 +22,34 @@
 
 <%!
     
-    
+    /*
 
     ShiftDAO shiftDAO = new ShiftDAO();
     EmployeeDAO employeeDAO = new EmployeeDAO();
     //List<Shift> shifts = shiftDAO.getShifts();
 
-    
-<<<<<<< HEAD
-=======
+
     DateContainer d = DateContainerDAO.getContainer();
->>>>>>> adca55d681e5d390dd9b585136b63a1c12dd7f6b
     //these start values will need to come from a predefined 3 weekly pointer
     int day = Integer.parseInt(d.getDay());
     int month = Integer.parseInt(d.getMonth());
     int year = Integer.parseInt(d.getYear());
     Collection<Shift> shifts = ShiftDAO.getByRosterId(d.getDay()+"/"+d.getMonth()+"/"+d.getYear());
         
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YY");
+    Calendar calendar = new GregorianCalendar(year,month,day);
+
+    */
+
+    ShiftDAO shiftDAO = new ShiftDAO();
+    EmployeeDAO employeeDAO = new EmployeeDAO();
+    //Collection<Shift> shifts = ShiftDAO.getByRosterId(d.getDay()+"/"+d.getMonth()+"/"+d.getYear());
+    Collection<Shift> shifts = ShiftDAO.getByRosterId("01/01/2015");
+    
+    int day = 1;
+    int month = 1;
+    int year = 2015;
+
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YY");
     Calendar calendar = new GregorianCalendar(year,month,day);
 

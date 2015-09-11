@@ -32,6 +32,18 @@
         <servlet-name>getEmployeeData</servlet-name>
         <servlet-class>servlets.getEmployeeData</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Configure</servlet-name>
+        <servlet-class>servlets.Configure</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>newEmployee</servlet-name>
+        <servlet-class>servlets.NewEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddShift</servlet-name>
+        <servlet-class>servlets.AddShiftServlet</servlet-class>
+    </servlet>
     
     
     
@@ -71,7 +83,16 @@
         <servlet-name>getEmployeeData</servlet-name>
         <url-pattern>/getEmployeeData</url-pattern>
     </servlet-mapping>
-
-    getEmployeeData
-
+    <servlet-mapping>
+        <servlet-name>Configure</servlet-name>
+        <url-pattern>/Configure</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newEmployee</servlet-name>
+        <url-pattern>/newEmployee</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddShift</servlet-name>
+        <url-pattern>/AddShift</url-pattern>
+    </servlet-mapping>
     </web-app>

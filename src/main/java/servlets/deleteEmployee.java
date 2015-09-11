@@ -34,16 +34,4 @@ public class deleteEmployee extends HttpServlet {
         EmployeeDAO.deleteEmployee(request.getParameter("email"));
         response.sendRedirect("/admin/employees.jsp");
     }
-
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

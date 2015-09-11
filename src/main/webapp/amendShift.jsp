@@ -237,7 +237,6 @@
                    var confirmed = confirm("  Confirm shift?\n\n" + sHour + " : " + sMin + "  –  " + fHour + " : " + fMin );
 
                    if (confirmed === true){
-                       console.log("here");
                        $("#newTimes").append("<input name='newTimes' id='' type='text' value='" + sHour + " " + sMin + " " + fHour + " " + fMin + "' style='display: none'/>");
                        return true;
                    } else {

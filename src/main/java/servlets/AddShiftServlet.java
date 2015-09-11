@@ -5,9 +5,6 @@
  */
 package servlets;
 
-import com.google.appengine.repackaged.com.google.gson.Gson;
-import dao.EmployeeDAO;
-import domain.Employee;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -20,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ashtoncranmer
  */
-@WebServlet(name = "getEmployeeData", urlPatterns = {"/getEmployeeData"})
-public class getEmployeeData extends HttpServlet {
+@WebServlet(name = "AddShiftServlet", urlPatterns = {"/AddShift"})
+public class AddShiftServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,22 +31,19 @@ public class getEmployeeData extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
-        String e = request.getParameter("email");
-        Employee emp = EmployeeDAO.getEmployeeByEmail(e);
-        
-        String name = emp.getName();
-        String email = emp.getEmail();
-        String minHrs = Double.toString(emp.getMinhours());
-        String maxHrs = Double.toString(emp.getMaxhours());
-        
-        
-        response.setContentType("application/json");
-        response.getWriter().write(new Gson().toJson(emp, Employee.class));
-        
-        
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet AddShiftServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet AddShiftServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
