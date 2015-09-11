@@ -1,4 +1,6 @@
 
+<%@page import="domain.Availability"%>
+<%@page import="dao.AvailabilityDAO"%>
 <%@page import="domain.ShiftType"%>
 <%@page import="dao.ShiftTypesDAO"%>
 <!DOCTYPE html>
@@ -18,13 +20,13 @@
 
 
 <%
+    //ArrayList <Availability> availEmployees = new ArrayList(new ArrayList(AvailabilityDAO.getByDate("07/09/2015")));
+    Collection<Availability> availEmployees = AvailabilityDAO.getByDate("07/09/2015"); 
     
-    //ArrayList <Employee>availableEmployees = new ArrayList(ShiftDAO.);
     ArrayList <Employee>allEmployees = new ArrayList(EmployeeDAO.getAll());
     ShiftTypesDAO s = new ShiftTypesDAO();
     ArrayList <ShiftType>shiftTypes = new ArrayList(new ArrayList(s.getShiftsForDay("SAT")));
-    
-    
+      
 %>
 
 <html>
@@ -88,7 +90,7 @@
                                         <td>Click time to set</td>
                                     </tr>
                                     <tr>
-                                        <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee:</td>
+                                        <td style="vertical-align: middle; background-color: #f7f7f7;">Set start:</td>
                                         <td style="margin: 0; padding: 0;">
                                             <input style="text-align: center; background-color: white;" id="timepicker1" type="text" name="timepicker1" value="05 : 45"/>
                                     </tr>
@@ -102,18 +104,13 @@
                             
                             <table id="allShiftsTable" class="alt">
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td>Click time to set</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: middle; background-color: #f7f7f7;">Set employee</td>
+                                    <tr style="vertical-align: middle; background-color: white;">
                                         <td> 
                                             <div class="select-wrapper">
                                             <select id="demo-category">
-                                                <option value="">-- Select pre-existing --</option>
-                                                <% for (Employee employee : allEmployees) {%>
-                                                <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
+                                                <option value=""></option>
+                                                <% for (ShiftType shiftType : shiftTypes) {%>
+                                                <option value="<%%>"><%=shiftType.toString() %></option>
                                                 <% }%>
                                             </select>
                                             </div>
@@ -155,7 +152,7 @@
                                         <td style="margin: 0; padding: 0;">
                                             <div class="select-wrapper">
                                             <select id="demo-category">
-                                                <option value="">-- Select from pre-existing --</option>
+                                                <option value=""></option>
                                                 <% for (ShiftType shiftType : shiftTypes) {%>
                                                 <option value="<%%>"><%=shiftType.toString() %></option>
                                                 <% }%>
@@ -163,6 +160,7 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    
                                 </tbody>
                             </table>
                            
@@ -175,8 +173,8 @@
                                             <div class="select-wrapper">
                                             <select id="demo-category">
                                                 <option value="">-- Select from all --</option>
-                                                <% for (Employee employee : allEmployees) {%>
-                                                <option value="<%=employee.getId()%>"><%=employee.getName()%></option>
+                                                <% for (Availability avEmp : availEmployees) {%>
+                                                <option value="<%=avEmp.getEmail() %>"><%=avEmp.getEmail()%></option>
                                                 <% }%>
                                             </select>
                                             </div>

@@ -71,6 +71,7 @@ public class Configure extends HttpServlet {
         EmployeeDAO.addEmployee(new Employee("9", "lewis@gmail.com", "6C725C744767E0D745901FB74154FFD59924DCE57F1CB2D0137E368606BDFB62", "Lewis", 5.0, 10.0, 10.0, false));
         EmployeeDAO.addEmployee(new Employee("10", "fiona@gmail.com", "4C0DB82499CA9A6D65C396D1FBB8E77078E315BD8DB0E9476A88CD244AA76CA6", "Fiona", 5.0, 30.0, 25.0, false));
 
+        try { 
         //and some availabilities
         DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
 
