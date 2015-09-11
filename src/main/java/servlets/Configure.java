@@ -15,6 +15,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,103 +73,118 @@ public class Configure extends HttpServlet {
         EmployeeDAO.addEmployee(new Employee("9", "lewis@gmail.com", "6C725C744767E0D745901FB74154FFD59924DCE57F1CB2D0137E368606BDFB62", "Lewis", 5.0, 10.0, 10.0, false));
         EmployeeDAO.addEmployee(new Employee("10", "fiona@gmail.com", "4C0DB82499CA9A6D65C396D1FBB8E77078E315BD8DB0E9476A88CD244AA76CA6", "Fiona", 5.0, 30.0, 25.0, false));
 
-        try { 
-        //and some availabilities
-        DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            //and some availabilities
+            DateFormat sourceFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        //Monday
-        AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0845", "0900", sourceFormat.parse("07/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("07/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("07/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("07/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "1900", "2300", sourceFormat.parse("07/09/2015")));
+            //Monday
+            AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0845", "0900", sourceFormat.parse("07/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("07/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("07/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("07/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "1900", "2300", sourceFormat.parse("07/09/2015")));
 
-        //Tuesday
-        AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", sourceFormat.parse("08/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0600", "0900", sourceFormat.parse("08/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("08/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("08/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("sam@gmail.com", "1500", "1900", sourceFormat.parse("08/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "1900", "2300", sourceFormat.parse("08/09/2015")));
+            //Tuesday
+            AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", sourceFormat.parse("08/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0600", "0900", sourceFormat.parse("08/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("08/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("08/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("sam@gmail.com", "1500", "1900", sourceFormat.parse("08/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "1900", "2300", sourceFormat.parse("08/09/2015")));
 
-         //Wednesday
-        AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", sourceFormat.parse("09/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ellis@gmail.com", "0845", "1200", sourceFormat.parse("09/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("09/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("09/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("09/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "1900", "2300", sourceFormat.parse("09/09/2015")));
+            //Wednesday
+            AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", sourceFormat.parse("09/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ellis@gmail.com", "0845", "1200", sourceFormat.parse("09/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("09/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("09/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("09/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "1900", "2300", sourceFormat.parse("09/09/2015")));
 
-         //Thursday
-        AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", sourceFormat.parse("10/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("sam@gmail.com", "0600", "0900", sourceFormat.parse("10/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("10/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("10/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("10/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "1900", "2300", sourceFormat.parse("10/09/2015")));
+            //Thursday
+            AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", sourceFormat.parse("10/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("sam@gmail.com", "0600", "0900", sourceFormat.parse("10/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("10/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("10/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("10/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "1900", "2300", sourceFormat.parse("10/09/2015")));
 
-         //Friday
-        AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", sourceFormat.parse("11/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0600", "0900", sourceFormat.parse("11/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("11/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("11/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("11/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "1900", "2300", sourceFormat.parse("11/09/2015")));
+            //Friday
+            AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0545", "0845", sourceFormat.parse("11/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0600", "0900", sourceFormat.parse("11/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("11/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("11/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("11/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "1900", "2300", sourceFormat.parse("11/09/2015")));
 
-         //Saturday
-        AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "0545", "0845", sourceFormat.parse("12/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0845", "1200", sourceFormat.parse("12/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("12/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("12/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("12/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "1900", "2300", sourceFormat.parse("12/09/2015")));
+            //Saturday
+            AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "0545", "0845", sourceFormat.parse("12/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("cam@gmail.com", "0845", "1200", sourceFormat.parse("12/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ben@gmail.com", "0900", "1200", sourceFormat.parse("12/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1200", "1500", sourceFormat.parse("12/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("jake@gmail.com", "1500", "1900", sourceFormat.parse("12/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ashton@gmail.com", "1900", "2300", sourceFormat.parse("12/09/2015")));
 
-         //Sunday 
-        AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0745", "1300", sourceFormat.parse("13/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "0800", "1300", sourceFormat.parse("13/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("ellis@gmail.com", "1300", "1700", sourceFormat.parse("13/09/2015")));
-        AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1500", "2100", sourceFormat.parse("13/09/2015")));
+            //Sunday 
+            AvailabilityDAO.addAvailability(new Availability("fiona@gmail.com", "0745", "1300", sourceFormat.parse("13/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("lewis@gmail.com", "0800", "1300", sourceFormat.parse("13/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("ellis@gmail.com", "1300", "1700", sourceFormat.parse("13/09/2015")));
+            AvailabilityDAO.addAvailability(new Availability("kistina@gmail.com", "1500", "2100", sourceFormat.parse("13/09/2015")));
 
-        response.sendRedirect("/admin/employees.jsp");
+            response.sendRedirect("/admin/employees.jsp");
+        } catch (ParseException | IOException e) {
+            System.out.println("no");
+        }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+        /**
+         * Handles the HTTP <code>GET</code> method.
+         *
+         * @param request servlet request
+         * @param response servlet response
+         * @throws ServletException if a servlet-specific error occurs
+         * @throws IOException if an I/O error occurs
+         */
+        @Override
+        protected void doGet
+        (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(Configure.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        /**
+         * Handles the HTTP <code>POST</code> method.
+         *
+         * @param request servlet request
+         * @param response servlet response
+         * @throws ServletException if a servlet-specific error occurs
+         * @throws IOException if an I/O error occurs
+         */
+        @Override
+        protected void doPost
+        (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(Configure.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
+        /**
+         * Returns a short description of the servlet.
+         *
+         * @return a String containing servlet description
+         */
+        @Override
+        public String getServletInfo
+        
+            () {
         return "Short description";
-    }// </editor-fold>
+        }// </editor-fold>
 
-}
+    }

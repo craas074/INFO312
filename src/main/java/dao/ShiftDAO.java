@@ -39,6 +39,7 @@ public class ShiftDAO {
        Query q = pm.newQuery(domain.Availability.class);
        try{
            Collection<Shift> res = (Collection<Shift>)q.execute();
+           res.size();
            return res;
        }
        finally{
@@ -54,6 +55,7 @@ public class ShiftDAO {
         q.declareParameters("String idParam");
         try{
             Collection<Shift> res = (Collection<Shift>) q.execute(id);
+            res.size();
             return res;
         }
         finally{

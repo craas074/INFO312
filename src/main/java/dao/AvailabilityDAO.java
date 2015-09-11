@@ -61,6 +61,7 @@ public final class AvailabilityDAO {
         q.declareParameters("String emailParam");
         try{
             Collection<Availability> res = (Collection<Availability>) q.execute(email);
+            res.size();
             return res;
         }
         finally{
@@ -78,6 +79,7 @@ public final class AvailabilityDAO {
         q.declareParameters("java.util.Date dateParam");
         try{
             Collection<Availability> res = (Collection<Availability>) q.execute(d);
+            res.size();
             return res;
         }
         finally{

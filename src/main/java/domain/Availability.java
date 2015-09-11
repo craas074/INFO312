@@ -14,7 +14,7 @@ import javax.jdo.annotations.Persistent;
  * @author cameron
  * @version 0.1
  */
-@PersistenceCapable(detachable="True")
+@PersistenceCapable(detachable="true")
 public class Availability {
     
     @Persistent
