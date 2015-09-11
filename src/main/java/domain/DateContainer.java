@@ -17,7 +17,6 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class DateContainer {
     
-    @PrimaryKey
     @Persistent
     private int id;
     @Persistent

@@ -20,7 +20,6 @@ import jdo.PMF;
  * @author benjamindawson-bruce
  */
 
-
 public final class EmployeeDAO {
     
     private static PersistenceManager pm;
@@ -28,7 +27,6 @@ public final class EmployeeDAO {
     public EmployeeDAO(){
     }
     
-
     public static PersistenceManager getPmf() {
         return pm;
     }
@@ -168,10 +166,6 @@ public final class EmployeeDAO {
                 retset.add(e);
             }
         }
-        return retset;
-        
+        return retset;   
     }
-    
-    
-    
 }
