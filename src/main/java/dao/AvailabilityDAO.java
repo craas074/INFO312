@@ -24,6 +24,9 @@ import jdo.PMF;
  */
 public final class AvailabilityDAO {
 
+    public AvailabilityDAO() {
+    }
+
     private static PersistenceManager pm;
     
     public static void addAvailability(Availability av){
