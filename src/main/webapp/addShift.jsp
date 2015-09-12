@@ -20,9 +20,8 @@
 
 
 <%
-    ArrayList <Availability> availEmployees = new ArrayList(new ArrayList(AvailabilityDAO.getByDate("07/09/2015")));
+    //ArrayList <Availability> availEmployees = new ArrayList(new ArrayList(AvailabilityDAO.getByDate("07/09/2015")));
     //Collection<Availability> availEmployees = AvailabilityDAO.getByDate("07/09/2015"); 
-
     
     ArrayList <Employee>allEmployees = new ArrayList(EmployeeDAO.getAll());
     ShiftTypesDAO s = new ShiftTypesDAO();
@@ -174,7 +173,8 @@
                                             <div class="select-wrapper">
                                             <select id="demo-category">
                                                 <option value="">-- Select from all --</option>
-                                                <% for (Availability avEmp : availEmployees) {%>
+                                                <% Collection<Availability> availEmployees = AvailabilityDAO.getByDate("07/09/2015"); 
+                                                for (Availability avEmp : availEmployees) {%>
                                                 <option value="<%=avEmp.getEmail() %>"><%=avEmp.getEmail()%></option>
                                                 <% }%>
                                             </select>
