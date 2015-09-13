@@ -66,7 +66,8 @@
     <div id="main">
         
         <header class="major"  style="text-align: center; padding: 0;">
-            <h3><i>Please specify your shift availability by using the schedules below. Selected shifts appear
+            <h3><i>Please specify your shift availability by using the schedules below. You are welcome to specify
+                    more than one shift per day. Selected shifts appear
                     as green. </i></h3>
             </header>
         
@@ -212,7 +213,7 @@
                             <td></td>
                         </tr>
                         <tr style="display: none;"></tr>
-                        <tr class="0845 1200">
+                        <tr id="0845 1200">
                             <td>0845 - 1200</td>
                             <td class="none"></td>
                             <td class="none"></td>
@@ -410,7 +411,7 @@
                             <td></td>
                         </tr>
                         <tr style="display: none;"></tr>
-                        <tr class="0845 1200">
+                        <tr id="0845 1200">
                             <td>0845 - 1200</td>
                             <td class="none"></td>
                             <td class="none"></td>
@@ -608,7 +609,7 @@
                             <td></td>
                         </tr>
                         <tr style="display: none;"></tr>
-                        <tr class="0845 1200">
+                        <tr id="0845 1200">
                             <td>0845 - 1200</td>
                             <td class="none"></td>
                             <td class="none"></td>
@@ -663,8 +664,7 @@
                 </table>
             </div>
         </section>
-                       
-
+                        
         <section>
             <h2> <i class="icon fa-pencil"> Additional comments</i></h2>
             <p><i>If you find that your availability cannot be fully represented by this submission form,
@@ -682,7 +682,7 @@
                                 <!-- shifts dynamically placed here to be submitted as part of the post -->
                             </div>
                             <p><i> Please note: once shifts have been submitted you won't be able to re-submit, so
-                                   review you selections carefully. Please notify work about any required changes or concerns. </i></p>
+                                   review your selections carefully. Please notify work about any required changes or concerns. </i></p>
                             <ul class="actions">
                                 <li><input id="submitButton" class="special" type="submit" value="Submit Availability" /></li>
                             </ul>
@@ -725,10 +725,23 @@
         
         <script>
         function submitFunc() {
+            
+            if ($('.shift').length === 0){
+                
+                var confirmed = confirm("You haven't chosen any shifts. You will not be able to re-submit for this 3 week period. Submit anyway?");
+
+                if (confirmed === true){
+                    return true;
+                } else {
+                    return false;
+                }
+            
+            }
+            
             var confirmed = confirm("Would you like to confirm your shift availability?");
 
             if (confirmed === true){
-                return true
+                return true;
             } else {
                 return false;
             }

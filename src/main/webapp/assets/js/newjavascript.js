@@ -72,7 +72,7 @@ var selections = (function () {
             if (document.getElementById(identifier) === null) {
 
                 //alert("doesn't exist, so create");
-                $("#shifts").append("<input name='shifts' id='" + identifier + "' type='text' value='" + identifier + "'/>");
+                $("#shifts").append("<input name='shifts' class='shift' id='" + identifier + "' type='text' value='" + identifier + "'/>");
 
                 //' style='display: none'
             } else {
